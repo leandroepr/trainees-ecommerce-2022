@@ -1,0 +1,57 @@
+{
+  "Create a react component with props": {
+    "prefix": "rfcp",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export interface ${1:ComponentName}Props {$2}",
+      "const ${1:ComponentName}: React.FC<${1:ComponentName}Props> = ($3) => { ",
+      "\treturn (",
+      "\t\t<>",
+      "\t\t\t$0",
+      "\t\t</>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:ComponentName}"
+    ],
+    "description": "Create a react functional component with Props"
+  },
+
+  "Create a local react component with props": {
+    "prefix": "subcomp",
+    "body": [
+      "interface ${1:ComponentName}Props {$2}",
+      "const ${1:ComponentName}: React.FC<${1:ComponentName}Props> = ($3) => { ",
+      "\treturn <>$4</>",
+      "}"
+    ],
+    "description": "Create a local react functional component with Props"
+  },
+
+  "React use State": {
+    "prefix": "rus",
+    "body": [
+      "const [$1, set${1/(.*)/${1:/capitalize}/}] = React.useState$3($2)"
+    ],
+    "description": "Create a React.useState"
+  },
+
+  "React use Callback": {
+    "prefix": "ruc",
+    "body": ["const ${1:callback} = React.useCallback(($2) => {$4}, [$3])"],
+    "description": "Create a React.useCallback"
+  },
+
+  "Create a useEffect hook": {
+    "prefix": "rue",
+    "body": ["React.useEffect(() => {", "  $1", "}, [])"],
+    "description": "Create a react-native component test"
+  },
+
+  "consoleLog": {
+    "prefix": "clg",
+    "body": "console.log(${1:object})",
+    "description": "Displays a message in the console"
+  }
+}
