@@ -1,6 +1,7 @@
 import React from 'react'
 
-export interface ImageComponentProps {
+export interface ImageComponentProps
+  extends React.HTMLAttributes<HTMLImageElement> {
   className?: string
   src?: string
   alt?: string
