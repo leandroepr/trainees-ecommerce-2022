@@ -1,1 +1,3 @@
-export * from './row';
+import Row from './row';
+
+export default Row;
