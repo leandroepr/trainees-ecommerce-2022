@@ -1,6 +1,6 @@
 # Welcome to Trainees E-commerce!
 
-This project aims to establish previous contents of the 80 Lines trainee program, class of 2022.
+This project aims to establish previous contents of the 80Lines trainee program, class of 2022.
 In addition to teaching new techniques and assessing the participants' knowledge and teamwork.
 
 ---
@@ -18,9 +18,9 @@ In addition to teaching new techniques and assessing the participants' knowledge
 
 # Context
 
-80 Lines is a team of developers and designers highly experienced in every area of front-end development, with the most modern frameworks. They deliver high quality app development, web development and modern UI/UXdesign.
+80Lines is a team of developers and designers highly experienced in every area of front-end development, with the most modern frameworks. They deliver high quality app development, web development and modern UI/UXdesign.
 
-In June 2022, six new developers began their journey at 80 Lines through the Trainee Program. This program is divided into three months, the first consisting of classes and orientations.
+In June 2022, six new developers began their journey at 80Lines through the Trainee Program. This program is divided into three months, the first consisting of classes and orientations.
 
 This project is the second stage of the program, which consists of a fictitious project for fixing previous lessons and evaluating progress.
 
