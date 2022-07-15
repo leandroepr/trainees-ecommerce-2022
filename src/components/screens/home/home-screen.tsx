@@ -3,8 +3,8 @@ import {
   Footer,
   Header,
   PublicLayout,
-} from "components/templates/public-layout";
-import React from "react";
+} from 'components/templates/public-layout'
+import React from 'react'
 
 // export interface HomeScreenProps {}
 const HomeScreen: React.FC = () => {
@@ -20,7 +20,7 @@ const HomeScreen: React.FC = () => {
         <span>footer</span>
       </Footer>
     </PublicLayout>
-  );
-};
+  )
+}
 
-export default HomeScreen;
+export default HomeScreen
