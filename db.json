@@ -1,0 +1,326 @@
+{
+  "categories": [
+    {
+      "id": "roupas",
+      "name": "Roupas",
+      "displayName": "Roupas para você e toda família"
+    },
+    {
+      "id": "calcados",
+      "name": "Calçados",
+      "displayName": "Calçados elegantes e confortáveis"
+    },
+    {
+      "id": "acessorios",
+      "name": "Acessórios",
+      "displayName": "Acessórios, Maquiagens e muito mais"
+    }
+  ],
+  "products": [
+    {
+      "slug": "camiseta-hering-super-cotton-masculina",
+      "title": "Camiseta Hering Super Cotton - Unisex",
+      "imageUrl": "https://http2.mlstatic.com/camiseta-hering-super-cotton-masculina-D_NQ_NP_851063-MLB40515678610_012020-O.jpg",
+      "price": "49.99",
+      "installmentsInfo": "em 10x R$ 5,65",
+      "condition": "Novo",
+      "soldAmount": "884",
+      "stockAmount": 100,
+      "categoryId": "roupas",
+      "categories": ["Roupas", "Camisetas", "Masculino", "Curta"]
+    },
+    {
+      "slug": "camiseta-hering-0299-original-masculinas-gola-redonda",
+      "title": "Camiseta Hering 0299 (original) - Masculinas - Gola Redonda",
+      "imageUrl": "https://http2.mlstatic.com/camiseta-hering-0299-original-masculinas-gola-redonda-D_NQ_NP_685591-MLB41818645468_052020-O.jpg",
+      "price": "34.99",
+      "installmentsInfo": "em 6x R$ 6,41",
+      "condition": "Novo",
+      "soldAmount": 188,
+      "stockAmount": 322,
+      "categoryId": "roupas",
+      "categories": ["Roupas", "Camisetas", "Masculino", "Curta"]
+    },
+    {
+      "slug": "camiseta-masculina-basica-algodo-premium-modelo-exclusivo",
+      "title": "Camiseta Masculina Básica Algodão Premium Modelo Exclusivo",
+      "imageUrl": "https://http2.mlstatic.com/camiseta-masculina-basica-algodo-premium-modelo-exclusivo-D_NQ_NP_635393-MLB32793978695_112019-O.jpg",
+      "price": "29.00",
+      "installmentsInfo": "em 5x R$ 5,80",
+      "condition": "Novo",
+      "soldAmount": 4617,
+      "stockAmount": 123,
+      "categoryId": "roupas",
+      "categories": ["Roupas", "Camisetas", "Masculino", "Curta"]
+    },
+    {
+      "slug": "camisa-termica-segunda-pele-proteco-uv-nova-street-mista",
+      "title": "Camisa Térmica Segunda Pele Proteção Uv Nova Street Mista",
+      "imageUrl": "https://http2.mlstatic.com/camisa-termica-segunda-pele-proteco-uv-nova-street-mista-D_NQ_NP_719728-MLB42097074385_062020-O.jpg",
+      "price": "48.00",
+      "installmentsInfo": "em 10x R$ 5,42",
+      "condition": "Novo",
+      "soldAmount": 6563,
+      "stockAmount": 5,
+      "categoryId": "roupas",
+      "categories": ["Roupas", "Camisetas", "Masculino", "Curta"]
+    },
+    {
+      "slug": "5-camiseta-masculina-camisas-slim-voker-100-algodo-atacado",
+      "title": "6 Camiseta Masculina Camisas Slim Voker 100% Algodão Atacado",
+      "imageUrl": "https://http2.mlstatic.com/5-camiseta-masculina-camisas-slim-voker-100-algodo-atacado-D_NQ_NP_855910-MLB41149427249_032020-O.jpg",
+      "price": "144.90",
+      "installmentsInfo": "em 12x R$ 13,76",
+      "condition": "Novo",
+      "soldAmount": 1065,
+      "stockAmount": 784,
+      "categoryId": "roupas",
+      "categories": ["Roupas", "Camisetas", "Masculino", "Curta"]
+    },
+    {
+      "slug": "macaco-macaquinho-curto-feminino-bojo-alcas-botoes-linho",
+      "title": "Macacão Macaquinho Curto Feminino Bojo Alças Botões Linho",
+      "imageUrl": "https://http2.mlstatic.com/macaco-macaquinho-curto-feminino-bojo-alcas-botoes-linho-D_NQ_NP_642591-MLB31583362880_072019-O.jpg",
+      "price": "79.90",
+      "installmentsInfo": "em 12x R$ 6,65 sem juros",
+      "condition": "Novo",
+      "soldAmount": 1547,
+      "stockAmount": 543,
+      "categoryId": "roupas",
+      "categories": ["Roupas", "Macacão", "Feminino", "Regata"]
+    },
+    {
+      "slug": "macaco-longo-bengaline-feminino-jardineira-suspensorio-top",
+      "title": "Macacão Longo Bengaline Feminino Jardineira Suspensorio Top",
+      "imageUrl": "https://http2.mlstatic.com/macaco-longo-bengaline-feminino-jardineira-suspensorio-top-D_NQ_NP_767888-MLB31675586956_082019-O.jpg",
+      "price": "54.05",
+      "installmentsInfo": "em 10x R$ 5,40 sem juros",
+      "condition": "Novo",
+      "soldAmount": 4521,
+      "stockAmount": 220,
+      "categoryId": "roupas",
+      "categories": ["Roupas", "Macacão", "Feminino", "Regata"]
+    },
+    {
+      "slug": "kit-jardineira-moda-evangelica-saia-jeans-escolha-as-suas",
+      "title": "Kit Jardineira Moda Evangélica + Saia Jeans Escolha As Suas",
+      "imageUrl": "https://http2.mlstatic.com/kit-jardineira-moda-evangelica-saia-jeans-escolha-as-suas-D_NQ_NP_753794-MLB31134721763_062019-O.jpg",
+      "price": "146.90",
+      "installmentsInfo": "em 12x R$ 13,95",
+      "condition": "Novo",
+      "soldAmount": 553,
+      "stockAmount": 90,
+      "categoryId": "roupas",
+      "categories": ["Roupas", "Macacão", "Feminino", "Regata"]
+    },
+    {
+      "slug": "kit-casaco-touca-meia-beb-tric-3-pecas",
+      "title": "Kit Casaco Touca Meia Bebê Tricô 3 Peças",
+      "imageUrl": "https://http2.mlstatic.com/kit-casaco-touca-meia-beb-tric-3-pecas-D_NQ_NP_902715-MLB31508906009_072019-F.jpg",
+      "price": "34.90",
+      "installmentsInfo": "em 6x R$ 5,82 sem juros",
+      "condition": "Novo",
+      "soldAmount": 618,
+      "stockAmount": 219,
+      "categoryId": "roupas",
+      "categories": ["Roupas", "Conjuntos", "Bebês"]
+    },
+    {
+      "slug": "tenis-flatform-amortecimento-air-feminino-conforto-leveza",
+      "title": "Tenis Flatform Amortecimento Air Feminino Conforto Leveza",
+      "imageUrl": "https://http2.mlstatic.com/tenis-flatform-amortecimento-air-feminino-conforto-leveza-D_NQ_NP_690842-MLB40506722492_012020-F.jpg",
+      "price": "85.41",
+      "installmentsInfo": "em 12x R$ 8,11",
+      "condition": "Novo",
+      "soldAmount": 1492,
+      "stockAmount": 30,
+      "categoryId": "calcados",
+      "categories": ["Calçados", "Sapatos", "Tênis", "Feminino", "Urbano"]
+    },
+    {
+      "slug": "sapatnis-confort-couro-legitimo",
+      "title": "Sapatênis Confort Couro Legítimo",
+      "imageUrl": "https://http2.mlstatic.com/sapatnis-confort-couro-legitimo-D_NQ_NP_606970-MLB32419057696_102019-O.jpg",
+      "price": "89.99",
+      "installmentsInfo": "em 12x R$ 7,50 sem juros",
+      "condition": "Novo",
+      "soldAmount": 3071,
+      "stockAmount": 30,
+      "categoryId": "calcados",
+      "categories": ["Calçados", "Sapatos", "Tênis", "Feminino", "Urbano"]
+    },
+    {
+      "slug": "sapatenis-tenis-casual-masculino-cano-alto-da-polo-botinha",
+      "title": "Sapatenis Tenis Casual Masculino Cano Alto Da Polo Botinha",
+      "imageUrl": "https://http2.mlstatic.com/sapatenis-tenis-casual-masculino-cano-alto-da-polo-botinha-D_NQ_NP_797235-MLB28274296751_102018-F.jpg",
+      "price": "64.50",
+      "installmentsInfo": "em 12x R$ 6,13",
+      "condition": "Novo",
+      "soldAmount": 3049,
+      "stockAmount": 30,
+      "categoryId": "calcados",
+      "categories": ["Calçados", "Sapatos", "Tênis", "Masculino", "Polo Joy"]
+    },
+    {
+      "slug": "sandalia-rasteira-bonequinha-em-couro-legitimo-linha-confort",
+      "title": "Sandália Rasteira Bonequinha Em Couro Legitimo Linha Confort",
+      "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_774271-MLB41098257399_032020-O.jpg",
+      "price": "89.99",
+      "installmentsInfo": "em 12x R$ 7,50 sem juros",
+      "condition": "Novo",
+      "soldAmount": 372,
+      "stockAmount": 10,
+      "categoryId": "calcados",
+      "categories": ["Calçados", "Sapatos", "Sandálias e Chinelos", "Femilino"]
+    },
+    {
+      "slug": "bota-botinha-feminina-casual-rasteira-charme",
+      "title": "Bota Botinha Feminina Casual Rasteira Charme",
+      "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_980974-MLB41505506820_042020-O.jpg",
+      "price": "99.99",
+      "installmentsInfo": "em 12x R$ 8,33 sem juros",
+      "condition": "Novo",
+      "soldAmount": 109,
+      "stockAmount": 1240,
+      "categoryId": "calcados",
+      "categories": ["Calçados", "Sapatos", "Botas", "Femilino"]
+    },
+    {
+      "slug": "paleta-48-sombras-jasmyne-com-espelho",
+      "title": "Paleta 48 Sombras Jasmyne Com Espelho",
+      "imageUrl": "https://http2.mlstatic.com/paleta-48-sombras-jasmyne-com-espelho-D_NQ_NP_935212-MLB43218287171_082020-O.jpg",
+      "price": "49.40",
+      "installmentsInfo": "em 6x R$ 8,23 sem juros",
+      "condition": "Novo",
+      "soldAmount": 249,
+      "stockAmount": 30,
+      "categoryId": "acessorios",
+      "categories": [
+        "Acessórios",
+        "Maquiagens",
+        "Olho",
+        "Paletas de Sombras",
+        "Jasmyne"
+      ]
+    },
+    {
+      "slug": "conjunto-corrente-pulseira-masculina-3x1-aco-inox-ref-325",
+      "title": "Conjunto Corrente Pulseira Masculina 3x1 Aço Inox Ref 325",
+      "imageUrl": "https://http2.mlstatic.com/conjunto-corrente-pulseira-masculina-3x1-aco-inox-ref-325-D_NQ_NP_764980-MLB32557629693_102019-O.jpg",
+      "price": "27.90",
+      "installmentsInfo": "em 5x R$ 5,58 sem juros",
+      "condition": "Novo",
+      "soldAmount": 1759,
+      "stockAmount": 330,
+      "categoryId": "acessorios",
+      "categories": [
+        "Acessórios",
+        "Jóias e Bijuterias",
+        "Colares",
+        "Corrente",
+        "Masculino"
+      ]
+    },
+    {
+      "slug": "relogio-champion-feminino-dourado-ouro-18k-com-1-ano-de-garantia-prova-dagua-e-nota-fiscal",
+      "title": "Relógio Champion Feminino Dourado Ouro 18k Com 1 Ano De Garantia Prova D'água E Nota Fiscal",
+      "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_794628-MLB43335048147_092020-O.jpg",
+      "price": "27.90",
+      "installmentsInfo": "em 12x R$ 17,41 sem juros",
+      "condition": "Novo",
+      "soldAmount": 7077,
+      "stockAmount": 120,
+      "categoryId": "acessorios",
+      "categories": [
+        "Acessórios",
+        "Relógios",
+        "De Pulso",
+        "Champion",
+        "Feminino",
+        "Adulto"
+      ]
+    },
+    {
+      "slug": "kit-corrente-colar-prata-925-ponto-de-luz-coraco-brincos",
+      "title": "Kit Corrente Colar Prata 925 Ponto De Luz Coração + Brincos",
+      "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_902610-MLB41791985980_052020-O.jpg",
+      "price": "72.90",
+      "installmentsInfo": "em 12x R$ 6,08 sem juros",
+      "condition": "Novo",
+      "soldAmount": 1966,
+      "stockAmount": 103,
+      "categoryId": "acessorios",
+      "categories": ["Acessórios", "Joias e Bijuterias", "Colares", "Feminino"]
+    },
+    {
+      "slug": "par-de-alianca-8mm-banhado-ouro-18k-com-garantia-ref-a1",
+      "title": "Par De Aliança 8mm Banhado Ouro 18k Com Garantia. Ref: A1",
+      "imageUrl": "https://http2.mlstatic.com/par-de-alianca-8mm-banhado-ouro-18k-com-garantia-ref-a1-D_NQ_NP_764357-MLB25743079753_072017-O.jpg",
+      "price": "29.99",
+      "installmentsInfo": "em 5x R$ 6,00 sem juros",
+      "condition": "Novo",
+      "soldAmount": 1423,
+      "stockAmount": 100,
+      "categoryId": "acessorios",
+      "categories": [
+        "Acessórios",
+        "Jóias e Bijuterias",
+        "Alianças",
+        "Folheado a ouro",
+        "Compromisso"
+      ]
+    },
+    {
+      "slug": "sapatilha-feminina-tenis-feminino-casual-confortável-leve",
+      "title": "Sapatilha Feminina Tenis Feminino Casual Confortável Leve",
+      "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_702294-MLB42922115990_072020-O.jpg",
+      "condition": "Novo",
+      "categoryId": "calcados",
+      "categories": ["Calçados", " Tênis", " Feminino", " Urbano"],
+
+      "price": "49.50",
+      "installmentsInfo": "em 10x R$ 5,59",
+      "stockAmount": "30",
+      "soldAmount": "1969"
+    },
+    {
+      "slug": "camiseta",
+      "title": "Sandália Rasteira Bonequinha Em Couro Legitimo Linha Confort",
+      "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_774271-MLB41098257399_032020-O.jpg",
+      "condition": "Novo",
+      "categoryId": "calcados",
+      "categories": ["Categoria", " Subcategoria", " Tag1"],
+
+      "price": "99.99",
+      "installmentsInfo": "em 10x R$ 9,99 ",
+      "stockAmount": 1,
+      "soldAmount": 1
+    },
+    {
+      "slug": "camiseta-alguma-coisa",
+      "title": "Camiseta alguma coisa",
+      "imageUrl": "https://www.punkstein.com/loja/31595-thickbox_default/camiseta-sem-estampa.jpg",
+      "condition": "Novo",
+      "categoryId": "roupas",
+      "categories": ["Roupas", " Camisetas", " Masculinas"],
+
+      "price": "99.99",
+      "installmentsInfo": "em 10x R$ 9,99 sem juros",
+      "stockAmount": 1,
+      "soldAmount": 1
+    },
+    {
+      "slug": "lenço-quente-com-decoração-de-apliques",
+      "title": "Lenço quente com decoração de apliques",
+      "imageUrl": "https://img.ltwebstatic.com/images3_pi/2021/10/14/163421267012d57eded12ea78459a73291d4aa11c5_thumbnail_600x.webp",
+      "condition": "Novo",
+      "categoryId": "roupas",
+      "categories": ["Roupas", " Frio", " Masculino"],
+
+      "price": "41.90",
+      "installmentsInfo": "em 10x R$ 4,19 sem juros",
+      "stockAmount": "42",
+      "soldAmount": "90"
+    }
+  ]
+}
