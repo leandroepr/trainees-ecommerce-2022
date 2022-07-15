@@ -1,3 +1,4 @@
+import DefaultHeader from 'components/default-header/default-header'
 import {
   Body,
   Footer,
@@ -12,7 +13,7 @@ const HomeScreen: React.FC = () => {
   return (
     <PublicLayout title="Bem vindo à loja!">
       <Header className="py-4">
-        <span>header</span>
+        <DefaultHeader />
       </Header>
       <Body className="py-4">
         <span>body</span>
