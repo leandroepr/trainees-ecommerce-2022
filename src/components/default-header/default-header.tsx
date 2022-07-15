@@ -26,7 +26,7 @@ const DefaultHeader = () => {
         </Row>
       </Column>
 
-      <Column className="space-y-3 grow">
+      <Column className="grow space-y-3">
         <SearchInput placeholder="Pesquise por produtos..." />
         <Row className="flex space-x-6">
           <div>Todos</div>
@@ -49,16 +49,16 @@ const DefaultHeader = () => {
           </div>
           <Row>
             <div>Usuário</div>
-            <ChevronDownIcon className="w-4 pt-1" />
+            <ChevronDownIcon className="w-4" />
           </Row>
 
           <Row>
             <div>Compras</div>
-            <ChevronDownIcon className="w-4 pt-1" />
+            <ChevronDownIcon className="w-4" />
           </Row>
           <Row>
             <div>Favoritos</div>
-            <ChevronDownIcon className="w-4 pt-1" />
+            <ChevronDownIcon className="w-4" />
           </Row>
 
           <div>
