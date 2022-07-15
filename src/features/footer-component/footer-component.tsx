@@ -1,7 +1,7 @@
 import { classNames } from 'helpers/class-names'
 import React from 'react'
 
-type FooterComponentProps = {
+interface FooterComponentProps {
   className?: string
 }
 const FooterComponent: React.FC<FooterComponentProps> = ({ className }) => {
@@ -12,7 +12,7 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ className }) => {
         className
       )}
     >
-      {'Copyright © Trainees 80 Lines 2022.'}
+      Copyright © Trainees 80 Lines 2022.
     </div>
   )
 }
