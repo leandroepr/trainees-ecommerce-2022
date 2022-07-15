@@ -1,9 +1,9 @@
-import Head from "next/head";
-import React from "react";
+import Head from 'next/head'
+import React from 'react'
 
 export interface PublicLayoutProps {
-  title?: string;
-  children?: React.ReactNode;
+  title?: string
+  children?: React.ReactNode
 }
 const PublicLayout: React.FC<PublicLayoutProps> = (props) => {
   return (
@@ -13,7 +13,7 @@ const PublicLayout: React.FC<PublicLayoutProps> = (props) => {
       </Head>
       {props.children}
     </div>
-  );
-};
+  )
+}
 
-export default PublicLayout;
+export default PublicLayout
