@@ -8,11 +8,11 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ className }) => {
   return (
     <div
       className={classNames(
-        'justify-center max-w-max text-xs text-opacity-1 text-gray-200 m-auto',
+        'text-xs text-gray-700 flex items-center justify-center shrink-0 h-10',
         className
       )}
     >
-      Copyright © Trainees 80 Lines 2022.
+      Copyright © Trainees 80Lines 2022.
     </div>
   )
 }

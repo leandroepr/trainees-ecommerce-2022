@@ -1,13 +1,13 @@
 import DefaultPublicLayout from 'components/templates/public-layout/default-public-layout'
 import React from 'react'
 
-// export interface HomeScreenProps {}
-const HomeScreen: React.FC = () => {
+// export interface CartScreenProps {}
+const CartScreen: React.FC = () => {
   return (
-    <DefaultPublicLayout title="Home">
+    <DefaultPublicLayout title="cart">
       <span>body</span>
     </DefaultPublicLayout>
   )
 }
 
-export default HomeScreen
+export default CartScreen
