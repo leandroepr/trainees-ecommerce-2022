@@ -1,5 +1,6 @@
-import Image from "next/image";
 import React from "react";
+import { classNames } from "helpers/class-names";
+import Image from "next/image";
 
 const ProductsList: React.FC = () => {
   const productList = [
@@ -48,13 +49,19 @@ const ProductsList: React.FC = () => {
   ];
 
   return (
-    <div className="grid gap-3 lg:grid-cols-3 sm:grid-cols-2 max-w-fit">
+    <div
+      className={classNames(
+        "grid gap-3 lg:grid-cols-3 sm:grid-cols-2 max-w-fit"
+      )}
+    >
       {productList.map((productItem) => (
         <div
           key={productItem.id}
-          className="border border-gray-300 shadow-lg w-64 h-96 bg-white rounded"
+          className={classNames(
+            "border border-gray-300 shadow-lg w-64 h-96 bg-white rounded"
+          )}
         >
-          <div className="mb-2 border-b-2">
+          <div className={classNames("mb-2 border-b-2")}>
             <Image
               src={productItem.productImage}
               alt="Imagem do produto"
@@ -64,10 +71,16 @@ const ProductsList: React.FC = () => {
               objectFit="contain"
             />
           </div>
-          <div className="px-4">
-            <h3 className="font-bold">{productItem.fullPrice}</h3>
-            <p className="font-medium">{productItem.installmentPrice}</p>
-            <span className="bg-blue-200 text-blue-600 rounded-sm font-medium py-0.2 px-1">
+          <div className={classNames("px-4")}>
+            <h3 className={classNames("font-bold")}>{productItem.fullPrice}</h3>
+            <p className={classNames("font-medium")}>
+              {productItem.installmentPrice}
+            </p>
+            <span
+              className={classNames(
+                "bg-blue-200 text-blue-600 rounded-sm font-medium py-0.2 px-1"
+              )}
+            >
               Enviando normalmente
             </span>
             <p>{productItem.productDescription}</p>
