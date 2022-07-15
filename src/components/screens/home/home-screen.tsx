@@ -3,9 +3,9 @@ import {
   Footer,
   Header,
   PublicLayout,
-} from "components/templates/public-layout";
-import FooterComponent from "features/footer-component/footer-component";
-import React from "react";
+} from 'components/templates/public-layout'
+import FooterComponent from 'features/footer-component'
+import React from 'react'
 
 // export interface HomeScreenProps {}
 const HomeScreen: React.FC = () => {
@@ -21,7 +21,7 @@ const HomeScreen: React.FC = () => {
         <FooterComponent />
       </Footer>
     </PublicLayout>
-  );
-};
+  )
+}
 
-export default HomeScreen;
+export default HomeScreen
