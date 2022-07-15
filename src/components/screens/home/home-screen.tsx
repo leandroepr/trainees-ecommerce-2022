@@ -5,6 +5,7 @@ import {
   PublicLayout,
 } from "components/templates/public-layout";
 import React from "react";
+import RelatedSearches from "features/related-searches/related-searches";
 
 // export interface HomeScreenProps {}
 const HomeScreen: React.FC = () => {
@@ -14,7 +15,7 @@ const HomeScreen: React.FC = () => {
         <span>header</span>
       </Header>
       <Body className="py-4">
-        <span>body</span>
+        <RelatedSearches />
       </Body>
       <Footer className="text-center">
         <span>footer</span>
