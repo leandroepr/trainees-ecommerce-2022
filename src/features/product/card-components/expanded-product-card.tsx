@@ -1,5 +1,5 @@
 import Column from 'components/toolkit/column'
-import ImageComponent from 'components/toolkit/image'
+import { ImageComponent } from 'components/toolkit/image'
 import Row from 'components/toolkit/row'
 import Text from 'components/toolkit/text'
 import { classNames } from 'helpers/class-names'
