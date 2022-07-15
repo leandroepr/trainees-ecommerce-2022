@@ -4,6 +4,7 @@ import {
   Header,
   PublicLayout,
 } from 'components/templates/public-layout'
+import FooterComponent from 'features/footer-component'
 import React from 'react'
 
 // export interface HomeScreenProps {}
@@ -17,7 +18,7 @@ const HomeScreen: React.FC = () => {
         <span>body</span>
       </Body>
       <Footer className="text-center">
-        <span>footer</span>
+        <FooterComponent />
       </Footer>
     </PublicLayout>
   )
