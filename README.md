@@ -43,7 +43,7 @@ In this project trainees will learn, exercise and will be evaluated for the foll
 
 # Instructions for running the project
 
-This project can be found at this [repository](https://github.com/leandroepr/tp-ecommerce-mono).
+This project can be found at this [repository](https://github.com/leandroepr/trainees-ecommerce-2022).
 
 After make the clone or fork, install the dependencies with:
 
@@ -57,7 +57,7 @@ To run the project follow one of the options below.
 
 **These are the project root scripts (`./package.json`)**:
 
-- `start`: To start the application, navigate to http://localhost:4200/.
+- `start`: To start the application, navigate to http://localhost:3000/.
 
   - _using (in the project root): `npm start` or `yarn start`_
 
@@ -65,7 +65,7 @@ To run the project follow one of the options below.
 
   - _using (in the project root): `npm build` or `yarn build`_
 
-- `dev`: For a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+- `dev`: For a dev server. Navigate to http://localhost:3000/. The app will automatically reload if you change any of the source files.
 
   - _using (in the project root): `npm dev` or `yarn dev`_
 
