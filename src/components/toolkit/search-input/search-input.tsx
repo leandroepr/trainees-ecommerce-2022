@@ -4,15 +4,15 @@ import React from "react";
 import Button from "../button/button";
 
 export interface SearchInputProps {
-  value?: string;
-  placeholder?: string;
-  id?: string;
-  name?: string;
-  label?: string;
-  className?: string;
+  value?: string
+  placeholder?: string
+  id?: string
+  name?: string
+  label?: string
+  className?: string
   // pending?: boolean;
-  onChange?: (value: string) => void;
-  onSearch?: (value: string) => void;
+  onChange?: (value: string) => void
+  onSearch?: (value: string) => void
 }
 const SearchInput: React.FC<SearchInputProps> = ({
   onChange,
@@ -21,22 +21,22 @@ const SearchInput: React.FC<SearchInputProps> = ({
   ...inputProps
 }) => {
   const handleOnSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      onSearch?.(internalValue);
+    if (event.key === 'Enter') {
+      onSearch?.(internalValue)
     }
-  };
+  }
   const handleOnClickToSearch = () => {
-    onSearch?.(internalValue);
-  };
-  const [internalValue, setInternalValue] = React.useState("");
+    onSearch?.(internalValue)
+  }
+  const [internalValue, setInternalValue] = React.useState('')
   React.useEffect(() => {
-    onChange?.(internalValue);
-  }, [internalValue, onChange]);
+    onChange?.(internalValue)
+  }, [internalValue, onChange])
 
   return (
     <div
       className={classNames(
-        "relative focus-within:text-sky-500 text-gray-400",
+        'relative focus-within:text-sky-500 text-gray-400',
         className
       )}
     >
@@ -45,7 +45,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         value={internalValue}
         onChange={(event) => setInternalValue(event.target.value)}
         className={classNames(
-          "shadow-sm focus:ring-sky-500 focus:border-sky-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10"
+          'shadow-sm focus:ring-sky-500 focus:border-sky-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10'
         )}
         onKeyUp={handleOnSearch}
         {...inputProps}
@@ -58,7 +58,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         onClick={handleOnClickToSearch}
       />
     </div>
-  );
-};
+  )
+}
 
-export default SearchInput;
+export default SearchInput
