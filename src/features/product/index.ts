@@ -1,4 +1,4 @@
-import CompressedProductCard from './card-components/compressed-product-card'
-import ExpandedProductCard from './card-components/expanded-product-card'
+import ExpandedProductCard from './product-card/expanded-product-card'
+import ProductCard from './product-card/product-card'
 
-export { CompressedProductCard, ExpandedProductCard }
+export { ProductCard as CompressedProductCard, ExpandedProductCard }

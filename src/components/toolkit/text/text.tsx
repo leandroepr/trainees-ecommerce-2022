@@ -1,11 +1,10 @@
 import { classNames } from 'helpers/class-names'
 
-interface TextProps {
+export interface TextProps {
   children?: React.ReactNode
   className?: string
   textType?: keyof typeof textTypeMap
 }
-
 const Text: React.FC<TextProps> = ({
   children,
   className,
