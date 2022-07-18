@@ -18,7 +18,9 @@ module.exports = {
         thinBlue: 'rgb(var(--thin-blue) / 1 )',
         green: 'rgb(var(--green) / 1 )',
         red: 'rgb(var(--red) / 1 )',
-      }
+      },
+    fontFamily: {
+      custom: ['ubuntu-mono', 'Ubuntu', 'sans-serif'],
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp')],

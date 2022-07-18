@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:wght@400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,16 +18,19 @@
  //  */
 
  @layer base {
-    :root  {
-        --black: 0 0 0; 
-        --white: 255 255 255;
-        --grey: 108 108 108;
-        --light-grey: 243 243 243;
-        --yellow: 255 237 49;
-        --blue: 0 122 253;  
-        --dark-blue: 38 45 110;
-        --thin-blue: 235 244 252;
-        --green: 0 158 66;
-        --red: 239 68 68;
-    }
+   html {
+    font-family: Ubuntu;
+  },
+  :root  {
+      --black: 0 0 0; 
+      --white: 255 255 255;
+      --grey: 108 108 108;
+      --light-grey: 243 243 243;
+      --yellow: 255 237 49;
+      --blue: 0 122 253;  
+      --dark-blue: 38 45 110;
+      --thin-blue: 235 244 252;
+      --green: 0 158 66;
+      --red: 239 68 68;
+  }
  }
