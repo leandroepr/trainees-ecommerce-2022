@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      custom: ['ubuntu-mono', 'Ubuntu', 'sans-serif'],
+    },
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp')],
 }
