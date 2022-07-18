@@ -1,3 +1,3 @@
-type className = string | null | undefined | (() => string);
+type className = string | null | undefined | (() => string)
 export const classNames = (...classNames: className[]): string =>
-  classNames.filter(Boolean).join(" ").replace(/\s\s+/g, " ").trim();
+  classNames.filter(Boolean).join(' ').replace(/\s\s+/g, ' ').trim()
