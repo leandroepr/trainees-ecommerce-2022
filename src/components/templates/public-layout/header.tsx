@@ -9,7 +9,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
   return (
     <div
       className={classNames(
-        'bg-yellow-300 border-b drop-shadow-sm',
+        'bg-yellow border-b drop-shadow-sm',
         props.className
       )}
     >
