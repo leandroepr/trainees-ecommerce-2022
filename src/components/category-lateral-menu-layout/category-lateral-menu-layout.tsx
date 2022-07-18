@@ -40,7 +40,7 @@ const CategoryLateralMenuLayout: React.FC<CategoryLateralMenuLayoutProps> = ({
               Meninos <StockNumber />
             </div>
             <div>
-              Bebês <span>(1001)</span>
+              Bebês <StockNumber />
             </div>
           </div>
         </section>
