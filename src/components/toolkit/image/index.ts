@@ -1,3 +1,3 @@
 import ImageComponent from './image-component'
 
-export { ImageComponent }
+export default ImageComponent
