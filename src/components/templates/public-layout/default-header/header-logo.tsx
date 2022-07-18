@@ -15,8 +15,8 @@ const HeaderLogo: React.FC<HeaderLogoProps> = (props) => {
       )}
     >
       <Row className="h-10 items-center">
-        <ShoppingBagIcon className="h-6 text-blue-800 flex shrink-0 mr-1" />
-        <div className="flex flex-col text-base text-blue-800 space-y-[-8px]">
+        <ShoppingBagIcon className="h-6 text-darkBlue flex shrink-0 mr-1" />
+        <div className="flex flex-col text-base text-darkBlue space-y-[-8px]">
           <div className="flex font-bold tracking-[0.15em]">COMPRE</div>
           <div className="flex tracking-[0.6em]">FÁCIL</div>
         </div>

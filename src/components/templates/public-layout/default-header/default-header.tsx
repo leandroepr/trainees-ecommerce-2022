@@ -4,7 +4,7 @@ import {
   LightningBoltIcon,
   LocationMarkerIcon,
   ShoppingCartIcon,
-  UserCircleIcon,
+  UserCircleIcon
 } from '@heroicons/react/outline'
 import Column from 'components/toolkit/column/column'
 import Row from 'components/toolkit/row/row'
@@ -13,7 +13,7 @@ import HeaderLogo from './header-logo'
 
 const DefaultHeader = () => {
   return (
-    <div className="flex flex-row text-slate-500 space-x-7 ">
+    <div className="flex flex-row text-darkBlue space-x-7">
       <Column className="w-44 space-y-2">
         <HeaderLogo />
         <Row className="space-x-1 overflow-hidden">
@@ -67,7 +67,7 @@ const DefaultHeader = () => {
 
           <div className="flex flex-row">
             <ShoppingCartIcon className="h-6 w-6" />
-            <div className="text-sm text-white bg-red-500 rounded-full w-5 h-5 text-center justify-center mt-2">
+            <div className="text-sm text-white bg-red rounded-full w-5 h-5 text-center justify-center mt-2">
               3
             </div>
           </div>
