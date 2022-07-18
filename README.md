@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Welcome to Trainees E-commerce!
 
-## Getting Started
+This project aims to establish previous contents of the 80Lines trainee program, class of 2022.
+In addition to teaching new techniques and assessing the participants' knowledge and teamwork.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Summary
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Welcome to Trainees E-commerce!](#welcome-to-trainees-e-commerce)
+- [Summary](#summary)
+- [Context](#context)
+- [Skills](#skills)
+- [Instructions for running the project](#instructions-for-running-the-project)
+- [Relevant scripts from main `package.json`](#relevant-scripts-from-main-packagejson)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# Context
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+80Lines is a team of developers and designers highly experienced in every area of front-end development, with the most modern frameworks. They deliver high quality app development, web development and modern UI/UXdesign.
 
-## Learn More
+In June 2022, six new developers began their journey at 80Lines through the Trainee Program. This program is divided into three months, the first consisting of classes and orientations.
 
-To learn more about Next.js, take a look at the following resources:
+This project is the second stage of the program, which consists of a fictitious project for fixing previous lessons and evaluating progress.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Trainees will work together as a team responsible for developing a product purchasing platform.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# Skills
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+In this project trainees will learn, exercise and will be evaluated for the following skills:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- HTML, CSS and Typescript;
+- Tailwind.css:
+- React.ts, Next.ts and React Query;
+- SOLID principles;
+- Git, GitHub and Git Flow;
+- Agile methodologies;
+
+---
+
+# Instructions for running the project
+
+This project can be found at this [repository](https://github.com/leandroepr/trainees-ecommerce-2022).
+
+After make the clone or fork, install the dependencies with:
+
+- `npm install` or `yarn install`
+
+To run the project follow one of the options below.
+
+---
+
+# Relevant scripts from main `package.json`
+
+**These are the project root scripts (`./package.json`)**:
+
+- `start`: To start the application, navigate to http://localhost:3000/.
+
+  - _using (in the project root): `npm start` or `yarn start`_
+
+- `build`: The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+  - _using (in the project root): `npm build` or `yarn build`_
+
+- `dev`: For a dev server. Navigate to http://localhost:3000/. The app will automatically reload if you change any of the source files.
+
+  - _using (in the project root): `npm dev` or `yarn dev`_
+
+- `test`: To execute the unit tests via [Jest](https://jestjs.io).
+  - _using (in the project root): `npm test` or `yarn test`_
