@@ -8,21 +8,17 @@ const RelatedSearches: React.FC = () => {
     'camisas masculinas',
     'body feminino',
     'cropped',
-    'conjuntos femininos'
+    'conjuntos femininos',
   ]
 
   return (
     <Row>
-      <h3 className={classNames('line-clamp-1 font-bold text-gray-700')}>
+      <h3 className={classNames('whitespace-nowrap font-bold text-gray-700')}>
         Buscas relacionadas:
       </h3>
       {relatedList.map((relatedItem, i) => (
-        <Row key={relatedItem}>
-          <p
-            className={classNames(
-              'line-clamp-1 ml-2 text-gray-500 font-normal'
-            )}
-          >
+        <Row key={relatedItem} className="overflow-hidden">
+          <p className={classNames('ml-2 truncate text-gray-500 font-normal')}>
             {relatedItem}
           </p>
           <span className={classNames('ml-2')}>
