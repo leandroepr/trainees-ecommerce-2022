@@ -1,3 +1,4 @@
-import Column from './column'
+import Column, { ColumnProps } from './column'
 
-export default Column
+export { Column }
+export type { ColumnProps }

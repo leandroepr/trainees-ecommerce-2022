@@ -10,7 +10,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = (props) => {
   return (
     <Row
       className={classNames(
-        'w-28 h-10shrink-0 overflow-hidden items-center',
+        'w-28 h-10 shrink-0 overflow-hidden items-center',
         props.className
       )}
     >

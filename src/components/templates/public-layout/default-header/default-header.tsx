@@ -13,9 +13,9 @@ import HeaderLogo from './header-logo'
 
 const DefaultHeader = () => {
   return (
-    <div className="flex flex-row text-slate-500 space-x-7 ">
+    <div className="flex flex-row text-grey/100 space-x-7 ">
       <Column className="w-44 space-y-2">
-        <HeaderLogo />
+        <HeaderLogo className="text-blue" />
         <Row className="space-x-1 overflow-hidden">
           <div className="flex items-center justify-center">
             <LocationMarkerIcon className="h-6 w-6" />
@@ -26,7 +26,7 @@ const DefaultHeader = () => {
         </Row>
       </Column>
 
-      <Column className="grow space-y-3">
+      <Column className="space-y-3 grow">
         <SearchInput placeholder="Pesquise por produtos..." />
         <Row className="flex space-x-6">
           <div>Todos</div>
@@ -49,16 +49,16 @@ const DefaultHeader = () => {
           </div>
           <Row>
             <div>Usuário</div>
-            <ChevronDownIcon className="w-4" />
+            <ChevronDownIcon className="w-4 pt-1" />
           </Row>
 
           <Row>
             <div>Compras</div>
-            <ChevronDownIcon className="w-4" />
+            <ChevronDownIcon className="w-4 pt-1" />
           </Row>
           <Row>
             <div>Favoritos</div>
-            <ChevronDownIcon className="w-4" />
+            <ChevronDownIcon className="w-4 pt-1" />
           </Row>
 
           <div>
@@ -67,7 +67,7 @@ const DefaultHeader = () => {
 
           <div className="flex flex-row">
             <ShoppingCartIcon className="h-6 w-6" />
-            <div className="text-sm text-white bg-red-500 rounded-full w-5 h-5 text-center justify-center mt-2">
+            <div className="absolute ml-4 text-sm text-white bg-red rounded-full w-5 h-5 text-center justify-center">
               3
             </div>
           </div>

@@ -1,3 +1,3 @@
-import ProductScreen from './product-screen'
+import ProductsScreen from "./products-screen";
 
-export { ProductScreen }
+export { ProductsScreen }
