@@ -14,8 +14,8 @@ export interface ProductInstallmentProps {
 const ProductInstallment: React.FC<ProductInstallmentProps> = ({
   className,
   installmentsInfo,
-  size = 'small',
-  color = 'dark',
+  size = 'medium',
+  color = 'gray',
 }) => {
   if (!installmentsInfo) return null
 
