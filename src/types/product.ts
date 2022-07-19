@@ -1,6 +1,6 @@
 export type Product = {
   slug: string
-  title: string
+  name: string
   imageUrl: string
   price: number
   installmentsInfo: string
