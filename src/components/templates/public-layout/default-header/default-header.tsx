@@ -9,10 +9,18 @@ import {
 import Column from 'components/toolkit/column/column'
 import Row from 'components/toolkit/row/row'
 import SearchInput from 'components/toolkit/search-input/search-input'
+import { useQueryParams } from 'hooks/use-query-params'
 import Link from 'next/link'
 import HeaderLogo from './header-logo'
 
+type QueryType = {
+  filtro?: string
+}
 const DefaultHeader = () => {
+  const { query, updateQuery } = useQueryParams<QueryType>()
+  const search = query.filtro || ''
+  const handleOnSearch = (query: string) => updateQuery({ filtro: query })
+
   return (
     <div className="flex flex-row text-grey/100 space-x-7 ">
       <Column className="w-44 space-y-2">
@@ -31,7 +39,11 @@ const DefaultHeader = () => {
       </Column>
 
       <Column className="space-y-3 grow">
-        <SearchInput placeholder="Pesquise por produtos..." />
+        <SearchInput
+          placeholder="Pesquise por produtos..."
+          value={search}
+          onSearch={handleOnSearch}
+        />
         <Row className="flex space-x-6">
           <div>
             <Link href="/">

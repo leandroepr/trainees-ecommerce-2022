@@ -15,6 +15,7 @@ export interface SearchInputProps {
   onSearch?: (value: string) => void
 }
 const SearchInput: React.FC<SearchInputProps> = ({
+  value = '',
   onChange,
   onSearch,
   className,
@@ -28,7 +29,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   const handleOnClickToSearch = () => {
     onSearch?.(internalValue)
   }
-  const [internalValue, setInternalValue] = React.useState('')
+  const [internalValue, setInternalValue] = React.useState(value)
   React.useEffect(() => {
     onChange?.(internalValue)
   }, [internalValue, onChange])
