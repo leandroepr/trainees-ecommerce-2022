@@ -17,9 +17,7 @@ const DefaultHeader = () => {
     <div className="flex flex-row text-grey/100 space-x-7 ">
       <Column className="w-44 space-y-2">
         <Link href="/">
-          <a>
-            <HeaderLogo className="text-blue" />
-          </a>
+          <HeaderLogo className="text-blue" />
         </Link>
 
         <Row className="space-x-1 overflow-hidden">
@@ -36,28 +34,23 @@ const DefaultHeader = () => {
         <SearchInput placeholder="Pesquise por produtos..." />
         <Row className="flex space-x-6">
           <div>
-            <Link href="/produtos">
+            <Link href="/">
               <a>Todos</a>
             </Link>
           </div>
           <div>
-            <Link href="/produtos/roupas">
+            <Link href="/produtos?categoria=roupas">
               <a>Roupas</a>
             </Link>
           </div>
           <div>
-            <Link href="/produtos/calcados">
+            <Link href="/produtos?categoria=calcados">
               <a>Calçados</a>
             </Link>
           </div>
           <div>
-            <Link href="/produtos/utilitarios">
+            <Link href="/produtos?categoria=utilitarios">
               <a>Utilitários</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/produtos/admin">
-              <a>CRUD</a>
             </Link>
           </div>
         </Row>
