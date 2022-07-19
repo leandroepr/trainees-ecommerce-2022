@@ -1,6 +1,6 @@
 import { classNames } from 'helpers/class-names'
 
-export type BadgeVariant = 'blue' | 'gray'
+export type BadgeVariant = 'info' | 'gray'
 export interface BadgeProps {
   children: React.ReactNode
   className?: string
@@ -13,7 +13,7 @@ const Badge: React.FC<BadgeProps> = ({
 }) => (
   <span
     className={classNames(
-      'w-fit px-2 py-[2px] rounded-sm text-sm truncate ',
+      'w-fit px-2 py-[2px] rounded-sm text-sm truncate',
       tagStyleMap[variant],
       className
     )}
@@ -24,6 +24,6 @@ const Badge: React.FC<BadgeProps> = ({
 export default Badge
 
 const tagStyleMap: Record<BadgeVariant, string> = {
-  blue: 'bg-sky-100 text-sky-600',
+  info: 'bg-sky-100 text-sky-600',
   gray: 'bg-zinc-200 text-gray-500',
 }
