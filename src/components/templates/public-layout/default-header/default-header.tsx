@@ -9,13 +9,19 @@ import {
 import Column from 'components/toolkit/column/column'
 import Row from 'components/toolkit/row/row'
 import SearchInput from 'components/toolkit/search-input/search-input'
+import Link from 'next/link'
 import HeaderLogo from './header-logo'
 
 const DefaultHeader = () => {
   return (
     <div className="flex flex-row text-grey/100 space-x-7 ">
       <Column className="w-44 space-y-2">
-        <HeaderLogo className="text-blue" />
+        <Link href="/">
+          <a>
+            <HeaderLogo className="text-blue" />
+          </a>
+        </Link>
+
         <Row className="space-x-1 overflow-hidden">
           <div className="flex items-center justify-center">
             <LocationMarkerIcon className="h-6 w-6" />
@@ -29,11 +35,31 @@ const DefaultHeader = () => {
       <Column className="space-y-3 grow">
         <SearchInput placeholder="Pesquise por produtos..." />
         <Row className="flex space-x-6">
-          <div>Todos</div>
-          <div>Roupas </div>
-          <div>Calçados</div>
-          <div>Utilitários</div>
-          <div>CRUD</div>
+          <div>
+            <Link href="/produtos">
+              <a>Todos</a>
+            </Link>
+          </div>
+          <div>
+            <Link href="/produtos/roupas">
+              <a>Roupas</a>
+            </Link>
+          </div>
+          <div>
+            <Link href="/produtos/calcados">
+              <a>Calçados</a>
+            </Link>
+          </div>
+          <div>
+            <Link href="/produtos/utilitarios">
+              <a>Utilitários</a>
+            </Link>
+          </div>
+          <div>
+            <Link href="/produtos/admin">
+              <a>CRUD</a>
+            </Link>
+          </div>
         </Row>
       </Column>
 
@@ -66,7 +92,11 @@ const DefaultHeader = () => {
           </div>
 
           <div className="flex flex-row">
-            <ShoppingCartIcon className="h-6 w-6" />
+            <Link href="/carrinho">
+              <a>
+                <ShoppingCartIcon className="h-6 w-6" />
+              </a>
+            </Link>
             <div className="absolute ml-4 text-sm text-white bg-red rounded-full w-5 h-5 text-center justify-center">
               3
             </div>
