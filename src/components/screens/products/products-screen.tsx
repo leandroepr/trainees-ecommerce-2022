@@ -4,15 +4,14 @@ import { Row } from 'components/toolkit'
 import { ProductsList } from 'features/category'
 import RelatedSearches from 'features/related-searches/related-searches'
 
-
 const ProductsScreen: React.FC = () => {
   return (
     <DefaultPublicLayout>
-          <RelatedSearches />
-        <Row className='justify-between mb-2'>
-          <CategoryLateralMenuLayout/>
-          <ProductsList/>
-        </Row>
+      <RelatedSearches />
+      <Row className="justify-between mb-2">
+        <CategoryLateralMenuLayout />
+        <ProductsList />
+      </Row>
     </DefaultPublicLayout>
   )
 }
