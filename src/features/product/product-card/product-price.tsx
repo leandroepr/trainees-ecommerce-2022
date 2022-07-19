@@ -2,12 +2,18 @@ import { Row } from 'components/toolkit'
 import { classNames } from 'helpers/class-names'
 import React from 'react'
 
+export type ProductPriceSize = 'small' | 'medium' | 'large'
 export interface ProductPriceProps {
   price?: number
-  size?: 'small' | 'medium' | 'large'
+  size?: ProductPriceSize
   className?: string
 }
-const ProductPrice: React.FC<ProductPriceProps> = ({ price, className }) => {
+
+const ProductPrice: React.FC<ProductPriceProps> = ({
+  price,
+  className,
+  size = 'medium',
+}) => {
   if (!price) return null
 
   const splitProductPrice = (integerPrice: number) => {
@@ -18,11 +24,23 @@ const ProductPrice: React.FC<ProductPriceProps> = ({ price, className }) => {
   const { currency, cents } = splitProductPrice(price)
 
   return (
-    <Row className={classNames('text-slate-800 font-light', className)}>
-      <span className="text-2xl">R$ {currency}</span>
-      <span className="leading-7">{cents}</span>
+    <Row className={classNames('text-slate-800', className)}>
+      <span className={currencySizeMap[size]}>R$ {currency}</span>
+      <span className={centsSizeMap[size]}>{cents}</span>
     </Row>
   )
 }
 
 export default ProductPrice
+
+const currencySizeMap: Record<ProductPriceSize, string> = {
+  large: '',
+  medium: 'text-2xl',
+  small: 'font-light text-2xl',
+}
+
+const centsSizeMap: Record<ProductPriceSize, string> = {
+  large: '',
+  medium: 'leading-7 text-base',
+  small: 'font-light leading-7 text-base',
+}
