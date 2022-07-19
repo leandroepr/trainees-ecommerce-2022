@@ -1,7 +1,7 @@
-import { SearchIcon } from "@heroicons/react/outline";
-import { classNames } from "helpers/class-names";
-import React from "react";
-import Button from "../button/button";
+import { SearchIcon } from '@heroicons/react/outline'
+import { classNames } from 'helpers/class-names'
+import React from 'react'
+import Button from '../button/button'
 
 export interface SearchInputProps {
   value?: string
@@ -45,7 +45,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         value={internalValue}
         onChange={(event) => setInternalValue(event.target.value)}
         className={classNames(
-          'shadow-sm focus:ring-sky-500 focus:border-sky-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10'
+          'h-10 shadow-sm focus:ring-sky-500 focus:border-sky-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10 placeholder: pl-4'
         )}
         onKeyUp={handleOnSearch}
         {...inputProps}
@@ -53,7 +53,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
       <Button
         contentButton={<SearchIcon className="w-4 h-4 " />}
         className={classNames(
-          "absolute right-0 z-10 inset-y-0 flex items-center justify-center shrink-0 border-l my-2 px-2 active:opacity-75 hover:text-opacity-90 "
+          'absolute right-0 z-10 inset-y-0 flex items-center justify-center shrink-0 border-l my-2 px-2 active:opacity-75 hover:text-opacity-90 '
         )}
         onClick={handleOnClickToSearch}
       />
