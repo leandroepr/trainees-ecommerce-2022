@@ -1,8 +1,8 @@
-import { ProductScreen } from 'components/screens/products'
+import { ProductsScreen } from 'components/screens/products'
 import type { NextPage } from 'next'
 
 const ProductRoute: NextPage = () => {
-  return <ProductScreen />
+  return <ProductsScreen />
 }
 
 export default ProductRoute
