@@ -1,27 +1,21 @@
-import {
-  Body,
-  Footer,
-  Header,
-  PublicLayout,
-} from "components/templates/public-layout";
-import React from "react";
-import RelatedSearches from "features/related-searches/related-searches";
+import { useGetAllProducts } from 'api-hook/product/use-get-all-products'
+import DefaultPublicLayout from 'components/templates/public-layout/default-public-layout'
+import ProductCard from 'features/product/product-card/product-card'
+import React from 'react'
 
 // export interface HomeScreenProps {}
 const HomeScreen: React.FC = () => {
+  const { isLoading, data: products } = useGetAllProducts()
   return (
-    <PublicLayout title="Bem vindo à loja!">
-      <Header className="py-4">
-        <span>header</span>
-      </Header>
-      <Body className="py-4">
-        <RelatedSearches />
-      </Body>
-      <Footer className="text-center">
-        <span>footer</span>
-      </Footer>
-    </PublicLayout>
-  );
-};
+    <DefaultPublicLayout title="Home">
+      {isLoading && <div>Carregando...</div>}
+      <div className="grid grid-cols-5 gap-4 py-4">
+        {products?.map((product) => (
+          <ProductCard key={product.slug} product={product} />
+        ))}
+      </div>
+    </DefaultPublicLayout>
+  )
+}
 
-export default HomeScreen;
+export default HomeScreen

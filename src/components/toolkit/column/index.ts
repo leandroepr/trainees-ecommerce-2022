@@ -1,1 +1,4 @@
-export * from './column';
+import Column, { ColumnProps } from './column'
+
+export { Column }
+export type { ColumnProps }
