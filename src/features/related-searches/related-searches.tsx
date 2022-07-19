@@ -12,7 +12,7 @@ const RelatedSearches: React.FC = () => {
   ]
 
   return (
-    <Row>
+    <Row className='py-4'>
       <h3 className={classNames('line-clamp-1 font-bold text-gray-700')}>
         Buscas relacionadas:
       </h3>

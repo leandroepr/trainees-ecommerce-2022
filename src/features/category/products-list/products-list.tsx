@@ -9,11 +9,11 @@ const ProductsList: React.FC = () => {
   const { isLoading, data: products } = useGetAllProducts()
 
   return (
-    <Row className={classNames('max-w-4xl')}>
+    <Row className={classNames('max-w-screen-lg')}>
       {isLoading && <div>Carregando...</div>}
       <Grid
         className={classNames(
-          "grid gap-3 lg:grid-cols-3 sm:grid-cols-2 max-w-fit"
+          "grid gap-3 lg:grid-cols-3 sm:grid-cols-2"
         )}
       >
         {products?.map((product) => (
