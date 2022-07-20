@@ -8,7 +8,7 @@ const HomeScreen: React.FC = () => {
   const { isLoading, data: categories } = useGetAllCategories()
 
   return (
-    <DefaultPublicLayout title="Home">
+    <DefaultPublicLayout className="space-y-12 py-12" title="Home">
       {isLoading && <div>Carregando...</div>}
       {categories?.map((category) => (
         <CategoryProductsList
