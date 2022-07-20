@@ -12,7 +12,7 @@ export interface DefaultPublicLayoutProps {
 const DefaultPublicLayout: React.FC<DefaultPublicLayoutProps> = (props) => {
   return (
     <PublicLayout title={props.title}>
-      <Header className="p-4">
+      <Header className="p-4 bg-primary">
         <DefaultHeader />
       </Header>
       <Body className={props.className}>{props.children}</Body>
