@@ -1,7 +1,7 @@
 import {
   BellIcon,
   ChevronDownIcon,
-  CurrencyDollarIcon,
+  LightningBoltIcon,
   LocationMarkerIcon,
   ShoppingCartIcon,
   UserCircleIcon,
@@ -30,7 +30,7 @@ const DefaultHeader = () => {
   }
 
   return (
-    <header className="flex flex-row text-secondary/95 space-x-7 bg-primary ">
+    <header className="flex flex-row text-secondary/80 space-x-7 bg-primary ">
       <Column className="w-44 space-y-2">
         <Link href="/">
           <a>
@@ -62,7 +62,7 @@ const DefaultHeader = () => {
 
       <Column className="space-y-3">
         <Row className="space-x-3 h-10 items-center">
-          <CurrencyDollarIcon className="h-6 w-6" />
+          <LightningBoltIcon className="h-6 w-6" />
           <div>Aproveite preços incríveis todos os dias!</div>
         </Row>
 
