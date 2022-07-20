@@ -10,7 +10,7 @@ const CategoryLateralMenuLayout: React.FC<CategoryLateralMenuLayoutProps> = ({
   className,
 }) => {
   return (
-    <div className={classNames('text-gray-600', className)}>
+    <div className={classNames('text-gray-600 min-w-fit pr-5', className)}>
       <Column className="space-y-4 pb-8">
         <div>Calçados, Roupas e Bolsas</div>
 

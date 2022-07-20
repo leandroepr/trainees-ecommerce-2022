@@ -13,15 +13,19 @@ const ProductsList: React.FC = () => {
       {isLoading && <div>Carregando...</div>}
       <Grid
         className={classNames(
-          "grid gap-3 lg:grid-cols-3 sm:grid-cols-2"
+          'grid gap-3 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 overflow-hidden'
         )}
       >
         {products?.map((product) => (
-          <ProductCard key={product.slug} product={product} variant="detailed" />
+          <ProductCard
+            key={product.slug}
+            product={product}
+            variant="detailed"
+          />
         ))}
       </Grid>
     </Row>
-  );
+  )
 };
 
 export default ProductsList;

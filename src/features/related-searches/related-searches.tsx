@@ -13,14 +13,14 @@ const RelatedSearches: React.FC = () => {
 
   return (
     <Row className='py-4'>
-      <h3 className={classNames('line-clamp-1 font-bold text-gray-700')}>
+      <h3 className={classNames('whitespace-nowrap line-clamp-1 font-bold text-gray-700')}>
         Buscas relacionadas:
       </h3>
       {relatedList.map((relatedItem, i) => (
-        <Row key={relatedItem}>
+        <Row className='overflow-hidden' key={relatedItem}>
           <p
             className={classNames(
-              'line-clamp-1 ml-2 text-gray-500 font-normal'
+              'line-clamp-1 ml-2 truncate text-gray-500 font-normal'
             )}
           >
             {relatedItem}
