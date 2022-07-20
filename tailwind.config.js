@@ -8,20 +8,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: 'rgb(var(--black)  / 1 )',
-        white: 'rgb(var(--white) / 1 )',
-        grey: 'rgb(var(--grey) / 1 )',
-        lightGrey: 'rgb(var(--light-grey)  / 1 )',
-        yellow: 'rgb(var(--yellow) / 1 )',
-        blue: 'rgb(var(--blue) / 1 )',
-        darkBlue: 'rgb(var(--dark-blue) / 1 )',
-        thinBlue: 'rgb(var(--thin-blue) / 1 )',
-        green: 'rgb(var(--green) / 1 )',
-        red: 'rgb(var(--red) / 1 )',
+        primary: 'rgb(var(--primary) / 1 )',
+        secondary: 'rgb(var(--secondary) / 1 )',
+        dark: 'rgb(var(--dark)  / 1 )',
+        light: 'rgb(var(--light) / 1 )',
+        success: 'rgb(var(--success) / 1 )',
+        info: 'rgb(var(--info) / 1 )',
+        error: 'rgb(var(--error) / 1 )',
       },
       fontFamily: {
         custom: ['ubuntu-mono', 'Ubuntu', 'sans-serif'],
       },
+       container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+      }
     },
     plugins: [
       require('@tailwindcss/forms'),

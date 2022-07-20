@@ -1,7 +1,7 @@
 import {
   BellIcon,
   ChevronDownIcon,
-  LightningBoltIcon,
+  CurrencyDollarIcon,
   LocationMarkerIcon,
   ShoppingCartIcon,
   UserCircleIcon,
@@ -12,6 +12,7 @@ import SearchInput from 'components/toolkit/search-input/search-input'
 import { useQueryParams } from 'hooks/use-query-params'
 import Link from 'next/link'
 import HeaderLogo from './header-logo'
+import HeaderNavigationMenu from './header-menu/header-navigation-menu'
 
 type QueryType = {
   filtro?: string
@@ -22,10 +23,12 @@ const DefaultHeader = () => {
   const handleOnSearch = (query: string) => updateQuery({ filtro: query })
 
   return (
-    <div className="flex flex-row text-grey/100 space-x-7 ">
+    <header className="flex flex-row text-secondary/95 space-x-7 bg-primary ">
       <Column className="w-44 space-y-2">
         <Link href="/">
-          <HeaderLogo className="text-blue" />
+          <a>
+            <HeaderLogo className="text-blue" />
+          </a>
         </Link>
 
         <Row className="space-x-1 overflow-hidden">
@@ -33,7 +36,8 @@ const DefaultHeader = () => {
             <LocationMarkerIcon className="h-6 w-6" />
           </div>
           <div className="flex flex-col text-xs w-40">
-            Envie para Fulano, <strong>Endereço Tal, número tal</strong>
+            Envie para Fulano,{' '}
+            <span className="font-bold">Endereço Tal, número tal</span>
           </div>
         </Row>
       </Column>
@@ -45,33 +49,14 @@ const DefaultHeader = () => {
           onSearch={handleOnSearch}
         />
         <Row className="flex space-x-6">
-          <div>
-            <Link href="/">
-              <a>Todos</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/produtos?categoria=roupas">
-              <a>Roupas</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/produtos?categoria=calcados">
-              <a>Calçados</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/produtos?categoria=utilitarios">
-              <a>Utilitários</a>
-            </Link>
-          </div>
+          <HeaderNavigationMenu className="space-x-6" />
         </Row>
       </Column>
 
       <Column className="space-y-3">
         <Row className="space-x-3 h-10 items-center">
-          <LightningBoltIcon className="h-6 w-6" />
-          <div>Aproveite preços incríveis todos os dias</div>
+          <CurrencyDollarIcon className="h-6 w-6" />
+          <div>Aproveite preços incríveis todos os dias!</div>
         </Row>
 
         <Row className="space-x-3">
@@ -102,13 +87,13 @@ const DefaultHeader = () => {
                 <ShoppingCartIcon className="h-6 w-6" />
               </a>
             </Link>
-            <div className="absolute ml-4 text-sm text-white bg-red rounded-full w-5 h-5 text-center justify-center">
+            <div className="absolute ml-4 text-sm text-white bg-red-500 rounded-full w-5 h-5 text-center justify-center mt-[-6px]">
               3
             </div>
           </div>
         </Row>
       </Column>
-    </div>
+    </header>
   )
 }
 
