@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/outline'
+import { useProductsByCategory } from 'api-hook/product/use-get-products-by-category'
 import { Column } from 'components/toolkit'
 import Row from 'components/toolkit/row'
 import Text from 'components/toolkit/text'
@@ -13,13 +14,15 @@ export interface CategoryProductsListProps {
   className?: string
   categoryName?: string
   categoryPageLink?: string
+  categoryId?: string
 }
 const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
   className,
-  productsList = [],
   categoryName = '',
   categoryPageLink = '/',
+  categoryId,
 }) => {
+  const { data } = useProductsByCategory(categoryId)
   return (
     <Column className={classNames('space-y-5', className)}>
       <Row className="items-baseline space-x-4">
@@ -32,7 +35,7 @@ const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
       </Row>
       <Row className="relative">
         <Row className={`grid grid-cols-5 space-x-4 items-center`}>
-          {productsList.slice(0, 5).map((product) => (
+          {data?.slice(0, 5).map((product) => (
             <ProductCard
               className="h-full"
               key={product.slug}

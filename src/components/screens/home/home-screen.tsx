@@ -1,5 +1,4 @@
 import { useGetAllCategories } from 'api-hook/category/use-get-all-categories'
-import { useProductsByCategory } from 'api-hook/product/use-get-products-by-category'
 import DefaultPublicLayout from 'components/templates/public-layout/default-public-layout'
 import CategoryProductsList from 'features/product/product-list/category-products-list'
 import React from 'react'
@@ -11,16 +10,13 @@ const HomeScreen: React.FC = () => {
   return (
     <DefaultPublicLayout title="Home">
       {isLoading && <div>Carregando...</div>}
-      <div className="px-3">
-        {categories &&
-          categories.map((category) => (
-            <CategoryProductsList
-              key={category.name}
-              categoryName={category.displayName}
-              productsList={useProductsByCategory(category.id).data}
-            />
-          ))}
-      </div>
+      {categories?.map((category) => (
+        <CategoryProductsList
+          key={category.name}
+          categoryName={category.displayName}
+          categoryId={category.id}
+        />
+      ))}
     </DefaultPublicLayout>
   )
 }
