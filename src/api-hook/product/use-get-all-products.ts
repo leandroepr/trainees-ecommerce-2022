@@ -5,7 +5,7 @@ import getAllProductsService, {
 } from 'services/products/get-all-products'
 import { CustomError } from 'types/custom-error'
 
-export const useGetAllProducts = (params: Params) => {
+export const useGetAllProducts = (params?: Params) => {
   const { data, error, isLoading } = useQuery<Response, CustomError>(
     ['/products', params],
     () => getAllProductsService(params)
