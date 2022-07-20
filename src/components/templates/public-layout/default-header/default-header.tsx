@@ -12,6 +12,7 @@ import SearchInput from 'components/toolkit/search-input/search-input'
 import { useQueryParams } from 'hooks/use-query-params'
 import Link from 'next/link'
 import HeaderLogo from './header-logo'
+import HeaderNavigationMenu from './header-menu/header-navigation-menu'
 
 type QueryType = {
   filtro?: string
@@ -22,10 +23,12 @@ const DefaultHeader = () => {
   const handleOnSearch = (query: string) => updateQuery({ filtro: query })
 
   return (
-    <div className="flex flex-row text-grey/100 space-x-7 ">
+    <header className="flex flex-row text-grey space-x-7 ">
       <Column className="w-44 space-y-2">
         <Link href="/">
-          <HeaderLogo className="text-blue" />
+          <a>
+            <HeaderLogo className="text-blue" />
+          </a>
         </Link>
 
         <Row className="space-x-1 overflow-hidden">
@@ -45,26 +48,7 @@ const DefaultHeader = () => {
           onSearch={handleOnSearch}
         />
         <Row className="flex space-x-6">
-          <div>
-            <Link href="/">
-              <a>Todos</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/produtos?categoria=roupas">
-              <a>Roupas</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/produtos?categoria=calcados">
-              <a>Calçados</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/produtos?categoria=utilitarios">
-              <a>Utilitários</a>
-            </Link>
-          </div>
+          <HeaderNavigationMenu className="space-x-6" />
         </Row>
       </Column>
 
@@ -108,7 +92,7 @@ const DefaultHeader = () => {
           </div>
         </Row>
       </Column>
-    </div>
+    </header>
   )
 }
 
