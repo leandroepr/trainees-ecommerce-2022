@@ -29,4 +29,6 @@ const textTypeMap = {
   cardInstallment: 'text-slate-500 text-md',
   expandedCardInstallment: 'text-slate-800 text-sm',
   productName: 'text-gray-500 tracking-tight text-sm',
+  categoryProductListName: 'text-zinc-700 text-2xl font-thin',
+  categoryProductListLink: 'text-blue-500',
 }
