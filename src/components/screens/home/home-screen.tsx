@@ -15,6 +15,7 @@ const HomeScreen: React.FC = () => {
           key={category.name}
           categoryName={category.displayName}
           categoryId={category.id}
+          categoryPageLink={category.id}
         />
       ))}
     </DefaultPublicLayout>
