@@ -1,13 +1,12 @@
-import { useGetAllProducts } from "api-hook/product/use-get-all-products";
+import React from "react";
+import { classNames } from "helpers/class-names";
 import { Row } from "components/toolkit";
 import Grid from "components/toolkit/grid/grid";
-import { ProductCard } from "features/product/product-card";
-import { classNames } from "helpers/class-names";
-import React from "react";
+import { ProductCard } from "features/product";
+import { useGetAllProducts } from "api-hook/product/use-get-all-products";
 
 const ProductsList: React.FC = () => {
   const { isLoading, data: products } = useGetAllProducts()
-
   return (
     <Row className={classNames('max-w-screen-lg')}>
       {isLoading && <div>Carregando...</div>}

@@ -11,6 +11,7 @@ import Row from 'components/toolkit/row/row'
 import SearchInput from 'components/toolkit/search-input/search-input'
 import { useQueryParams } from 'hooks/use-query-params'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import HeaderLogo from './header-logo'
 import HeaderNavigationMenu from './header-menu/header-navigation-menu'
 
@@ -21,6 +22,12 @@ const DefaultHeader = () => {
   const { query, updateQuery } = useQueryParams<QueryType>()
   const search = query.filtro || ''
   const handleOnSearch = (query: string) => updateQuery({ filtro: query })
+  const router = useRouter()
+
+  const redirectAndHandleOnSearch = (query: string) => {
+    handleOnSearch(query)
+    router.push(`produtos?filtro=${query}`)
+  }
 
   return (
     <header className="flex flex-row text-secondary/95 space-x-7 bg-primary ">
@@ -46,7 +53,7 @@ const DefaultHeader = () => {
         <SearchInput
           placeholder="Pesquise por produtos..."
           value={search}
-          onSearch={handleOnSearch}
+          onSearch={redirectAndHandleOnSearch}
         />
         <Row className="flex space-x-6">
           <HeaderNavigationMenu className="space-x-6" />

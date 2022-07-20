@@ -1,14 +1,13 @@
 import { useQuery } from 'react-query'
-import getAllProductsService, {
-  Params,
+import getAllCategoriesService, {
   Response,
-} from 'services/products/get-all-products'
+} from 'services/categories/get-all-categories'
 import { CustomError } from 'types/custom-error'
 
-export const useGetAllProducts = (params?: Params) => {
+export const useGetAllCategories = () => {
   const { data, error, isLoading } = useQuery<Response, CustomError>(
-    ['/products', params],
-    () => getAllProductsService(params)
+    '/categories',
+    () => getAllCategoriesService()
   )
 
   return { data, error, isLoading }
