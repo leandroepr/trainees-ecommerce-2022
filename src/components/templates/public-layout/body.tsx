@@ -1,4 +1,4 @@
-import { classNames } from 'helpers/class-names'
+import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 
 export interface BodyProps {

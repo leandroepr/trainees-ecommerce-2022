@@ -9,7 +9,7 @@ import {
 import Column from 'components/toolkit/column/column'
 import Row from 'components/toolkit/row/row'
 import SearchInput from 'components/toolkit/search-input/search-input'
-import { useQueryParams } from 'hooks/use-query-params'
+import { useQueryParams } from 'core/hooks/use-query-params'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import HeaderLogo from './header-logo'

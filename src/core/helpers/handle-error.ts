@@ -1,4 +1,4 @@
-import { CustomError } from 'types/custom-error'
+import { CustomError } from 'core/types/custom-error'
 
 type Option<Payload = any> = {
   payload?: Payload

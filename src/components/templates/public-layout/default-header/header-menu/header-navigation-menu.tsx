@@ -1,5 +1,5 @@
-import { NavigationItem } from 'components/navigation-item'
-import { classNames } from 'helpers/class-names'
+import { NavigationItem } from 'components/templates/public-layout/default-header/header-menu'
+import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 
 export interface HeaderNavigationMenuProps {
@@ -10,24 +10,12 @@ const HeaderNavigationMenu: React.FC<HeaderNavigationMenuProps> = ({
 }) => {
   return (
     <nav className={classNames('', className)}>
-      <NavigationItem text="Todos" href="/" className="hover:text-sky-400" />
-
-      <NavigationItem
-        text="Roupas"
-        href="/produtos?categoria=roupas"
-        className="hover:text-sky-400"
-      />
-
-      <NavigationItem
-        text="Calçados"
-        href="/produtos?categoria=calcados"
-        className="hover:text-sky-400"
-      />
-
+      <NavigationItem text="Todos" href="/" />
+      <NavigationItem text="Roupas" href="/produtos?categoria=roupas" />
+      <NavigationItem text="Calçados" href="/produtos?categoria=calcados" />
       <NavigationItem
         text="Utilitários"
         href="/produtos?categoria=utilitarios"
-        className="hover:text-sky-400"
       />
     </nav>
   )

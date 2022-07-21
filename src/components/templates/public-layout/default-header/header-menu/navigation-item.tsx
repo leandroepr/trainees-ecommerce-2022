@@ -1,4 +1,4 @@
-import { classNames } from 'helpers/class-names'
+import { classNames } from 'core/helpers/class-names'
 import Link from 'next/link'
 import React from 'react'
 
@@ -13,11 +13,9 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
   className,
 }) => {
   return (
-    <>
-      <Link href={href}>
-        <a className={classNames('', className)}>{text}</a>
-      </Link>
-    </>
+    <Link href={href}>
+      <a className={classNames('hover:text-sky-400', className)}>{text}</a>
+    </Link>
   )
 }
 

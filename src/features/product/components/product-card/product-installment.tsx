@@ -1,5 +1,5 @@
 import { Text } from 'components/toolkit'
-import { classNames } from 'helpers/class-names'
+import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 
 type sizeMapType = 'small' | 'medium'

@@ -1,5 +1,5 @@
 import Column from 'components/toolkit/column/column'
-import { classNames } from 'helpers/class-names'
+import { classNames } from 'core/helpers/class-names'
 import StockNumber from './stock-number'
 
 export interface CategoryLateralMenuLayoutProps {

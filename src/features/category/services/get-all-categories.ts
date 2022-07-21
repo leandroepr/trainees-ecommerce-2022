@@ -1,6 +1,6 @@
-import { handleError } from 'helpers/handle-error'
-import { api } from 'lib/api'
-import { Category } from 'types/category'
+import { handleError } from 'core/helpers/handle-error'
+import { api } from 'core/lib/api'
+import { Category } from 'features/category/types/category'
 
 export type Params = null
 export type Response = Category[]
