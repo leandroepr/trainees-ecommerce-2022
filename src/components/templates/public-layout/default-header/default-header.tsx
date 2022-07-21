@@ -25,8 +25,30 @@ const DefaultHeader = () => {
   const router = useRouter()
 
   const redirectAndHandleOnSearch = (query: string) => {
-    handleOnSearch(query)
-    router.push(`produtos?filtro=${query}`)
+    const currentPathName = router.pathname
+    const currentQuery: string | null = window.location.search
+    const currentURL = `${currentPathName}${currentQuery}`
+
+    console.log(`O currentPathName atual é ${currentPathName}`)
+    console.log(`A currentQuery atual é ${currentQuery}`)
+    console.log(`A currentURL atual é ${currentURL}`)
+
+    if (currentPathName === '/') {
+      router.push(`produtos?filtro=${query}`)
+      handleOnSearch(query)
+    } else if (currentURL.includes('categoria=roupas')) {
+      router.push(`produtos?categoria=filtro=roupas=${query}`)
+      handleOnSearch(query)
+    } else if (currentURL.includes('categoria=calcados')) {
+      router.push(`produtos?categoria=filtro=calcados=${query}`)
+      handleOnSearch(query)
+    } else if (currentURL.includes('categoria=utilitarios')) {
+      router.push(`produtos?categoria=filtro=utilitarios=${query}`)
+      handleOnSearch(query)
+    } else {
+      router.push(`produtos?filtro=${query}`)
+      handleOnSearch(query)
+    }
   }
 
   return (
