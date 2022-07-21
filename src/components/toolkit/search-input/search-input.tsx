@@ -22,12 +22,18 @@ const SearchInput: React.FC<SearchInputProps> = ({
   ...inputProps
 }) => {
   const handleOnSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && internalValue !== '') {
       onSearch?.(internalValue)
+    } else {
+      return
     }
   }
   const handleOnClickToSearch = () => {
-    onSearch?.(internalValue)
+    if (internalValue !== '') {
+      onSearch?.(internalValue)
+    } else {
+      return
+    }
   }
   const [internalValue, setInternalValue] = React.useState(value)
   React.useEffect(() => {

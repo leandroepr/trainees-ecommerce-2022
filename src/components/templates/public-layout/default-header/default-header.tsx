@@ -37,13 +37,13 @@ const DefaultHeader = () => {
       router.push(`produtos?filtro=${query}`)
       handleOnSearch(query)
     } else if (currentURL.includes('categoria=roupas')) {
-      router.push(`produtos?categoria=filtro=roupas=${query}`)
+      router.push(`produtos?categoria=roupas?filtro=${query}`)
       handleOnSearch(query)
     } else if (currentURL.includes('categoria=calcados')) {
-      router.push(`produtos?categoria=filtro=calcados=${query}`)
+      router.push(`produtos?categoria=calcados?filtro=${query}`)
       handleOnSearch(query)
     } else if (currentURL.includes('categoria=utilitarios')) {
-      router.push(`produtos?categoria=filtro=utilitarios=${query}`)
+      router.push(`produtos?categoria=utilitarios?filtro=${query}`)
       handleOnSearch(query)
     } else {
       router.push(`produtos?filtro=${query}`)
