@@ -21,7 +21,6 @@ type QueryType = {
 const DefaultHeader = () => {
   const { query, updateQuery } = useQueryParams<QueryType>()
   const search = query.filtro || ''
-  const handleOnSearch = (query: string) => updateQuery({ filtro: query })
   const router = useRouter()
 
   const redirectAndHandleOnSearch = (query: string) => {
@@ -33,21 +32,10 @@ const DefaultHeader = () => {
     console.log(`A currentQuery atual é ${currentQuery}`)
     console.log(`A currentURL atual é ${currentURL}`)
 
-    if (currentPathName === '/') {
-      router.push(`produtos?filtro=${query}`)
-      handleOnSearch(query)
-    } else if (currentURL.includes('categoria=roupas')) {
-      router.push(`produtos?categoria=roupas?filtro=${query}`)
-      handleOnSearch(query)
-    } else if (currentURL.includes('categoria=calcados')) {
-      router.push(`produtos?categoria=calcados?filtro=${query}`)
-      handleOnSearch(query)
-    } else if (currentURL.includes('categoria=utilitarios')) {
-      router.push(`produtos?categoria=utilitarios?filtro=${query}`)
-      handleOnSearch(query)
+    if (currentPathName.includes('/produtos')) {
+      updateQuery({ filtro: query })
     } else {
       router.push(`produtos?filtro=${query}`)
-      handleOnSearch(query)
     }
   }
 
