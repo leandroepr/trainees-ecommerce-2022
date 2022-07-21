@@ -1,9 +1,9 @@
-import { useGetAllProducts } from "api-hook/product/use-get-all-products";
-import { Row } from "components/toolkit";
-import Grid from "components/toolkit/grid/grid";
-import { ProductCard } from "features/product";
-import { classNames } from "helpers/class-names";
-import React from "react";
+import { Row } from 'components/toolkit'
+import Grid from 'components/toolkit/grid/grid'
+import { classNames } from 'core/helpers/class-names'
+import { ProductCard } from 'features/product'
+import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
+import React from 'react'
 
 const ProductsList: React.FC = () => {
   const { data: products } = useGetAllProducts()
@@ -25,6 +25,6 @@ const ProductsList: React.FC = () => {
       </Grid>
     </Row>
   )
-};
+}
 
-export default ProductsList;
+export default ProductsList

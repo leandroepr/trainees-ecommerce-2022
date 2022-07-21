@@ -1,8 +1,8 @@
-import { useQuery } from 'react-query'
+import { CustomError } from 'core/types/custom-error'
 import getAllCategoriesService, {
   Response,
-} from 'services/categories/get-all-categories'
-import { CustomError } from 'types/custom-error'
+} from 'features/category/services/get-all-categories'
+import { useQuery } from 'react-query'
 
 export const useGetAllCategories = () => {
   const { data, error, isLoading } = useQuery<Response, CustomError>(

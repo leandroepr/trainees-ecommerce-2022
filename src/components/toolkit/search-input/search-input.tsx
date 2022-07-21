@@ -1,5 +1,5 @@
 import { SearchIcon } from '@heroicons/react/outline'
-import { classNames } from 'helpers/class-names'
+import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 import Button from '../button/button'
 

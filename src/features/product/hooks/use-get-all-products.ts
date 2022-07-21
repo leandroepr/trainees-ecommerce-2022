@@ -1,9 +1,9 @@
-import { useQuery } from 'react-query'
+import { CustomError } from 'core/types/custom-error'
 import getAllProductsService, {
   Params,
   Response,
-} from 'services/products/get-all-products'
-import { CustomError } from 'types/custom-error'
+} from 'features/product/services/get-all-products'
+import { useQuery } from 'react-query'
 
 export const useGetAllProducts = (params?: Params) => {
   const { data, error, isLoading } = useQuery<Response, CustomError>(

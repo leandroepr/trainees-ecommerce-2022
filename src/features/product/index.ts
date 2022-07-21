@@ -1,3 +1,3 @@
-import ProductCard from './product-card/product-card'
+import ProductCard from './components/product-card/product-card'
 
 export { ProductCard }
