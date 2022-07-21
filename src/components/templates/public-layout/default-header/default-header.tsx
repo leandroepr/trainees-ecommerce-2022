@@ -25,12 +25,6 @@ const DefaultHeader = () => {
 
   const redirectAndHandleOnSearch = (query: string) => {
     const currentPathName = router.pathname
-    const currentQuery: string | null = window.location.search
-    const currentURL = `${currentPathName}${currentQuery}`
-
-    console.log(`O currentPathName atual é ${currentPathName}`)
-    console.log(`A currentQuery atual é ${currentQuery}`)
-    console.log(`A currentURL atual é ${currentURL}`)
 
     if (currentPathName.includes('/produtos')) {
       updateQuery({ filtro: query })
