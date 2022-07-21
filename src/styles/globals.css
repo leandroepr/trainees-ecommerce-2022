@@ -14,6 +14,12 @@
  * @error - background products number in the cart
  //  */
 
+@layer utilities {
+  input[type='search']::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+}
+
 @layer base {
   html {
     font-family: Ubuntu;

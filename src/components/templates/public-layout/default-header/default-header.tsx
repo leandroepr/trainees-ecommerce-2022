@@ -21,12 +21,16 @@ type QueryType = {
 const DefaultHeader = () => {
   const { query, updateQuery } = useQueryParams<QueryType>()
   const search = query.filtro || ''
-  const handleOnSearch = (query: string) => updateQuery({ filtro: query })
   const router = useRouter()
 
   const redirectAndHandleOnSearch = (query: string) => {
-    handleOnSearch(query)
-    router.push(`produtos?filtro=${query}`)
+    const currentPathName = router.pathname
+
+    if (currentPathName.includes('/produtos')) {
+      updateQuery({ filtro: query })
+    } else {
+      router.push(`produtos?filtro=${query}`)
+    }
   }
 
   return (

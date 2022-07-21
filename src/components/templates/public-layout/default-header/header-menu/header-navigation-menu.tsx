@@ -10,24 +10,24 @@ const HeaderNavigationMenu: React.FC<HeaderNavigationMenuProps> = ({
 }) => {
   return (
     <nav className={classNames('', className)}>
-      <NavigationItem text="Todos" href="/" className="hover:text-sky-500" />
+      <NavigationItem text="Todos" href="/" className="hover:text-sky-400" />
 
       <NavigationItem
         text="Roupas"
         href="/produtos?categoria=roupas"
-        className="hover:text-sky-500"
+        className="hover:text-sky-400"
       />
 
       <NavigationItem
         text="Calçados"
         href="/produtos?categoria=calcados"
-        className="hover:text-sky-500"
+        className="hover:text-sky-400"
       />
 
       <NavigationItem
         text="Utilitários"
         href="/produtos?categoria=utilitarios"
-        className="hover:text-sky-500"
+        className="hover:text-sky-400"
       />
     </nav>
   )
