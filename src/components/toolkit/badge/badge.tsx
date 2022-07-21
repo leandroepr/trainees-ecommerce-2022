@@ -1,4 +1,4 @@
-import { classNames } from 'helpers/class-names'
+import { classNames } from 'core/helpers/class-names'
 
 export type BadgeVariant = 'info' | 'gray'
 export interface BadgeProps {

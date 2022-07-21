@@ -1,17 +1,13 @@
 import { ChevronRightIcon } from '@heroicons/react/outline'
-import { useGetAllProducts } from 'api-hook/product/use-get-all-products'
 import { Column } from 'components/toolkit'
 import Row from 'components/toolkit/row'
 import Text from 'components/toolkit/text'
-import { classNames } from 'helpers/class-names'
+import { classNames } from 'core/helpers/class-names'
+import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { ProductCard } from '../product-card'
-
-type QueryType = {
-  filtro?: string
-}
 
 export interface CategoryProductsListProps {
   className?: string
@@ -22,7 +18,6 @@ export interface CategoryProductsListProps {
 const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
   className,
   categoryName = '',
-  categoryPageLink = '/',
   categoryId,
 }) => {
   const { data } = useGetAllProducts({ category: categoryId })

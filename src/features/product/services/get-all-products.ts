@@ -1,6 +1,6 @@
-import { handleError } from 'helpers/handle-error'
-import { api } from 'lib/api'
-import { Product } from 'types/product'
+import { handleError } from 'core/helpers/handle-error'
+import { api } from 'core/lib/api'
+import { Product } from 'features/product/types/product'
 
 export type Params = {
   category?: string
