@@ -32,7 +32,7 @@ const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
         </Link>
       </Row>
       <Row className="relative">
-        <Row className={`grid grid-cols-5 space-x-4 items-center`}>
+        <div className={`grid grid-cols-5 gap-4`}>
           {data?.slice(0, 5).map((product) => (
             <Link key={product.slug} href={`/produtos/${product.slug}`}>
               <a>
@@ -40,7 +40,7 @@ const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
               </a>
             </Link>
           ))}
-        </Row>
+        </div>
         <Column className="absolute -right-8 h-full justify-center">
           <Link href={`/produtos?categoria=${categoryId}`}>
             <a>
