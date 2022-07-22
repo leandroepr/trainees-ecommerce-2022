@@ -1,5 +1,4 @@
 import { Row } from 'components/toolkit'
-import Grid from 'components/toolkit/grid/grid'
 import { classNames } from 'core/helpers/class-names'
 import { ProductCard } from 'features/product'
 import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
@@ -11,7 +10,7 @@ const ProductsList: React.FC = () => {
 
   return (
     <Row className={classNames('max-w-screen-lg')}>
-      <Grid
+      <div
         className={classNames(
           'grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'
         )}
@@ -23,7 +22,7 @@ const ProductsList: React.FC = () => {
             </a>
           </Link>
         ))}
-      </Grid>
+      </div>
     </Row>
   )
 }
