@@ -3,7 +3,6 @@ import Badge from 'components/toolkit/badge'
 import { BadgeVariant } from 'components/toolkit/badge/badge'
 import { classNames } from 'core/helpers/class-names'
 import { Product } from 'features/product/types/product'
-import Link from 'next/link'
 import React from 'react'
 import ProductImage from './product-image'
 import ProductInstallment from './product-installment'
@@ -40,40 +39,38 @@ const ProductCard: React.FC<ProductCardProps> = ({
   )
 
   return (
-    <Link href="#">
-      <Card className={classNames('divide-y', className)}>
-        <ProductImage src={product?.imageUrl} alt={product?.name} />
-        <Column className="flex-grow p-5 space-y-3">
-          <Column>
-            <ProductPrice
-              price={product?.price}
-              size={variant === 'compressed' ? 'small' : 'medium'}
-            />
-            <ProductInstallment
-              installmentsInfo={product?.installmentsInfo}
-              size={variant === 'compressed' ? 'medium' : 'small'}
-              color={variant === 'compressed' ? 'gray' : 'dark'}
-            />
-          </Column>
-          {variant === 'detailed' && (
-            <React.Fragment>
-              {(infoBadges?.length || 0) > 0 && (
-                <Row className="gap-1 overflow-hidden min-w-fit">
-                  {infoBadges?.map((badge) => (
-                    <Badge variant="info" key={badge.content}>
-                      {badge.content}
-                    </Badge>
-                  ))}
-                </Row>
-              )}
-              <Text className="text-slate-500 tracking-tight text-sm break-words line-clamp-3">
-                {product?.name}
-              </Text>
-            </React.Fragment>
-          )}
+    <Card className={classNames('divide-y', className)}>
+      <ProductImage src={product?.imageUrl} alt={product?.name} />
+      <Column className="flex-grow p-5 space-y-3">
+        <Column>
+          <ProductPrice
+            price={product?.price}
+            size={variant === 'compressed' ? 'small' : 'medium'}
+          />
+          <ProductInstallment
+            installmentsInfo={product?.installmentsInfo}
+            size={variant === 'compressed' ? 'medium' : 'small'}
+            color={variant === 'compressed' ? 'gray' : 'dark'}
+          />
         </Column>
-      </Card>
-    </Link>
+        {variant === 'detailed' && (
+          <React.Fragment>
+            {(infoBadges?.length || 0) > 0 && (
+              <Row className="gap-1 overflow-hidden min-w-fit">
+                {infoBadges?.map((badge) => (
+                  <Badge variant="info" key={badge.content}>
+                    {badge.content}
+                  </Badge>
+                ))}
+              </Row>
+            )}
+            <Text className="tracking-tight text-sm break-words line-clamp-3">
+              {product?.name}
+            </Text>
+          </React.Fragment>
+        )}
+      </Column>
+    </Card>
   )
 }
 

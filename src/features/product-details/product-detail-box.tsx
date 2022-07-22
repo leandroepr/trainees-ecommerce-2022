@@ -1,11 +1,12 @@
 import { CheckIcon, ShieldCheckIcon } from '@heroicons/react/outline'
 import { PencilIcon } from '@heroicons/react/solid'
+import { Column } from 'components/toolkit'
 import Link from 'next/link'
 import VendorInfoBox from './vendor-info-box'
 
 const ProductDetailsBox = () => {
   return (
-    <>
+    <Column className="p-6">
       <div className="text-xs pb-2">Novo | 884 vendidos</div>
       <div className="flex flex-row">
         <div className="text-2xl font-extrabold max-w-xs pb-2 text-black">
@@ -62,7 +63,7 @@ const ProductDetailsBox = () => {
         </div>
       </div>
       <VendorInfoBox />
-    </>
+    </Column>
   )
 }
 
