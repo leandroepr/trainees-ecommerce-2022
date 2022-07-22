@@ -8,6 +8,7 @@ export interface DefaultPublicLayoutProps {
   title?: string
   className?: string
   children?: React.ReactNode
+  mainBackgroung?: string
 }
 const DefaultPublicLayout: React.FC<DefaultPublicLayoutProps> = (props) => {
   return (
@@ -15,7 +16,9 @@ const DefaultPublicLayout: React.FC<DefaultPublicLayoutProps> = (props) => {
       <Header className="p-4 bg-primary">
         <DefaultHeader />
       </Header>
-      <Body className={props.className}>{props.children}</Body>
+      <Body className={props.className} mainBackgroung={props.mainBackgroung}>
+        {props.children}
+      </Body>
       <Footer className="text-center">
         <DefaultFooter />
       </Footer>
