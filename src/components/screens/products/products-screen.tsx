@@ -1,5 +1,6 @@
 import DefaultPublicLayout from 'components/templates/public-layout/default-public-layout'
 import { Column, Row } from 'components/toolkit'
+import Container from 'components/toolkit/container'
 import Spinner from 'components/toolkit/spinner/spinner'
 import { classNames } from 'core/helpers/class-names'
 import { ProductsList } from 'features/category'
@@ -12,17 +13,19 @@ const ProductsScreen: React.FC = () => {
 
   return (
     <DefaultPublicLayout>
-      <RelatedSearches />
-      <Row className="justify-between mb-2">
-        <CategoryLateralMenuLayout />
-        {isLoading && (
-          <Column className={classNames('items-center')}>
-            <Spinner color="black" size={100} />
-            Carregando...
-          </Column>
-        )}
-        <ProductsList />
-      </Row>
+      <Container>
+        <RelatedSearches />
+        <Row className="justify-between mb-2">
+          <CategoryLateralMenuLayout />
+          {isLoading && (
+            <Column className={classNames('items-center')}>
+              <Spinner color="black" size={100} />
+              Carregando...
+            </Column>
+          )}
+          <ProductsList />
+        </Row>
+      </Container>
     </DefaultPublicLayout>
   )
 }
