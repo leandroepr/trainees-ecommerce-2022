@@ -16,7 +16,7 @@ const VendorInfoBox = () => {
         </div>
         <div className="flex flex-col">
           <div className="text-sm">Localização</div>
-          <div className="text-xs text-slate-700 font-light pb-8">
+          <div className="text-xs text-slate-700 font-light pb-6">
             São Paulo, São Paulo
           </div>
         </div>

@@ -10,9 +10,9 @@ export interface ProductDetailScreenProps {
 const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({ slug }) => {
   return (
     <DefaultPublicLayout title="Detalhes do produto">
-      <section className="flex flex-col space-y-4 pt-3 text-gray-700 shrink-0 overflow-hidden">
+      <section className="flex flex-col space-y-4 pt-3 text-gray-700 overflow-hidden">
         <ProductDetailsPageCategoriesBox />
-        <div className="flex flex-row space-x-6 bg-white">
+        <div className="flex flex-row space-x-6 bg-white shrink-0">
           <div>
             <div className="flex flex-row pl-4 max-w-full mr-12 resize-none">
               <ProductImageAndDescriptionBox />

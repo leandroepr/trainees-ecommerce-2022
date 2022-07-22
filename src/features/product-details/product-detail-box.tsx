@@ -56,7 +56,7 @@ const ProductDetailsBox = () => {
         <div>
           <ShieldCheckIcon className="h-6 mt-2 pr-2" />
         </div>
-        <div className="text-sm text-gray-600 pb-20">
+        <div className="text-sm text-gray-600 pb-8">
           Compra garantida, receba o produto que está esperando ou devolvemos o
           dinheiro.
         </div>
