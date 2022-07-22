@@ -14,6 +14,7 @@ module.exports = {
         light: 'rgb(var(--light) / 1 )',
         success: 'rgb(var(--success) / 1 )',
         info: 'rgb(var(--info) / 1 )',
+        warning: 'rgb(var(--warning) / 1 )',
         error: 'rgb(var(--error) / 1 )',
       },
       fontFamily: {

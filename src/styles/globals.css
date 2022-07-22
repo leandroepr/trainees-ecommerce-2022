@@ -5,12 +5,15 @@
 @tailwind utilities;
 
 /**
+ *** variable name - example ***
+
  * @primary - header-background
  * @secondary - header-texts
  * @dark - main-texts;
  * @light - card-background;
  * @success - some installment prices and "Frete Grátis" text in product page
  * @info - some background buttons and some texts
+ * @warning - reputation thermometer
  * @error - background products number in the cart
  //  */
 
@@ -31,6 +34,7 @@
     --light: 255 255 255;
     --success: 0 158 66;
     --info: 0 122 253;
+    --warning: 255 193 7;
     --error: 239 68 68;
   }
 }
