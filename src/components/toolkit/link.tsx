@@ -4,11 +4,12 @@ import React from 'react'
 export interface LinkProps {
   href: NextLinkProps['href']
   children: React.ReactNode
+  className?: string
 }
-const Link: React.FC<LinkProps> = ({ children, ...linkProps }) => {
+const Link: React.FC<LinkProps> = ({ children, className, ...linkProps }) => {
   return (
     <NextLink {...linkProps}>
-      <a>{children}</a>
+      <a className={className}>{children}</a>
     </NextLink>
   )
 }
