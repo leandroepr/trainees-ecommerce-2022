@@ -1,11 +1,15 @@
+import Link from 'next/link'
 import Card from './card'
 import { Column } from './column'
 import Container from './container'
 import Row from './row'
+import SearchInput from './search-input/search-input'
 import Text from './text'
 
 export type { CardProps } from './card'
 export type { ColumnProps } from './column'
 export type { ContainerProps } from './container'
+export type { LinkProps } from './link'
 export type { RowProps } from './row'
-export { Column, Card, Row, Text, Container }
+export type { SearchInputProps } from './search-input/search-input'
+export { Column, Card, Row, Text, Container, Link, SearchInput }
