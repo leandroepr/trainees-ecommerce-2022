@@ -3,6 +3,7 @@ import Grid from 'components/toolkit/grid/grid'
 import { classNames } from 'core/helpers/class-names'
 import { ProductCard } from 'features/product'
 import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
+import Link from 'next/link'
 import React from 'react'
 
 const ProductsList: React.FC = () => {
@@ -16,11 +17,11 @@ const ProductsList: React.FC = () => {
         )}
       >
         {products?.map((product) => (
-          <ProductCard
-            key={product.slug}
-            product={product}
-            variant="detailed"
-          />
+          <Link key={product.slug} href={`/produtos/${product.slug}`}>
+            <a>
+              <ProductCard product={product} variant="detailed" />
+            </a>
+          </Link>
         ))}
       </Grid>
     </Row>
