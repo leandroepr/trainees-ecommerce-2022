@@ -64,7 +64,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 ))}
               </Row>
             )}
-            <Text className="text-slate-500 tracking-tight text-sm break-words line-clamp-3">
+            <Text className="tracking-tight text-sm break-words line-clamp-3">
               {product?.name}
             </Text>
           </React.Fragment>
