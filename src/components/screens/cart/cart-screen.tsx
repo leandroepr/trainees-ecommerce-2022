@@ -1,6 +1,5 @@
 import DefaultPublicLayout from 'components/templates/public-layout/default-public-layout'
-import { Column, Row } from 'components/toolkit'
-import Container from 'components/toolkit/container'
+import { Column, Container, Row } from 'components/toolkit'
 import CartBox from 'features/cart/components/cart-box/cart-box'
 import React from 'react'
 
