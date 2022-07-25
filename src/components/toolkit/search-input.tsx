@@ -1,7 +1,7 @@
 import { SearchIcon } from '@heroicons/react/outline'
+import { Button } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import React from 'react'
-import Button from '../button/button'
 
 export interface SearchInputProps {
   value?: string

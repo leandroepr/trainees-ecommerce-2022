@@ -1,6 +1,5 @@
 import DefaultPublicLayout from 'components/templates/public-layout/default-public-layout'
-import { Column, Container, Row } from 'components/toolkit'
-import Spinner from 'components/toolkit/spinner/spinner'
+import { Column, Container, Row, Spinner } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import { ProductsList } from 'features/category'
 import CategoryLateralMenuLayout from 'features/category/components/category-lateral-menu-layout/category-lateral-menu-layout'

@@ -1,6 +1,5 @@
-import { Card, Column, Row, Text } from 'components/toolkit'
-import Badge from 'components/toolkit/badge'
-import { BadgeVariant } from 'components/toolkit/badge/badge'
+import { Badge, Card, Column, Row, Text } from 'components/toolkit'
+import { BadgeVariant } from 'components/toolkit/badge'
 import { classNames } from 'core/helpers/class-names'
 import { Product } from 'features/product/types/product'
 import React from 'react'

@@ -1,4 +1,4 @@
-import Column from 'components/toolkit/column/column'
+import { Column } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import StockNumber from './stock-number'
 

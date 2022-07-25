@@ -3,8 +3,7 @@ import {
   PencilIcon,
   ShieldCheckIcon,
 } from '@heroicons/react/outline'
-import { Column, Row, Text } from 'components/toolkit'
-import Badge from 'components/toolkit/badge'
+import { Badge, Column, Row, Text } from 'components/toolkit'
 import Link from 'next/link'
 import React from 'react'
 

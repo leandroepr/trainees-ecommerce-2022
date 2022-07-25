@@ -1,4 +1,4 @@
-import Row from 'components/toolkit/row/row'
+import { Row } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 
