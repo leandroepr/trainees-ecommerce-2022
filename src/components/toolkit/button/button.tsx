@@ -9,20 +9,20 @@ import React from 'react'
  //  */
 
 export interface ButtonProps {
-  contentButton: React.ReactNode
+  children: React.ReactNode
   className: string
   type?: 'button' | 'submit' | 'reset'
   onClick?: () => void
 }
 const Button: React.FC<ButtonProps> = ({
-  contentButton,
+  children,
   className,
   type,
   onClick,
 }) => {
   return (
-    <button className={classNames(className)} type={type} onClick={onClick}>
-      {contentButton}
+    <button className={classNames('', className)} type={type} onClick={onClick}>
+      {children}
     </button>
   )
 }
