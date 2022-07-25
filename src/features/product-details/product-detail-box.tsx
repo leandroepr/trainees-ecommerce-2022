@@ -34,32 +34,28 @@ const ProductDetailsBox = () => {
         </Text>
       </div>
 
-      <div className="pt-4 pb-2">
-        <div className="flex flex-row">
-          <div>
-            <CheckIcon className="h-5 text-green-500" />
-          </div>
-          <Column className="text-sm space-y-1 pb-4">
-            <Text as="span" className="text-green-500 font-bold">
-              Frete grátis
-            </Text>
-            <Text as="span">Benefício Lorem Ipsum</Text>
-            <div className="pb-2">
-              <Link href="/">
-                <a className="text-blue-500 font-bold">Ver mais opções</a>
-              </Link>
-            </div>
-          </Column>
-        </div>
-      </div>
+      <Row className="pt-4 pb-2">
+        <CheckIcon className="h-5 text-green-500" />
+        <Column className="text-sm space-y-1 pb-4">
+          <Text as="span" className="text-green-500 font-bold">
+            Frete grátis
+          </Text>
+          <Text as="span">Benefício Lorem Ipsum</Text>
+
+          <Link href="/">
+            <a className="text-blue-500 font-bold pb-2">Ver mais opções</a>
+          </Link>
+        </Column>
+      </Row>
 
       <Column className="items-center justify-center space-y-4 pb-6">
-        <div className="flex bg-blue-500 justify-center items-center h-10 rounded text-white container">
-          <button>Comprar agora</button>
-        </div>
-        <div className="flex w-full justify-center items-center h-10 rounded text-blue-500 border-2 border-blue-500">
-          <button>Adicionar ao carrinho</button>
-        </div>
+        <button className="bg-blue-500 justify-center items-center h-10 rounded text-white container">
+          Comprar agora
+        </button>
+
+        <button className="w-full justify-center items-center h-10 rounded text-blue-500 border-2 border-blue-500">
+          Adicionar ao carrinho
+        </button>
       </Column>
 
       <Row>
