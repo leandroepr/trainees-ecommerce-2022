@@ -14,9 +14,10 @@ import React from 'react'
 export interface ButtonProps {
   children: React.ReactNode
   type?: 'button' | 'submit' | 'reset'
-  variant: 'info' | 'light' | 'disabled'
+  variant: 'info' | 'light'
   size: 'sm' | 'md' | 'lg'
   shape: 'rounded' | 'square'
+  disabled?: boolean;
   className?: string
   onClick?: () => void
 }
@@ -27,13 +28,14 @@ const Button: React.FC<ButtonProps> = ({
   variant,
   size,
   shape,
+  disabled,
   className,
   onClick,
 }) => {
   return (
-    <button className={classNames('cursor-pointer py-1 px-4 rounded', buttonColorMap[variant], buttonSizeMap[size], buttonShapeMap[shape], className)} type={type} onClick={onClick}>
+    <button className={classNames('py-1 px-4 rounded', disabled ? 'bg-light text-dark/30 border border-dark/30 cursor-not-allowed' : buttonColorMap[variant], buttonSizeMap[size], buttonShapeMap[shape], className)} disabled={disabled} type={type} onClick={onClick}>
       {children}
-    </button>
+    </button >
   )
 }
 
@@ -42,7 +44,6 @@ export default Button
 const buttonColorMap = {
   info: 'bg-info text-light',
   light: 'bg-light text-info border border-info',
-  disabled: 'bg-light text-dark/30 border border-dark/30 cursor-not-allowed'
 }
 
 const buttonSizeMap = {
