@@ -3,6 +3,7 @@ import {
   ChevronDownIcon,
   LightningBoltIcon,
   LocationMarkerIcon,
+  MenuIcon,
   ShoppingCartIcon,
   UserCircleIcon,
 } from '@heroicons/react/outline'
@@ -59,9 +60,9 @@ const DefaultHeader = () => {
         </Row>
       </Column>
 
-      <Column className="space-y-3">
+      <Column className="hidden lg:flex space-y-3">
         <Row className="space-x-3 h-10 items-center">
-          <LightningBoltIcon className="h-6 w-6 " />
+          <LightningBoltIcon className="h-6 w-6" />
           <Text as="span">Aproveite preços incríveis todos os dias!</Text>
         </Row>
 
@@ -97,6 +98,21 @@ const DefaultHeader = () => {
             </Text>
           </Row>
         </Row>
+      </Column>
+
+      <Column className="hidden md:flex md:pt-2 md:space-y-1">
+        <Row className="sm:h-10 sm:w-10 lg:hidden">
+          <Link href="/carrinho">
+            <ShoppingCartIcon className="h-6 w-6" />
+          </Link>
+          <Text
+            as="span"
+            className="absolute ml-4 text-sm text-white bg-red-500 rounded-full w-5 h-5 text-center justify-center mt-[-6px]"
+          >
+            3
+          </Text>
+        </Row>
+        <MenuIcon className="sm:h-6 sm:w-6 lg:hidden" />
       </Column>
     </Row>
   )
