@@ -6,30 +6,33 @@ import React from 'react'
  * @type button type
  * @variant button color
  * @size button size
+ * @shape button shape
  * @className other styles
  * @onClick function onClick
  //  */
 
 export interface ButtonProps {
-  contentButton: React.ReactNode
+  children: React.ReactNode
   type?: 'button' | 'submit' | 'reset'
   variant: 'info' | 'light' | 'disabled'
   size: 'sm' | 'md' | 'lg'
+  shape: 'rounded' | 'square'
   className?: string
   onClick?: () => void
 }
 
 const Button: React.FC<ButtonProps> = ({
-  contentButton,
+  children,
   type,
   variant,
   size,
+  shape,
   className,
   onClick,
 }) => {
   return (
-    <button className={classNames('cursor-pointer py-1 px-4 rounded', buttonColorMap[variant], buttonSizeMap[size], className)} type={type} onClick={onClick}>
-      {contentButton}
+    <button className={classNames('cursor-pointer py-1 px-4 rounded', buttonColorMap[variant], buttonSizeMap[size], buttonShapeMap[shape], className)} type={type} onClick={onClick}>
+      {children}
     </button>
   )
 }
@@ -46,4 +49,9 @@ const buttonSizeMap = {
   sm: 'w-32 h-10',
   md: 'w-50 h-10',
   lg: 'w-80 h-10'
+}
+
+const buttonShapeMap = {
+  rounded: 'rounded',
+  square: 'rounded-none',
 }
