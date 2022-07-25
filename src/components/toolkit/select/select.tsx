@@ -33,7 +33,7 @@ const Select = ({
         {options.map((option) => (
           <option
             value={option}
-            key={options.indexOf(option)}
+            key={`option-${options.indexOf(option)}`}
             className={optionsClassName}
           >
             {option}
