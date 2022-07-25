@@ -61,8 +61,8 @@ const DefaultHeader = () => {
 
       <Column className="space-y-3">
         <Row className="space-x-3 h-10 items-center">
-          <LightningBoltIcon className="h-6 w-6" />
-          <div>Aproveite preços incríveis todos os dias!</div>
+          <LightningBoltIcon className="h-6 w-6 " />
+          <Text as="span">Aproveite preços incríveis todos os dias!</Text>
         </Row>
 
         <Row className="space-x-3">
