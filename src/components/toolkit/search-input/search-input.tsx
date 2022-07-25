@@ -1,5 +1,5 @@
 import { SearchIcon } from '@heroicons/react/outline'
-import { classNames } from 'helpers/class-names'
+import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 import Button from '../button/button'
 
@@ -22,12 +22,18 @@ const SearchInput: React.FC<SearchInputProps> = ({
   ...inputProps
 }) => {
   const handleOnSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && internalValue !== '') {
       onSearch?.(internalValue)
+    } else {
+      return
     }
   }
   const handleOnClickToSearch = () => {
-    onSearch?.(internalValue)
+    if (internalValue !== '') {
+      onSearch?.(internalValue)
+    } else {
+      return
+    }
   }
   const [internalValue, setInternalValue] = React.useState(value)
   React.useEffect(() => {
@@ -46,7 +52,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         value={internalValue}
         onChange={(event) => setInternalValue(event.target.value)}
         className={classNames(
-          'h-10 shadow-sm focus:ring-sky-500 focus:border-sky-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10 placeholder: pl-4'
+          'h-10 shadow-sm block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10 placeholder: pl-4 focus:outline-sky-500'
         )}
         onKeyUp={handleOnSearch}
         {...inputProps}

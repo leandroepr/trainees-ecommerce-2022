@@ -1,4 +1,4 @@
-import { classNames } from 'helpers/class-names'
+import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 
 export interface BodyProps {
@@ -7,10 +7,8 @@ export interface BodyProps {
 }
 const Body: React.FC<BodyProps> = (props) => {
   return (
-    <main className="flex flex-col flex-1">
-      <div className={classNames('container mx-auto', props.className)}>
-        {props.children}
-      </div>
+    <main className={classNames('flex flex-col flex-1', props.className)}>
+      {props.children}
     </main>
   )
 }

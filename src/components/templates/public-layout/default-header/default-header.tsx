@@ -1,16 +1,13 @@
 import {
   BellIcon,
   ChevronDownIcon,
-  CurrencyDollarIcon,
+  LightningBoltIcon,
   LocationMarkerIcon,
   ShoppingCartIcon,
   UserCircleIcon,
 } from '@heroicons/react/outline'
-import Column from 'components/toolkit/column/column'
-import Row from 'components/toolkit/row/row'
-import SearchInput from 'components/toolkit/search-input/search-input'
-import { useQueryParams } from 'hooks/use-query-params'
-import Link from 'next/link'
+import { Column, Link, Row, SearchInput } from 'components/toolkit'
+import { useQueryParams } from 'core/hooks/use-query-params'
 import { useRouter } from 'next/router'
 import HeaderLogo from './header-logo'
 import HeaderNavigationMenu from './header-menu/header-navigation-menu'
@@ -21,21 +18,23 @@ type QueryType = {
 const DefaultHeader = () => {
   const { query, updateQuery } = useQueryParams<QueryType>()
   const search = query.filtro || ''
-  const handleOnSearch = (query: string) => updateQuery({ filtro: query })
   const router = useRouter()
 
   const redirectAndHandleOnSearch = (query: string) => {
-    handleOnSearch(query)
-    router.push(`produtos?filtro=${query}`)
+    const currentPathName = router.pathname
+
+    if (currentPathName.includes('/produtos')) {
+      updateQuery({ filtro: query })
+    } else {
+      router.push(`produtos?filtro=${query}`)
+    }
   }
 
   return (
-    <header className="flex flex-row text-secondary/95 space-x-7 bg-primary ">
+    <header className="flex flex-row text-secondary/80 space-x-7 bg-primary ">
       <Column className="w-44 space-y-2">
         <Link href="/">
-          <a>
-            <HeaderLogo className="text-blue" />
-          </a>
+          <HeaderLogo className="text-blue" />
         </Link>
 
         <Row className="space-x-1 overflow-hidden">
@@ -62,7 +61,7 @@ const DefaultHeader = () => {
 
       <Column className="space-y-3">
         <Row className="space-x-3 h-10 items-center">
-          <CurrencyDollarIcon className="h-6 w-6" />
+          <LightningBoltIcon className="h-6 w-6" />
           <div>Aproveite preços incríveis todos os dias!</div>
         </Row>
 
@@ -90,9 +89,7 @@ const DefaultHeader = () => {
 
           <div className="flex flex-row">
             <Link href="/carrinho">
-              <a>
-                <ShoppingCartIcon className="h-6 w-6" />
-              </a>
+              <ShoppingCartIcon className="h-6 w-6" />
             </Link>
             <div className="absolute ml-4 text-sm text-white bg-red-500 rounded-full w-5 h-5 text-center justify-center mt-[-6px]">
               3

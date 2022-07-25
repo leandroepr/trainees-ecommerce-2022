@@ -1,6 +1,9 @@
-import { useGetAllCategories } from 'api-hook/category/use-get-all-categories'
 import DefaultPublicLayout from 'components/templates/public-layout/default-public-layout'
-import CategoryProductsList from 'features/product/product-list/category-products-list'
+import { Column, Container } from 'components/toolkit'
+import Spinner from 'components/toolkit/spinner/spinner'
+import { classNames } from 'core/helpers/class-names'
+import { useGetAllCategories } from 'features/category/hooks/use-get-all-categories'
+import CategoryProductsList from 'features/product/components/product-list/category-products-list'
 import React from 'react'
 
 // export interface HomeScreenProps {}
@@ -8,16 +11,23 @@ const HomeScreen: React.FC = () => {
   const { isLoading, data: categories } = useGetAllCategories()
 
   return (
-    <DefaultPublicLayout className="space-y-12 py-12" title="Home">
-      {isLoading && <div>Carregando...</div>}
-      {categories?.map((category) => (
-        <CategoryProductsList
-          key={category.name}
-          categoryName={category.displayName}
-          categoryId={category.id}
-          categoryPageLink={category.id}
-        />
-      ))}
+    <DefaultPublicLayout title="Home">
+      <Container className="space-y-12 py-12">
+        {isLoading && (
+          <Column className={classNames('items-center')}>
+            <Spinner color="black" size={100} />
+            Carregando...
+          </Column>
+        )}
+        {categories?.map((category) => (
+          <CategoryProductsList
+            key={category.name}
+            categoryName={category.displayName}
+            categoryId={category.id}
+            categoryPageLink={category.id}
+          />
+        ))}
+      </Container>
     </DefaultPublicLayout>
   )
 }
