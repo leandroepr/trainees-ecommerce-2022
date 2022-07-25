@@ -10,7 +10,7 @@ const CartScreen: React.FC = () => {
       <Container className="pt-6">
         {/* <Column className={classNames('items-center')}>Carregando...</Column> */}
         <Column className="flex h-full shadow-xl bg-light">
-          <Row className="bg-red h-96 w-full">
+          <Row className="bg-red w-full h-fit">
             <CartBox className="w-full" />
           </Row>
         </Column>
