@@ -1,4 +1,4 @@
-import { Card, Column, Row, Text } from 'components/toolkit'
+import { Card, Column, Row, SkeletonElement, Text } from 'components/toolkit'
 import Badge from 'components/toolkit/badge'
 import { BadgeVariant } from 'components/toolkit/badge/badge'
 import { classNames } from 'core/helpers/class-names'
@@ -8,15 +8,19 @@ import ProductImage from './product-image'
 import ProductInstallment from './product-installment'
 import ProductPrice from './product-price'
 
+export type ProductCardVariant = 'compressed' | 'detailed'
 export interface ProductCardProps {
   className?: string
   product?: Product
-  variant?: 'compressed' | 'detailed'
+  variant?: ProductCardVariant
+  pending?: boolean
 }
+
 const ProductCard: React.FC<ProductCardProps> = ({
   className,
   variant = 'compressed',
   product,
+  pending = false,
 }) => {
   const adaptCategories = (input: string[]) => {
     const result: { variant: BadgeVariant; content: string }[] = [
@@ -37,6 +41,57 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const infoBadges = adaptedCategories?.filter(
     (badge) => badge.variant === 'info'
   )
+
+  if (pending)
+    return (
+      <Column
+        className={classNames(
+          'bg-light border rounded-md overflow-hidden divide-y h-full w-full',
+          className
+        )}
+      >
+        <SkeletonElement className="aspect-square" />
+        <Column className="flex-grow p-5 space-y-3">
+          <Column className="space-y-2">
+            <SkeletonElement
+              as="span"
+              order="secondary"
+              className="h-8 w-1/3"
+            />
+            <SkeletonElement
+              as="span"
+              order="secondary"
+              className={classNames(
+                variant === 'compressed' ? 'h-5' : 'h-4',
+                'w-2/3'
+              )}
+            />
+          </Column>
+          {variant === 'detailed' && (
+            <React.Fragment>
+              <Row className="space-x-1">
+                {Array(3).fill(
+                  <SkeletonElement
+                    as="span"
+                    order="secondary"
+                    className="bg-gray-200 h-6 w-1/2"
+                  />
+                )}
+              </Row>
+              <Column className="space-y-1">
+                {Array(2).fill(
+                  <SkeletonElement
+                    as="span"
+                    order="secondary"
+                    className="bg-gray-200 h-4 w-full"
+                  />
+                )}
+              </Column>
+            </React.Fragment>
+          )}
+        </Column>
+      </Column>
+    )
 
   return (
     <Card className={classNames('divide-y', className)}>
