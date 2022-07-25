@@ -12,7 +12,7 @@ const ProductDetailsBox = () => {
         <Text className="text-2xl font-extrabold max-w-xs pb-2 text-black">
           Camiseta Hering Super Cotton - Unissex
         </Text>
-        <PencilIcon className="h-6 text-blue-500" />
+        <PencilIcon className="h-10 text-blue-500" />
       </Row>
       <Text
         as="span"
