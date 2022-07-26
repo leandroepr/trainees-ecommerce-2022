@@ -15,7 +15,7 @@ export interface ButtonProps {
   children: React.ReactNode
   type?: 'button' | 'submit' | 'reset'
   variant: 'info' | 'light'
-  size: 'sm' | 'md' | 'lg'
+  size: 'xs' | 'sm' | 'md' | 'lg'
   shape: 'rounded' | 'square'
   disabled?: boolean;
   className?: string
@@ -47,6 +47,7 @@ const buttonColorMap = {
 }
 
 const buttonSizeMap = {
+  xs: 'w-10 h-10',
   sm: 'w-32 h-10',
   md: 'w-50 h-10',
   lg: 'w-80 h-10'

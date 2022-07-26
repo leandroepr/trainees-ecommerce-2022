@@ -1,5 +1,6 @@
 import { Button, Column, Row } from 'components/toolkit'
 import React from 'react'
+import { ProductsTotalPrice } from '../total-price'
 
 const CartBoxFirstTab: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const CartBoxFirstTab: React.FC = () => {
           <div>Component do produto</div>
         </Row>
         <Row className="pt-16 justify-end border-b pb-10">
-          <div>Component de preços</div>
+          <ProductsTotalPrice />
         </Row>
       </Column>
       <Row className="pt-16 justify-end">
