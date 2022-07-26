@@ -1,6 +1,6 @@
-import { Combobox, Transition } from '@headlessui/react'
+import { Combobox } from '@headlessui/react'
 import { classNames } from 'core/helpers/class-names'
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import Container from '../container'
 import SelectButton from './select-button'
 import SelectInput from './select-input'
@@ -32,15 +32,7 @@ const Select = ({ options, label, className }: SelectProps) => {
             <SelectInput onChange={(event) => setQuery(event.target.value)} />
             <SelectButton />
           </div>
-          <Transition
-            as={Fragment}
-            leave="transition ease-in duration-100"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-            afterLeave={() => setQuery('')}
-          >
-            <SelectOptionList query={query} options={filteredOptions} />
-          </Transition>
+          <SelectOptionList query={query} options={filteredOptions} />
         </div>
       </Combobox>
     </Container>
