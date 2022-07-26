@@ -2,11 +2,12 @@ import { Combobox } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/solid'
 import { classNames } from 'core/helpers/class-names'
 
-interface SelectOptionProps {
+export interface SelectOptionProps {
   className?: string
-  option: string
+  value: any
+  children?: React.ReactNode
 }
-const SelectOption = ({ option, className }: SelectOptionProps) => {
+const SelectOption = ({ value, children, className }: SelectOptionProps) => {
   return (
     <Combobox.Option
       className={({ active }) =>
@@ -17,7 +18,7 @@ const SelectOption = ({ option, className }: SelectOptionProps) => {
           className
         )
       }
-      value={option}
+      value={value}
     >
       {({ selected, active }) => (
         <>
@@ -26,7 +27,7 @@ const SelectOption = ({ option, className }: SelectOptionProps) => {
               selected ? 'font-medium' : 'font-normal'
             }`}
           >
-            {option}
+            {children}
           </span>
           {selected ? (
             <span

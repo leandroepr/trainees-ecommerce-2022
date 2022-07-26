@@ -1,16 +1,15 @@
 import { Combobox } from '@headlessui/react'
 import { classNames } from 'core/helpers/class-names'
-import SelectOption from './select-option'
 
-interface SelectOptionListProps {
+export interface SelectOptionListProps {
   className?: string
-  options: readonly string[]
-  query?: string
+  children?: React.ReactNode[]
+  nonIdealState?: string
 }
 const SelectOptionList = ({
-  query,
-  options,
   className,
+  children,
+  nonIdealState = 'Opção não encontrada.',
 }: SelectOptionListProps) => {
   return (
     <Combobox.Options
@@ -19,12 +18,12 @@ const SelectOptionList = ({
         className
       )}
     >
-      {options.length === 0 && query !== '' ? (
+      {children?.length === 0 ? (
         <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
-          Opção não encontrada.
+          {nonIdealState}
         </div>
       ) : (
-        options.map((option) => <SelectOption option={option} key={option} />)
+        <>{children}</>
       )}
     </Combobox.Options>
   )
