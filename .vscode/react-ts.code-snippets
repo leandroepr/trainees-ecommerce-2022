@@ -1,4 +1,22 @@
 {
+  "Create a next page": {
+    "prefix": "npc",
+    "body": [
+      "import { NextPage } from 'next'",
+      "",
+      "const ${1:ComponentName}: NextPage = () => { ",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:ComponentName}"
+    ],
+    "description": "Create a next page component"
+  },
+
   "Create a react component with props": {
     "prefix": "rfcp",
     "body": [
