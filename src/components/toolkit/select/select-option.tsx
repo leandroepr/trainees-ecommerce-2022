@@ -12,7 +12,7 @@ const SelectOption = ({ option, className }: SelectOptionProps) => {
       className={({ active }) =>
         classNames(
           `relative cursor-default select-none py-2 pl-10 pr-4 ${
-            active ? 'bg-teal-600 text-white' : 'text-gray-900'
+            active ? 'bg-secondary text-white' : 'text-gray-900'
           }`,
           className
         )
@@ -31,7 +31,7 @@ const SelectOption = ({ option, className }: SelectOptionProps) => {
           {selected ? (
             <span
               className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                active ? 'text-white' : 'text-teal-600'
+                active ? 'text-white' : 'text-secondary'
               }`}
             >
               <CheckIcon className="h-5 w-5" aria-hidden="true" />
