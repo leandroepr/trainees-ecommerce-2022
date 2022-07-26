@@ -8,10 +8,12 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/outline'
 import { Column, Link, Row, SearchInput, Text } from 'components/toolkit'
+
 import { useQueryParams } from 'core/hooks/use-query-params'
 import { useRouter } from 'next/router'
 import HeaderLogo from './header-logo'
 import HeaderNavigationMenu from './header-menu/header-navigation-menu'
+import UserDropdownMenu from './user-dropdown-menu'
 
 type QueryType = {
   filtro?: string
@@ -71,17 +73,17 @@ const DefaultHeader = () => {
             <UserCircleIcon className="h-6 w-6" />
           </div>
           <Row>
-            <Text as="span">Usuário</Text>
-            <ChevronDownIcon className="w-4 pt-1" />
+            <UserDropdownMenu>Usuário</UserDropdownMenu>
+            <ChevronDownIcon className="w-4" />
           </Row>
 
           <Row>
             <Text as="span">Compras</Text>
-            <ChevronDownIcon className="w-4 pt-1" />
+            <ChevronDownIcon className="w-4 " />
           </Row>
           <Row>
             <Text as="span">Favoritos</Text>
-            <ChevronDownIcon className="w-4 pt-1" />
+            <ChevronDownIcon className="w-4 " />
           </Row>
 
           <BellIcon className="h-6 w-6" />

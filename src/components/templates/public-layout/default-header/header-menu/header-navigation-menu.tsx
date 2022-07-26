@@ -20,6 +20,7 @@ const HeaderNavigationMenu: React.FC<HeaderNavigationMenuProps> = ({
           text="Utilitários"
           href="/produtos?categoria=utilitarios"
         />
+        <NavigationItem className="lg:hidden" text="CRUD" href="/admin" />
         <MenuIcon className=" sm:flex h-6 w-6 md:hidden" />
         <Row className="sm:hidden md:flex lg:hidden space-x-3"></Row>
         <Row className="space-x-4 md:hidden pr-4">
