@@ -1,67 +1,70 @@
 import { CheckIcon, ShieldCheckIcon } from '@heroicons/react/outline'
 import { PencilIcon } from '@heroicons/react/solid'
-import { Column } from 'components/toolkit'
+import { Column, Row, Text } from 'components/toolkit'
 import Link from 'next/link'
 import VendorInfoBox from './vendor-info-box'
 
 const ProductDetailsBox = () => {
   return (
     <Column className="p-6">
-      <div className="text-xs pb-2">Novo | 884 vendidos</div>
-      <div className="flex flex-row">
-        <div className="text-2xl font-extrabold max-w-xs pb-2 text-black">
+      <Text className="text-xs pb-2">Novo | 884 vendidos</Text>
+      <Row>
+        <Text className="text-2xl font-extrabold max-w-xs pb-2 text-black">
           Camiseta Hering Super Cotton - Unissex
-        </div>
-        <div>
-          <PencilIcon className="h-6 text-blue-500" />
-        </div>
-      </div>
-      <div className=" bg-blue-500 w-fit rounded text-white px-2 py-1 text-sm">
+        </Text>
+        <PencilIcon className="h-10 text-blue-500" />
+      </Row>
+      <Text
+        as="span"
+        className=" bg-blue-500 w-fit rounded text-white px-2 py-1 text-sm"
+      >
         Enviando normalmente
-      </div>
+      </Text>
       <div className="space-y-2">
-        <div className="max-w-xs">
-          <div className="text-4xl text-bold pt-4 text-black">R$ 49,99</div>
-          <div className="text-sm text-black">em 10x de R$ 5,65</div>
-        </div>
-        <div className="text-black">Estoque disponível</div>
+        <Column className="max-w-xs">
+          <Text as="span" className="text-4xl text-bold pt-4 text-black">
+            R$ 49,99
+          </Text>
+          <Text as="span" className="text-sm text-black pb-4">
+            em 10x de R$ 5,65
+          </Text>
+        </Column>
+        <Text as="span" className="text-black">
+          Estoque disponível
+        </Text>
       </div>
 
-      <div className="pt-4">
-        <div className="flex flex-row">
-          <div>
-            <CheckIcon className="h-5 text-green-500" />
-          </div>
-          <div className="text-sm space-y-1 pb-4">
-            <div className="text-green-500 font-bold">Frete grátis</div>
-            <div>Benefício Lorem Ipsum</div>
-            <div className="pb-2">
-              <Link href="/">
-                <a className="text-blue-500 font-bold">Ver mais opções</a>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Row className="pt-4 pb-2">
+        <CheckIcon className="h-5 text-green-500" />
+        <Column className="text-sm space-y-1 pb-4">
+          <Text as="span" className="text-green-500 font-bold">
+            Frete grátis
+          </Text>
+          <Text as="span">Benefício Lorem Ipsum</Text>
 
-      <div className="flex flex-col items-center justify-center space-y-4 pb-6">
-        <div className="flex bg-blue-500 justify-center items-center h-10 rounded text-white container">
-          <button>Comprar agora</button>
-        </div>
-        <div className="flex w-full justify-center items-center h-10 rounded text-blue-500 border-2 border-blue-500">
-          <button>Adicionar ao carrinho</button>
-        </div>
-      </div>
+          <Link href="/">
+            <a className="text-blue-500 font-bold pb-2">Ver mais opções</a>
+          </Link>
+        </Column>
+      </Row>
 
-      <div className="flex flex-row">
-        <div>
-          <ShieldCheckIcon className="h-6 mt-2 pr-2" />
-        </div>
-        <div className="text-sm text-gray-600 pb-8">
+      <Column className="items-center justify-center space-y-4 pb-6">
+        <button className="bg-blue-500 justify-center items-center h-10 rounded text-white container">
+          Comprar agora
+        </button>
+
+        <button className="w-full justify-center items-center h-10 rounded text-blue-500 border-2 border-blue-500">
+          Adicionar ao carrinho
+        </button>
+      </Column>
+
+      <Row>
+        <ShieldCheckIcon className="h-10 pr-2" />
+        <Text as="span" className="text-sm text-gray-600 pb-8">
           Compra garantida, receba o produto que está esperando ou devolvemos o
           dinheiro.
-        </div>
-      </div>
+        </Text>
+      </Row>
       <VendorInfoBox />
     </Column>
   )

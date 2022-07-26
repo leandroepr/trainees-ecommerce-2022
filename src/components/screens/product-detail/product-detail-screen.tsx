@@ -1,5 +1,13 @@
 import DefaultPublicLayout from 'components/templates/public-layout/default-public-layout'
-import { Column, Container, Flex, Image, Link, Row } from 'components/toolkit'
+import {
+  Column,
+  Container,
+  Flex,
+  Image,
+  Link,
+  Row,
+  Text,
+} from 'components/toolkit'
 import ProductDetailsBox from 'features/product-details/product-detail-box'
 import React from 'react'
 
@@ -29,8 +37,10 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
                 />
               </Flex>
               <Column className="space-y-4 p-8">
-                <span className="font-bold text-lg text-black">Descrição</span>
-                <span className="">
+                <Text as="h2" className="font-bold text-lg text-black">
+                  Descrição
+                </Text>
+                <Text as="span">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Pellentesque ac magna vehicula, hendrerit arcu condimentum,
                   mollis ligula. Quisque enim nisi, commodo eu ex nec,
@@ -40,7 +50,7 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
                   arcu, sit amet semper nisi. Duis fermentum ligula nec blandit
                   vehicula. Integer ut libero justo. Pellentesque eget mauris
                   lobortis, hendrerit nisl vitae, fermentum justo.
-                </span>
+                </Text>
               </Column>
             </Column>
             <Column className="shrink-0 border-l h-full">
