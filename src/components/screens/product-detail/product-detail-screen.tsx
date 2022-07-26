@@ -19,14 +19,22 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
     <DefaultPublicLayout title="Detalhes do produto">
       <Container className="py-4">
         <Column as="section" className="space-y-4 text-gray-700">
-          <Row className="text-blue-500 space-x-4">
-            <Link className="text-gray-700" href="/">
+          <Row className="text-blue-500 ">
+            <Link className="text-gray-700 pr-2 border-r-2" href="/">
               Voltar à lista
             </Link>
-            <Link href="/produtos">Roupas </Link>
-            <Link href="/produtos?categoria=roupa">Camisetas</Link>
-            <Link href="/produtos?categoria=roupa">Masculino</Link>
-            <Link href="/produtos?categoria=roupa">Curta</Link>
+            <Link href="/produtos" className="px-2 border-r-2">
+              Roupas{' '}
+            </Link>
+            <Link href="/produtos?categoria=roupa" className="px-2 border-r-2">
+              Camisetas
+            </Link>
+            <Link href="/produtos?categoria=roupa" className="px-2 border-r-2">
+              Masculino
+            </Link>
+            <Link href="/produtos?categoria=roupa" className="pl-2">
+              Curta
+            </Link>
           </Row>
           <Row className="w-full h-full bg-white drop-shadow mt-4">
             <Column className="grow basis-2/3">
