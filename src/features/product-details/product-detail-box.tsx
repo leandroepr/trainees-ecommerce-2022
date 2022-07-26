@@ -6,7 +6,7 @@ import VendorInfoBox from './vendor-info-box'
 
 const ProductDetailsBox = () => {
   return (
-    <Column className="p-6">
+    <Column className="p-8">
       <Text className="text-xs pb-2">Novo | 884 vendidos</Text>
       <Row>
         <Text className="text-2xl font-extrabold max-w-xs pb-2 text-black">

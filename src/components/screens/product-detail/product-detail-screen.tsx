@@ -18,7 +18,7 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
   return (
     <DefaultPublicLayout title="Detalhes do produto">
       <Container className="py-4">
-        <Column as="section" className="flex flex-col space-y-4 text-gray-700">
+        <Column as="section" className="space-y-4 text-gray-700">
           <Row className="text-blue-500 space-x-4">
             <Link className="text-gray-700" href="/">
               Voltar à lista
@@ -29,7 +29,7 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
             <Link href="/produtos?categoria=roupa">Curta</Link>
           </Row>
           <Row className="w-full h-full bg-white drop-shadow mt-4">
-            <Column className="grow">
+            <Column className="grow basis-2/3">
               <Flex className="items-center justify-center border-b max-h-[34rem] py-2">
                 <Image
                   src="https://http2.mlstatic.com/camiseta-hering-super-cotton-masculina-D_NQ_NP_851063-MLB40515678610_012020-O.jpg"
@@ -37,10 +37,10 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
                 />
               </Flex>
               <Column className="space-y-4 p-8">
-                <Text as="h2" className="font-bold text-lg text-black">
+                <Text as="h2" className="font-bold text-xl text-black pb-1">
                   Descrição
                 </Text>
-                <Text as="span">
+                <Text as="span" className="text-justify">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Pellentesque ac magna vehicula, hendrerit arcu condimentum,
                   mollis ligula. Quisque enim nisi, commodo eu ex nec,
@@ -53,7 +53,7 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
                 </Text>
               </Column>
             </Column>
-            <Column className="shrink-0 border-l h-full">
+            <Column className="shrink-0 border-l h-full basis-1/3">
               <div className="max-w-sm">
                 <ProductDetailsBox />
               </div>
