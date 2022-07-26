@@ -41,6 +41,6 @@ const currencySizeMap: Record<ProductPriceSize, string> = {
 
 const centsSizeMap: Record<ProductPriceSize, string> = {
   large: '',
-  medium: 'leading-7 text-base',
-  small: 'font-light leading-7 text-base',
+  medium: 'text-base',
+  small: 'font-light text-base',
 }

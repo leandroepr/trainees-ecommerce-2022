@@ -16,14 +16,8 @@ const CartBoxFirstTab: React.FC = () => {
         </Row>
       </Column>
       <Row className="pt-16 justify-end">
-        <Button
-          contentButton="Cancelar a compra"
-          className="mr-2 border border-info text-info py-1 px-4 rounded"
-        />
-        <Button
-          contentButton="Continuar a compra"
-          className="bg-info text-light py-1 px-4 rounded"
-        />
+        <Button shape="rounded" variant='light' size='md' className='mr-2'>Cancelar a compra</Button>
+        <Button shape="rounded" variant='info' size='md'>Continuar a compra</Button>
       </Row>
     </Column>
   )

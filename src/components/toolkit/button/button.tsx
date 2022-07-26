@@ -3,28 +3,57 @@ import React from 'react'
 
 /**
  * @contentButton text/icon
- * @className styles
  * @type button type
+ * @variant button color
+ * @size button size
+ * @shape button shape
+ * @className other styles
  * @onClick function onClick
  //  */
 
 export interface ButtonProps {
-  contentButton: React.ReactNode
-  className: string
+  children: React.ReactNode
   type?: 'button' | 'submit' | 'reset'
+  variant: 'info' | 'light'
+  size: 'xs' | 'sm' | 'md' | 'lg'
+  shape: 'rounded' | 'square'
+  disabled?: boolean;
+  className?: string
   onClick?: () => void
 }
+
 const Button: React.FC<ButtonProps> = ({
-  contentButton,
-  className,
+  children,
   type,
+  variant,
+  size,
+  shape,
+  disabled,
+  className,
   onClick,
 }) => {
   return (
-    <button className={classNames(className)} type={type} onClick={onClick}>
-      {contentButton}
-    </button>
+    <button className={classNames('py-1 px-4 rounded', disabled ? 'bg-light text-dark/30 border border-dark/30 cursor-not-allowed' : buttonColorMap[variant], buttonSizeMap[size], buttonShapeMap[shape], className)} disabled={disabled} type={type} onClick={onClick}>
+      {children}
+    </button >
   )
 }
 
 export default Button
+
+const buttonColorMap = {
+  info: 'bg-info text-light',
+  light: 'bg-light text-info border border-info',
+}
+
+const buttonSizeMap = {
+  xs: 'w-10 h-10',
+  sm: 'w-32 h-10',
+  md: 'w-50 h-10',
+  lg: 'w-80 h-10'
+}
+
+const buttonShapeMap = {
+  rounded: 'rounded',
+  square: 'rounded-none',
+}
