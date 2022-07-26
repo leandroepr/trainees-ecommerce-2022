@@ -1,12 +1,16 @@
 import { Popover, Transition } from '@headlessui/react'
 import { Link } from 'components/toolkit'
 
-const DropdownItem = () => {
+interface DropdownItemProps {
+  children: React.ReactNode
+}
+
+const DropdownItem: React.FC<DropdownItemProps> = ({ children }) => {
   return (
     <Popover className="relative">
-      <Popover.Button>Usuário</Popover.Button>
+      <Popover.Button>{children}</Popover.Button>
       <Transition
-        enter="transition duration-100 ease-out"
+        enter="transition duration-125 ease-out"
         enterFrom="transform scale-95 opacity-0"
         enterTo="transform scale-100 opacity-100"
         leave="transition duration-75 ease-out"
