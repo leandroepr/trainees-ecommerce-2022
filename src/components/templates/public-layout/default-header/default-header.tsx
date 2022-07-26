@@ -67,9 +67,7 @@ const DefaultHeader = () => {
         </Row>
 
         <Row className="space-x-3">
-          <div>
-            <UserCircleIcon className="h-6 w-6" />
-          </div>
+          <UserCircleIcon className="h-6 w-6" />
           <Row>
             <Text as="span">Usuário</Text>
             <ChevronDownIcon className="w-4 pt-1" />

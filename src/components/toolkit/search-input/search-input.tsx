@@ -41,18 +41,13 @@ const SearchInput: React.FC<SearchInputProps> = ({
   }, [internalValue, onChange])
 
   return (
-    <div
-      className={classNames(
-        'relative focus-within:text-sky-500 text-gray-400',
-        className
-      )}
-    >
+    <div className={classNames('relative text-gray-400', className)}>
       <input
         type="search"
         value={internalValue}
         onChange={(event) => setInternalValue(event.target.value)}
         className={classNames(
-          'h-10 shadow-sm block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10 placeholder: pl-4 focus:outline-sky-500'
+          'h-10 shadow-sm block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10 placeholder: pl-4'
         )}
         onKeyUp={handleOnSearch}
         {...inputProps}
