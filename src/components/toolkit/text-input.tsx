@@ -8,10 +8,10 @@ export interface TextInputProps {
   value?: string
   label?: string
   placeholder?: string
-  shape: 'rounded' | 'square'
+  shape?: 'rounded' | 'square'
   disabled?: boolean
   className?: string
-  onChange?: (value: React.ChangeEvent<HTMLInputElement>) => void
+  onChange?: (value: string) => void
 }
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -20,16 +20,22 @@ const TextInput: React.FC<TextInputProps> = ({
   value = '',
   label,
   placeholder,
-  shape,
+  shape = 'rounded',
   disabled,
   className,
   onChange
 }) => {
 
+  const [typedValue, setTypedValue] = React.useState(value)
+
+  React.useEffect(() => {
+    onChange?.(typedValue)
+  }, [typedValue, onChange])
+
   return (
     <Row>
-      <label className={classNames('w-full', disabled ? 'text-dark/30' : 'block focus-within:text-info')}>{label}
-        <input className={classNames('block h-8 w-full', disabled ? 'border border-dark/30 text-dark/30 cursor-not-allowed focus:border-dark/30 focus:ring-0' : 'border border-dark/50 focus:text-info focus:border-info', inputShapeMap[shape], className)} type='text' name={name} id={id} value={value} placeholder={placeholder} onChange={onChange}>
+      <label htmlFor={id} className={classNames('w-full', disabled ? 'text-dark/30' : 'block focus-within:text-info')}>{label}
+        <input className={classNames('block h-8 w-full', disabled ? 'border border-dark/30 text-dark/30 cursor-not-allowed focus:border-dark/30 focus:ring-0' : 'border border-dark/50 focus:text-info focus:border-info', inputShapeMap[shape], className)} type='text' name={name} id={id} value={typedValue} placeholder={placeholder} onChange={(event) => setTypedValue(event.target.value)}>
         </input>
       </label>
     </Row>
