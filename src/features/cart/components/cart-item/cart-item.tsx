@@ -1,11 +1,9 @@
 import { Column, Row, Text } from 'components/toolkit'
-import Placeholder from 'components/toolkit/placeholder/placeholder'
 import React from 'react'
 
 const CartItem: React.FC = () => {
   return (
-    <Row className="">
-      <Placeholder text="" width="82" height="82"></Placeholder>
+    <Row>
       <Column className="ml-1 h-32 w-auto">
         <Text as="h1" className="font-bold text-lg">
           Camiseta Hering Super Cotton - Unisex
