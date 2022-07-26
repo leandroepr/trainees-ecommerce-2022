@@ -11,7 +11,7 @@ import { Column, Link, Row, SearchInput, Text } from 'components/toolkit'
 
 import { useQueryParams } from 'core/hooks/use-query-params'
 import { useRouter } from 'next/router'
-import DropdownItem from './dropdown-menu-item'
+import UserDropdownMenu from './dropdown-menu-item'
 import HeaderLogo from './header-logo'
 import HeaderNavigationMenu from './header-menu/header-navigation-menu'
 
@@ -73,7 +73,7 @@ const DefaultHeader = () => {
             <UserCircleIcon className="h-6 w-6" />
           </div>
           <Row>
-            <DropdownItem>Usuário</DropdownItem>
+            <UserDropdownMenu>Usuário</UserDropdownMenu>
             <ChevronDownIcon className="w-4" />
           </Row>
 

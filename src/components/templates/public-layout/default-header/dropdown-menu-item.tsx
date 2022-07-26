@@ -1,11 +1,11 @@
 import { Popover, Transition } from '@headlessui/react'
 import { Link } from 'components/toolkit'
 
-interface DropdownItemProps {
+interface UserDropdownMenuProps {
   children: React.ReactNode
 }
 
-const DropdownItem: React.FC<DropdownItemProps> = ({ children }) => {
+const UserDropdownMenu: React.FC<UserDropdownMenuProps> = ({ children }) => {
   return (
     <Popover className="relative">
       <Popover.Button>{children}</Popover.Button>
@@ -32,4 +32,4 @@ const DropdownItem: React.FC<DropdownItemProps> = ({ children }) => {
   )
 }
 
-export default DropdownItem
+export default UserDropdownMenu
