@@ -1,6 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/outline'
-import { Column, Link, Row, SkeletonElement } from 'components/toolkit'
-import Text from 'components/toolkit/text'
+import { Column, Link, Row, SkeletonElement, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
 import React from 'react'

@@ -1,5 +1,4 @@
-import { Text } from 'components/toolkit'
-import Row from 'components/toolkit/row/row'
+import { Row, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 
@@ -14,7 +13,8 @@ const RelatedSearches: React.FC = () => {
 
   return (
     <Row className="py-4">
-      <Text as='h3'
+      <Text
+        as="h3"
         className={classNames(
           'whitespace-nowrap line-clamp-1 font-bold text-gray-700'
         )}
@@ -23,7 +23,8 @@ const RelatedSearches: React.FC = () => {
       </Text>
       {relatedList.map((relatedItem, i) => (
         <Row className="overflow-hidden" key={relatedItem}>
-          <Text as='p'
+          <Text
+            as="p"
             className={classNames(
               'line-clamp-1 ml-2 truncate text-gray-500 font-normal'
             )}

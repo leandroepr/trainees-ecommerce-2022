@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/outline'
-import Row from 'components/toolkit/row/row'
+import { Row } from 'components/toolkit'
 
 const ProductListByCategory = () => {
   return (

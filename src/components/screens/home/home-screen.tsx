@@ -1,6 +1,5 @@
 import DefaultPublicLayout from 'components/templates/public-layout/default-public-layout'
-import { Column, Container } from 'components/toolkit'
-import Spinner from 'components/toolkit/spinner/spinner'
+import { Column, Container, Spinner } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import { useGetAllCategories } from 'features/category/hooks/use-get-all-categories'
 import CategoryProductsList from 'features/product/components/product-list/category-products-list'

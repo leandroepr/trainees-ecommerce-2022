@@ -1,6 +1,5 @@
 import { CheckIcon, ShoppingBagIcon } from '@heroicons/react/outline'
-import { Column, Text } from 'components/toolkit'
-import Row from 'components/toolkit/row/row'
+import { Column, Row, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 
