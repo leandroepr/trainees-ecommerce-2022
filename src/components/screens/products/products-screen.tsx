@@ -13,15 +13,19 @@ const ProductsScreen: React.FC = () => {
     <DefaultPublicLayout>
       <Container>
         <RelatedSearches />
-        <Row className="justify-between mb-2">
-          <CategoryLateralMenuLayout />
-          {isLoading && (
-            <Column className={classNames('items-center')}>
-              <Spinner color="black" size={100} />
-              Carregando...
-            </Column>
-          )}
-          <ProductsList />
+        <Row className="grid-cols-2">
+            <Row className="shrink-0">
+              <CategoryLateralMenuLayout />
+            </Row>
+            {isLoading && (
+              <Column className={classNames('items-center')}>
+                <Spinner color="black" size={100} />
+                Carregando...
+              </Column>
+            )}
+            <Row className="">
+              <ProductsList />
+            </Row>
         </Row>
       </Container>
     </DefaultPublicLayout>

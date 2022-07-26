@@ -1,5 +1,5 @@
 import { CheckIcon, ShoppingBagIcon } from '@heroicons/react/outline'
-import { Row } from 'components/toolkit'
+import { Column, Row, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 
@@ -15,15 +15,19 @@ const HeaderLogo: React.FC<HeaderLogoProps> = (props) => {
       )}
     >
       <Row className="h-10 items-center">
-        <div className="flex relative flex-row">
+        <Row className="relative">
           <ShoppingBagIcon className="h-10 text-blue-800 flex shrink-0 pb-1 mt-1 mr-1" />
           <CheckIcon className="absolute h-4 mt-[21px] pl-3 text-blue-800 pb-1" />
-        </div>
+        </Row>
 
-        <div className="flex flex-col text-blue-800 space-y-[-8px]">
-          <div className="flex tracking-[0.2em] font-bold ">COMPRE</div>
-          <div className="flex tracking-[0.62em] ">FÁCIL</div>
-        </div>
+        <Column className=" text-blue-800 space-y-[-8px]">
+          <Text as="span" className="flex tracking-[0.2em] font-bold ">
+            COMPRE
+          </Text>
+          <Text as="span" className="flex tracking-[0.6575em] ">
+            FÁCIL
+          </Text>
+        </Column>
       </Row>
     </Row>
   )

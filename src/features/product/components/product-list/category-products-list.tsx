@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/outline'
-import { Column, Link, Row, Text } from 'components/toolkit'
+import { Column, Link, Row, SkeletonElement, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
 import React from 'react'
@@ -10,13 +10,33 @@ export interface CategoryProductsListProps {
   categoryName?: string
   categoryPageLink?: string
   categoryId?: string
+  pending?: boolean
 }
 const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
   className,
   categoryName = '',
   categoryId,
+  pending = false,
 }) => {
   const { data } = useGetAllProducts({ category: categoryId })
+
+  if (pending)
+    return (
+      <Column className={classNames('space-y-5 animate-pulse', className)}>
+        <Row className="items-baseline space-x-4">
+          <SkeletonElement order="secondary" className="h-6 w-1/3" />
+          <SkeletonElement order="secondary" className="h-5 w-1/12" />
+        </Row>
+        <Row className="relative">
+          <Row className={`w-full grid grid-cols-5 gap-4 items-center`}>
+            {Array(5).fill(<ProductCard pending={true} variant="compressed" />)}
+          </Row>
+          <Column className="absolute -right-8 h-full justify-center">
+            <span className="w-16 h-16 bg-gray-200 rounded-full" />
+          </Column>
+        </Row>
+      </Column>
+    )
 
   return (
     <Column className={classNames('space-y-5', className)}>
