@@ -43,7 +43,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   return (
     <div
       className={classNames(
-        'relative focus-within:text-sky-500 text-gray-400',
+        'focus-within:text-sky-500 relative text-gray-400',
         className
       )}
     >
@@ -52,18 +52,17 @@ const SearchInput: React.FC<SearchInputProps> = ({
         value={internalValue}
         onChange={(event) => setInternalValue(event.target.value)}
         className={classNames(
-          'h-10 shadow-sm block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10 placeholder: pl-4 focus:outline-sky-500'
+          'h-10 shadow-sm focus:ring-sky-500 focus:border-sky-500 block w-full sm:text-sm border-gray-300 rounded-md placeholder:text-gray-400 text-gray-700 pr-10 placeholder: pl-4'
         )}
         onKeyUp={handleOnSearch}
         {...inputProps}
       />
       <Button
-        contentButton={<SearchIcon className="w-4 h-4 " />}
-        className={classNames(
-          'absolute right-0 z-10 inset-y-0 flex items-center justify-center shrink-0 border-l my-2 px-2 active:opacity-75 hover:text-opacity-90 '
-        )}
+        className="absolute right-0 z-10 inset-y-0 flex items-center justify-center shrink-0 border-l my-2 px-2 active:opacity-75 hover:text-opacity-90"
         onClick={handleOnClickToSearch}
-      />
+      >
+        <SearchIcon className="w-4 h-4" />
+      </Button>
     </div>
   )
 }

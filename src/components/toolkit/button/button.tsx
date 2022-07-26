@@ -12,12 +12,12 @@ import React from 'react'
  //  */
 
 export interface ButtonProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   type?: 'button' | 'submit' | 'reset'
-  variant: 'info' | 'light'
-  size: 'sm' | 'md' | 'lg'
-  shape: 'rounded' | 'square'
-  disabled?: boolean;
+  variant?: 'info' | 'light'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
+  shape?: 'rounded' | 'square'
+  disabled?: boolean
   className?: string
   onClick?: () => void
 }
@@ -25,17 +25,30 @@ export interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({
   children,
   type,
-  variant,
-  size,
-  shape,
+  variant = 'info',
+  size = 'md',
+  shape = 'rounded',
   disabled,
   className,
   onClick,
 }) => {
   return (
-    <button className={classNames('py-1 px-4 rounded', disabled ? 'bg-light text-dark/30 border border-dark/30 cursor-not-allowed' : buttonColorMap[variant], buttonSizeMap[size], buttonShapeMap[shape], className)} disabled={disabled} type={type} onClick={onClick}>
+    <button
+      className={classNames(
+        'py-1 px-4 rounded',
+        disabled
+          ? 'bg-light text-dark/30 border border-dark/30 cursor-not-allowed'
+          : buttonColorMap[variant],
+        buttonSizeMap[size],
+        buttonShapeMap[shape],
+        className
+      )}
+      disabled={disabled}
+      type={type}
+      onClick={onClick}
+    >
       {children}
-    </button >
+    </button>
   )
 }
 
@@ -47,9 +60,10 @@ const buttonColorMap = {
 }
 
 const buttonSizeMap = {
+  xs: 'w-10 h-10',
   sm: 'w-32 h-10',
   md: 'w-50 h-10',
-  lg: 'w-80 h-10'
+  lg: 'w-80 h-10',
 }
 
 const buttonShapeMap = {
