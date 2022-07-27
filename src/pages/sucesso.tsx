@@ -1,4 +1,4 @@
-import { SuccessScreen } from 'components/screens/success'
+import SuccessScreen from 'components/screens/success/success-screen'
 import type { NextPage } from 'next'
 
 const SuccessRoute: NextPage = () => {
