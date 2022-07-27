@@ -11,7 +11,7 @@ type ServiceType = (params?: Params) => Promise<Response>
 const getAllProductsService: ServiceType = async (params) => {
   const filters = [
     params?.category && `categoryId=${params.category}`,
-    params?.search && `name_like=${params.search}`,
+    //params?.search && `name_like=${params.search}`,
     params?.search && `slug_like=${params.search}`,
   ]
     .filter(Boolean)
