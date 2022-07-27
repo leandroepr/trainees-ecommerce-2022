@@ -41,7 +41,7 @@ const NewProductForm = () => {
 
           <Select className="border border-dark/20 rounded">
             <SelectInput onChange={(value) => value} className="h-10" />
-            <SelectOptionList>
+            <SelectOptionList className="border border-dark/20 rounded">
               <SelectOption value="Roupas">Roupas</SelectOption>
               <SelectOption value="Sapatos">Sapatos</SelectOption>
             </SelectOptionList>
