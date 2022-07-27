@@ -9,12 +9,17 @@ import {
   Text,
 } from 'components/toolkit'
 import ProductDetailsBox from 'features/product-details/product-detail-box'
-import React from 'react'
+import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
+import { useRouter } from 'next/router'
 
-export interface ProductDetailScreenProps {
-  slug: string
-}
-const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
+const ProductDetailScreen = () => {
+  const { data } = useGetAllProducts()
+  const router = useRouter()
+
+  const productImageURL = data
+    ?.filter((product) => product.slug === router.query.slug)
+    .map((product) => product.imageUrl)
+
   return (
     <DefaultPublicLayout title="Detalhes do produto">
       <Container className="py-4">
@@ -39,10 +44,7 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
           <Row className="w-full h-full bg-white drop-shadow mt-4">
             <Column className="grow basis-2/3">
               <Flex className="items-center justify-center border-b max-h-[34rem] py-2">
-                <Image
-                  src="https://http2.mlstatic.com/camiseta-hering-super-cotton-masculina-D_NQ_NP_851063-MLB40515678610_012020-O.jpg"
-                  alt="Camisa preta"
-                />
+                <Image src={productImageURL} alt="" />
               </Flex>
               <Column className="space-y-4 p-8">
                 <Text as="h2" className="font-bold text-xl text-black pb-1">
