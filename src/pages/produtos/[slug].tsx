@@ -1,4 +1,4 @@
-import ProductDetailScreen from 'components/screens/product-detail'
+import ProductDetailScreen from 'components/screens/product-detail/product-detail-screen'
 import { GetServerSideProps, NextPage } from 'next'
 
 interface Props {

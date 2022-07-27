@@ -6,6 +6,7 @@ import Container from './container'
 import Flex from './flex'
 import Image from './image'
 import Link from './link'
+import NumberInput from './number-input'
 import Row from './row'
 import SearchInput from './search-input'
 import SkeletonElement from './skeleton-element'
@@ -20,6 +21,7 @@ export type { ContainerProps } from './container'
 export type { FlexProps } from './flex'
 export type { ImageProps } from './image'
 export type { LinkProps } from './link'
+export type { NumberInputProps } from './number-input'
 export type { RowProps } from './row'
 export type { SearchInputProps } from './search-input'
 export type { SkeletonElementProps } from './skeleton-element'
@@ -39,4 +41,5 @@ export {
   SkeletonElement,
   Spinner,
   Text,
+  NumberInput,
 }
