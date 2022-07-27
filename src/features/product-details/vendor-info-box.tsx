@@ -7,7 +7,7 @@ import { Column, Row, Text } from 'components/toolkit'
 
 const VendorInfoBox = () => {
   return (
-    <section className="pb-14">
+    <section className="pt-8 border-t-2">
       <Text as="h2" className="font-bold pb-3 text-black ">
         Informações sobre o vendedor
       </Text>
@@ -30,8 +30,8 @@ const VendorInfoBox = () => {
         <div className="bg-green-100 w-16 h-2" />
         <div className="bg-green-500 w-16 h-3" />
       </Row>
-      <Row className="space-x-6">
-        <Column className="max-w-sm text-xs items-center">
+      <Row className="space-x-6 justify-center">
+        <Column className="text-xs items-center">
           <Text as="span" className=" text-lg text-black font-semibold">
             561
           </Text>
@@ -39,19 +39,23 @@ const VendorInfoBox = () => {
           <Text as="span">ultimos 4 meses</Text>
         </Column>
 
-        <Column className="max-w-xs text-xs items-center border-x-4 border-0 px-4">
+        <Column className=" text-xs items-center  ">
           <ChatAltIcon className="h-6 text-black" />
           <Text as="span">Presta um bom</Text>
           <Text as="span">atendimento</Text>
         </Column>
 
-        <Column className="max-w-xs text-xs">
+        <Column className="text-xs items-center">
           <ClockIcon className="h-6 text-black" />
-          <Column className="items-center justify-center">
-            <Text as="span">Entrega os</Text>
-            <Text as="span">produtos dentro</Text>
-            <Text as="span">do prazo</Text>
-          </Column>
+          <Text as="span" className="">
+            Entrega os
+          </Text>
+          <Text as="span" className="">
+            produtos dentro
+          </Text>
+          <Text as="span" className="">
+            do prazo
+          </Text>
         </Column>
       </Row>
     </section>
