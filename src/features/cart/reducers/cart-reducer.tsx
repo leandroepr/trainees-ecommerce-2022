@@ -1,5 +1,7 @@
-import { defaultCartContextValue } from '../contexts/cart-context'
+import { CartItemType } from '../types/cart-item-type'
 import { Action, State } from '../types/cart-reducer-type'
+
+export const defaultCartReducerValue: CartItemType[] = []
 
 const CartReducer = (state: State, action: Action) => {
   switch (action.type) {
@@ -19,7 +21,7 @@ const CartReducer = (state: State, action: Action) => {
         ),
       ]
     case 'clear':
-      return defaultCartContextValue
+      return defaultCartReducerValue
     default:
       return state
   }

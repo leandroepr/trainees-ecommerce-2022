@@ -1,8 +1,7 @@
 import { CheckIcon, ShieldCheckIcon } from '@heroicons/react/outline'
 import { PencilIcon } from '@heroicons/react/solid'
 import { Column, Row, Text } from 'components/toolkit'
-import { CartContext } from 'features/cart/contexts/cart-context'
-import { DispatchContext } from 'features/cart/contexts/dispatch-context'
+import useCartContext from 'features/cart/hooks/use-cart-context'
 import { Product } from 'features/product/types/product'
 import Link from 'next/link'
 import React from 'react'
@@ -13,20 +12,19 @@ export interface ProductDetailsBoxProps {
 }
 
 const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ product }) => {
-  const cartContext = React.useContext(CartContext)
-  const dispatchContext = React.useContext(DispatchContext)
+  const { items, dispatch } = useCartContext()
 
   const add = (product: Product) => {
-    const existingProduct = cartContext.find(
+    const existingProduct = items.find(
       (item) => item.product.slug === product.slug
     )
     if (existingProduct) {
-      dispatchContext({
+      dispatch({
         type: 'update',
         data: { ...existingProduct, amount: (existingProduct.amount += 1) },
       })
     } else {
-      dispatchContext({
+      dispatch({
         type: 'add',
         data: { product: product, amount: 1 },
       })
