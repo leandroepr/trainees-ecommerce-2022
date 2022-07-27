@@ -82,7 +82,7 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
               </Column>
               <Column className="shrink-0 border-l h-full basis-1/3">
                 <div className="max-w-sm">
-                  <ProductDetailsBox />
+                  <ProductDetailsBox slug={slug} />
                 </div>
               </Column>
             </Row>

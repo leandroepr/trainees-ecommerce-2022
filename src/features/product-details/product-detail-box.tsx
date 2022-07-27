@@ -13,8 +13,6 @@ export interface ProductDetailsBoxProps {
 const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ slug }) => {
   const { data, isLoading } = useGetAllProducts({ search: slug })
 
-  
-
   return (
     <Column className="p-8">
       {isLoading && (
@@ -25,7 +23,9 @@ const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ slug }) => {
       )}
       {data?.map((product) => (
         <>
-          <Text className="text-xs pb-2"> {product.condition} | {product.soldAmount} vendidos</Text>
+          <Text className="text-xs pb-2">
+            {product.condition} | {product.soldAmount} vendidos
+          </Text>
           <Row>
             <Text className="text-2xl font-extrabold max-w-xs pb-2 text-black">
               {product.name}
@@ -41,7 +41,7 @@ const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ slug }) => {
           <div className="space-y-2">
             <Column className="max-w-xs">
               <Text as="span" className="text-4xl text-bold pt-4 text-black">
-                R$ {product.price.replace('.',',')}
+                R$ {product.price.replace('.', ',')}
               </Text>
               <Text as="span" className="text-sm text-black pb-4">
                 {product.installmentsInfo}

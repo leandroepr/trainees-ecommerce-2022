@@ -3,7 +3,8 @@ import { Column, Link, Row, SkeletonElement, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
 import React from 'react'
-import { ProductCard } from '../product-card'
+import ProductCard from '../product-card/product-card'
+
 
 export interface CategoryProductsListProps {
   className?: string
