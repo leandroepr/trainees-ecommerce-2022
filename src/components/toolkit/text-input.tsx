@@ -43,10 +43,10 @@ const TextInput: React.FC<TextInputProps> = ({
         {label}
         <input
           className={classNames(
-            'block h-8 w-full',
+            'py-5 block h-8 w-full',
             disabled
-              ? 'border border-dark/30 text-dark/30 cursor-not-allowed focus:border-dark/30 focus:ring-0'
-              : 'border border-dark/50 focus:text-info focus:border-info',
+              ? 'border border-dark/10 text-dark/10 cursor-not-allowed focus:border-dark/30 focus:ring-0'
+              : 'border border-dark/20 focus:text-info focus:border-info',
             inputShapeMap[shape],
             className
           )}
@@ -59,6 +59,7 @@ const TextInput: React.FC<TextInputProps> = ({
         ></input>
       </label>
     </Row>
+
   )
 }
 
