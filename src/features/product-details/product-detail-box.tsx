@@ -2,26 +2,19 @@ import { CheckIcon, ShieldCheckIcon } from '@heroicons/react/outline'
 import { PencilIcon } from '@heroicons/react/solid'
 import { Column, Row, Spinner, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
-import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
+import { Product } from 'features/product/types/product'
 import Link from 'next/link'
 import VendorInfoBox from './vendor-info-box'
 
 export interface ProductDetailsBoxProps {
-  slug: string
+  product: Product[] | undefined
 }
 
-const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ slug }) => {
-  const { data, isLoading } = useGetAllProducts({ search: slug })
-
+const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ product }) => {
+  console.log(product)
   return (
     <Column className="p-8">
-      {isLoading && (
-        <Column className={classNames('items-center')}>
-          <Spinner color="black" size={100} />
-          Carregando...
-        </Column>
-      )}
-      {data?.map((product) => (
+      {product?.map((product) => (
         <>
           <Text className="text-xs pb-2">
             {product.condition} | {product.soldAmount} vendidos
