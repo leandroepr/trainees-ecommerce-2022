@@ -1,6 +1,6 @@
-import { classNames } from 'core/helpers/class-names';
-import React from 'react';
-import Row from './row';
+import { classNames } from 'core/helpers/class-names'
+import React from 'react'
+import Row from './row'
 
 export interface TextInputProps {
   name?: string
@@ -23,9 +23,8 @@ const TextInput: React.FC<TextInputProps> = ({
   shape = 'rounded',
   disabled,
   className,
-  onChange
+  onChange,
 }) => {
-
   const [typedValue, setTypedValue] = React.useState(value)
 
   React.useEffect(() => {
@@ -34,9 +33,30 @@ const TextInput: React.FC<TextInputProps> = ({
 
   return (
     <Row>
-      <label htmlFor={id} className={classNames('w-full', disabled ? 'text-dark/30' : 'block focus-within:text-info')}>{label}
-        <input className={classNames('block h-8 w-full', disabled ? 'border border-dark/30 text-dark/30 cursor-not-allowed focus:border-dark/30 focus:ring-0' : 'border border-dark/50 focus:text-info focus:border-info', inputShapeMap[shape], className)} type='text' name={name} id={id} value={typedValue} placeholder={placeholder} onChange={(event) => setTypedValue(event.target.value)}>
-        </input>
+      <label
+        htmlFor={id}
+        className={classNames(
+          'w-full  shadow',
+          disabled ? 'text-dark/30' : 'block focus-within:text-info'
+        )}
+      >
+        {label}
+        <input
+          className={classNames(
+            'block h-8 w-full',
+            disabled
+              ? 'border border-dark/30 text-dark/30 cursor-not-allowed focus:border-dark/30 focus:ring-0'
+              : 'border border-dark/50 focus:text-info focus:border-info',
+            inputShapeMap[shape],
+            className
+          )}
+          type="text"
+          name={name}
+          id={id}
+          value={typedValue}
+          placeholder={placeholder}
+          onChange={(event) => setTypedValue(event.target.value)}
+        ></input>
       </label>
     </Row>
   )
