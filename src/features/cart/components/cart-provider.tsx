@@ -1,7 +1,7 @@
 import React from 'react'
-import { CartContext } from '../contexts/cart-context'
-import { CartContextType } from '../types/cart-context-type'
-import { CartItemType } from '../types/cart-item-type'
+import { CartContext, defaultCartContextValue } from '../contexts/cart-context'
+import { DispatchContext } from '../contexts/dispatch-context'
+import CartReducer from '../reducers/cart-reducer'
 
 interface CartContextProviderProps {
   children?: React.ReactNode
@@ -10,25 +10,17 @@ interface CartContextProviderProps {
 const CartContextProvider: React.FC<CartContextProviderProps> = ({
   children,
 }) => {
-  const [products, setProducts] = React.useState<CartItemType[]>([])
-  const add = (item: CartItemType) => setProducts((p) => [...p, item])
-  const remove = (item: CartItemType) =>
-    setProducts((p) => p.filter((i) => i.product.slug !== item.product.slug))
-  const update = (item: CartItemType) =>
-    setProducts((p) => [
-      ...p.filter((i) => i.product.slug !== item.product.slug),
-      item,
-    ])
-  const clear = () => setProducts([])
-  const cartContext: CartContextType = {
-    products,
-    add,
-    remove,
-    update,
-    clear,
-  }
+  const [cartContext, dispatch] = React.useReducer(
+    CartReducer,
+    defaultCartContextValue
+  )
+
   return (
-    <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
+    <CartContext.Provider value={cartContext}>
+      <DispatchContext.Provider value={dispatch}>
+        {children}
+      </DispatchContext.Provider>
+    </CartContext.Provider>
   )
 }
 
