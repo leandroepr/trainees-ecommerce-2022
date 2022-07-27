@@ -1,12 +1,11 @@
-import { Combobox } from '@headlessui/react'
 import { Button, Column, Row, Text } from 'components/toolkit'
+import { Select } from 'components/toolkit/select'
 import SelectInput from 'components/toolkit/select/select-input'
 import SelectOption from 'components/toolkit/select/select-option'
+import SelectOptionList from 'components/toolkit/select/select-option-list'
 import TextInput from 'components/toolkit/text-input'
-import React from 'react'
 
-export interface NewProductFormProps {}
-const NewProductForm: React.FC<NewProductFormProps> = () => {
+const NewProductForm = () => {
   return (
     <Column className="bg-light max-w-4xl">
       <Text
@@ -20,65 +19,63 @@ const NewProductForm: React.FC<NewProductFormProps> = () => {
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Título{' '}
           </Text>
-          <TextInput className="py-5" />
+          <TextInput className="py-5 border border-dark/20" />
         </div>
 
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             URL da imagem{' '}
           </Text>
-          <TextInput className="py-5" />
+          <TextInput className="py-5 border border-dark/20" />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Condição do produto{' '}
           </Text>
-          <TextInput className="py-5" />
+          <TextInput className="py-5 border border-dark/20" />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Selecione a categoria{' '}
           </Text>
 
-          <Combobox>
-            <SelectInput
-              placeholder=""
-              className="h-11 border-2 border-dark"
-              onChange={() => null}
-            >
-              <SelectOption value="teste">Teste</SelectOption>
-            </SelectInput>
-          </Combobox>
+          <Select className="border border-dark/20 rounded">
+            <SelectInput onChange={(value) => value} className="h-10" />
+            <SelectOptionList>
+              <SelectOption value="Roupas">Roupas</SelectOption>
+              <SelectOption value="Sapatos">Sapatos</SelectOption>
+            </SelectOptionList>
+          </Select>
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Categoria, subcategoria e tags{' '}
           </Text>
-          <TextInput className="py-5 " />
+          <TextInput className="py-5 border border-dark/20" />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Preço do produto{' '}
           </Text>
-          <TextInput className="py-5 " />
+          <TextInput className="py-5 border border-dark/20" />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Condições de pagamento{' '}
           </Text>
-          <TextInput className="py-5 " />
+          <TextInput className="py-5 border border-dark/20" />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Quantidade de produtos vendidos{' '}
           </Text>
-          <TextInput className="py-5 " />
+          <TextInput className="py-5 border-dark/20" />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Quantidade em estoque{' '}
           </Text>
-          <TextInput className="py-5" />
+          <TextInput className="py-5 border-dark/20" />
         </div>
 
         <Row className="flex justify-end space-x-6 pt-6 border-t-2">
