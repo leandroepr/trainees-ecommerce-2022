@@ -82,10 +82,10 @@ const NewProductForm: React.FC<NewProductFormProps> = () => {
         </div>
 
         <Row className="flex justify-end space-x-6 pt-6 border-t-2">
-          <Button variant="light" className="w-28 h-9">
+          <Button variant="light" className="w-28 h-10">
             Cancelar
           </Button>
-          <Button className="w-28 h-9">Salvar</Button>
+          <Button className="w-28 h-10">Salvar</Button>
         </Row>
       </Column>
     </Column>
