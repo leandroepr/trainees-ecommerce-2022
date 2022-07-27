@@ -1,6 +1,7 @@
 import { Button, Column, Row } from 'components/toolkit'
 import React from 'react'
-import { ProductsTotalPrice } from '../total-price'
+import ProductsTotalPrice from '../total-price/products-total-price'
+
 
 const CartBoxFirstTab: React.FC = () => {
   return (

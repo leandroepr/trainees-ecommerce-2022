@@ -1,4 +1,5 @@
-import { CartScreen } from 'components/screens/cart'
+
+import CartScreen from 'components/screens/cart/cart-screen'
 import type { NextPage } from 'next'
 
 const CartRoute: NextPage = () => {
