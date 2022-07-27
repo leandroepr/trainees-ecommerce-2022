@@ -8,7 +8,7 @@ import React from 'react'
 export interface NewProductFormProps {}
 const NewProductForm: React.FC<NewProductFormProps> = () => {
   return (
-    <Column className="bg-light max-w-4xl ">
+    <Column className="bg-light max-w-4xl">
       <Text
         as="h2"
         className="indent-8 text-2xl pt-8 pb-8 border-b-2 text-dark/70 font-light"
@@ -20,20 +20,20 @@ const NewProductForm: React.FC<NewProductFormProps> = () => {
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Título{' '}
           </Text>
-          <TextInput className="pt-8 " />
+          <TextInput className="py-5" />
         </div>
 
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             URL da imagem{' '}
           </Text>
-          <TextInput className="pt-8 " />
+          <TextInput className="py-5" />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Condição do produto{' '}
           </Text>
-          <TextInput className="pt-8 " />
+          <TextInput className="py-5" />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
@@ -54,31 +54,31 @@ const NewProductForm: React.FC<NewProductFormProps> = () => {
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Categoria, subcategoria e tags{' '}
           </Text>
-          <TextInput className="pt-8 " />
+          <TextInput className="py-5 " />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Preço do produto{' '}
           </Text>
-          <TextInput className="pt-8 " />
+          <TextInput className="py-5 " />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Condições de pagamento{' '}
           </Text>
-          <TextInput className="pt-8 " />
+          <TextInput className="py-5 " />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Quantidade de produtos vendidos{' '}
           </Text>
-          <TextInput className="pt-8 " />
+          <TextInput className="py-5 " />
         </div>
         <div className="relative">
           <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
             Quantidade em estoque{' '}
           </Text>
-          <TextInput className="pt-8" />
+          <TextInput className="py-5" />
         </div>
 
         <Row className="flex justify-end space-x-6 pt-6 border-t-2">
