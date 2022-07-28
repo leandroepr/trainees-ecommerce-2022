@@ -10,7 +10,13 @@ import { useGetAllCategories } from 'features/category/hooks/use-get-all-categor
 import { Product } from 'features/product/types/product'
 import React from 'react'
 
-const NewProductForm = () => {
+interface NewProductFormProps {
+  handleNewProduct: (product: Product) => void
+}
+
+const NewProductForm: React.FC<NewProductFormProps> = ({
+  handleNewProduct,
+}) => {
   const { data: categories, isLoading } = useGetAllCategories()
   const [product, setProduct] = React.useState({} as Product)
   const [selectValue, setSelectValue] = React.useState('Selecione a Categoria')
@@ -28,6 +34,7 @@ const NewProductForm = () => {
       ['categories']: value,
     })
     setSelectValue(value)
+    handleNewProduct({ ...product, ['categories']: value })
   }
 
   const handleOnChange = (value: string, name: string) => {
@@ -35,6 +42,7 @@ const NewProductForm = () => {
       ...product,
       [name]: value,
     })
+    handleNewProduct({ ...product, [name]: value })
   }
 
   return (
@@ -104,7 +112,7 @@ const NewProductForm = () => {
               />
               <SelectOptionList className="border border-dark/20 rounded">
                 {categories?.map((category) => (
-                  <SelectOption value={category.name}>
+                  <SelectOption key={category.id} value={category.name}>
                     {category.name}
                   </SelectOption>
                 ))}
