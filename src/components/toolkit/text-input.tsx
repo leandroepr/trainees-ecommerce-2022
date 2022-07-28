@@ -3,7 +3,7 @@ import React from 'react'
 import Row from './row'
 
 export interface TextInputProps {
-  name?: string
+  name: string
   id?: string
   value?: string
   label?: string
@@ -11,7 +11,7 @@ export interface TextInputProps {
   shape?: 'rounded' | 'square'
   disabled?: boolean
   className?: string
-  onChange?: (value: string) => void
+  onChange: (value: string, name: string) => void
 }
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -25,11 +25,17 @@ const TextInput: React.FC<TextInputProps> = ({
   className,
   onChange,
 }) => {
+
   const [typedValue, setTypedValue] = React.useState(value)
 
-  React.useEffect(() => {
-    onChange?.(typedValue)
-  }, [typedValue, onChange])
+  const handleOnChange = (value: any) => {
+    setTypedValue(value)
+    onChange(value, name)
+  }
+
+  // React.useEffect(() => {
+  //   onChange?.(typedValue)
+  // }, [typedValue, onChange])
 
   return (
     <Row>
@@ -55,7 +61,7 @@ const TextInput: React.FC<TextInputProps> = ({
           id={id}
           value={typedValue}
           placeholder={placeholder}
-          onChange={(event) => setTypedValue(event.target.value)}
+          onChange={(e) => handleOnChange(e.target.value)}
         ></input>
       </label>
     </Row>

@@ -1,4 +1,5 @@
 export type Product = {
+  id: string
   slug: string
   name: string
   imageUrl: string
@@ -8,5 +9,5 @@ export type Product = {
   soldAmount: number
   stockAmount: number
   categoryId: string
-  categories: string[]
+  categories: string[] | string
 }
