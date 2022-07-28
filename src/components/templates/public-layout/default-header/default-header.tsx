@@ -10,6 +10,7 @@ import {
 import { Column, Link, Row, SearchInput, Text } from 'components/toolkit'
 
 import { useQueryParams } from 'core/hooks/use-query-params'
+import CartAmount from 'features/cart/cart-amount'
 import { useRouter } from 'next/router'
 import HeaderLogo from './header-logo'
 import HeaderNavigationMenu from './header-menu/header-navigation-menu'
@@ -96,7 +97,7 @@ const DefaultHeader = () => {
               as="span"
               className="absolute ml-4 text-sm text-white bg-red-500 rounded-full w-5 h-5 text-center justify-center mt-[-6px]"
             >
-              3
+              {<CartAmount />}
             </Text>
           </Row>
         </Row>
