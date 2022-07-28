@@ -14,11 +14,13 @@ export interface SelectProps<T> {
 const Select = <T,>({
   children,
   className,
+  label,
   value,
   onChange = NotImplemented,
 }: SelectProps<T>) => {
   return (
-    <div className={classNames('w-full', className)}>
+    <div className={classNames('w-full relative group', className)}>
+      <div className="absolute z-10 mt-[-10px] ml-3 text-dark/30 bg-light group-focus-within:text-info">{label}</div>
       <Combobox value={value} onChange={onChange}>
         <div className="relative mt-1">{children}</div>
       </Combobox>

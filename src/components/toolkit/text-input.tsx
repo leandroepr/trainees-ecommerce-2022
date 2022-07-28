@@ -10,6 +10,7 @@ export interface TextInputProps {
   placeholder?: string
   shape?: 'rounded' | 'square'
   disabled?: boolean
+  required?: boolean
   className?: string
   onChange?: (value: string) => void
 }
@@ -22,6 +23,7 @@ const TextInput: React.FC<TextInputProps> = ({
   placeholder,
   shape = 'rounded',
   disabled,
+  required,
   className,
   onChange,
 }) => {
@@ -32,15 +34,15 @@ const TextInput: React.FC<TextInputProps> = ({
   }, [typedValue, onChange])
 
   return (
-    <Row>
+    <Row className="relative">
       <label
         htmlFor={id}
         className={classNames(
-          'w-full  shadow',
+          'w-full group',
           disabled ? 'text-dark/30' : 'block focus-within:text-info'
         )}
       >
-        {label}
+        <div className="bg-light absolute mt-[-13px] ml-3 text-dark/30 group-focus-within:text-info">{required ? `${label}*` : label}</div>
         <input
           className={classNames(
             'py-5 block h-8 w-full',
