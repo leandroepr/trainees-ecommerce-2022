@@ -47,7 +47,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, handleItem }) => {
         </CountButton>
       </Column>
       <Column className="items-center justify-center w-1/5 h-20">
-        <ProductPrice price={product.price} />
+        <ProductPrice price={product.price * amount} />
       </Column>
     </Row>
   )

@@ -27,7 +27,7 @@ const CartBoxFirstTab: React.FC = () => {
           data: { ...item, amount: (item.amount += 1) },
         })
       case 'decrease':
-        if (item.amount > 1) {
+        if (item.amount >= 1) {
           return dispatch({
             type: 'update',
             data: { ...item, amount: (item.amount -= 1) },

@@ -9,7 +9,7 @@ export interface CountButtonProps {
 
 const CountButton: React.FC<CountButtonProps> = (props) => {
   return (
-    <Row className="border border-gray-400 rounded-r w-24">
+    <Row className="border border-gray-400 rounded">
       <button
         onClick={() => props.handleAmount('decrease')}
         className="w-7 h-7 bg-light hover:bg-gray-400 py-2 px-3 rounded-l"
