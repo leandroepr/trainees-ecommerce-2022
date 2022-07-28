@@ -1,9 +1,10 @@
 import { CheckIcon, ShieldCheckIcon } from '@heroicons/react/outline'
 import { PencilIcon } from '@heroicons/react/solid'
-import { Column, Row, Spinner, Text } from 'components/toolkit'
-import { classNames } from 'core/helpers/class-names'
+import { Column, Row, Text } from 'components/toolkit'
+import useCartContext from 'features/cart/hooks/use-cart-context'
 import { Product } from 'features/product/types/product'
 import Link from 'next/link'
+import React from 'react'
 import VendorInfoBox from './vendor-info-box'
 
 export interface ProductDetailsBoxProps {
@@ -11,7 +12,25 @@ export interface ProductDetailsBoxProps {
 }
 
 const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ product }) => {
-  console.log(product)
+  const { items, dispatch } = useCartContext()
+
+  const add = (product: Product) => {
+    const existingProduct = items.find(
+      (item) => item.product.slug === product.slug
+    )
+    if (existingProduct) {
+      dispatch({
+        type: 'update',
+        data: { ...existingProduct, amount: (existingProduct.amount += 1) },
+      })
+    } else {
+      dispatch({
+        type: 'add',
+        data: { product: product, amount: 1 },
+      })
+    }
+  }
+
   return (
     <Column className="p-8">
       {product?.map((product) => (
@@ -34,7 +53,7 @@ const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ product }) => {
           <div className="space-y-2">
             <Column className="max-w-xs">
               <Text as="span" className="text-4xl text-bold pt-4 text-black">
-                R$ {product.price.replace('.', ',')}
+                R$ {String(product.price).replace('.', ',')}
               </Text>
               <Text as="span" className="text-sm text-black pb-4">
                 {product.installmentsInfo}
@@ -64,7 +83,10 @@ const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ product }) => {
               Comprar agora
             </button>
 
-            <button className="w-full justify-center items-center h-10 rounded text-blue-500 border-2 border-blue-500">
+            <button
+              className="w-full justify-center items-center h-10 rounded text-blue-500 border-2 border-blue-500"
+              onClick={() => add(product)}
+            >
               Adicionar ao carrinho
             </button>
           </Column>
