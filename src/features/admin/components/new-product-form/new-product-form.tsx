@@ -1,4 +1,4 @@
-import { Button, Column, NumberInput, Row, Text } from 'components/toolkit'
+import { Button, Column, Link, Row, Spinner, Text } from 'components/toolkit'
 import { Select } from 'components/toolkit/select'
 import SelectInput from 'components/toolkit/select/select-input'
 import SelectOption from 'components/toolkit/select/select-option'
@@ -51,11 +51,11 @@ const NewProductForm = () => {
       >
         Cadastro de Produtos
       </Text>
-      
+
       <form onSubmit={handleSubmit}>
         <Column className="py-10 px-8 space-y-3">
-        <Column className="pb-10 space-y-4">
-          <TextInput
+          <Column className="pb-10 space-y-4">
+            <TextInput
               required
               label='Título'
               id="name"
@@ -64,8 +64,7 @@ const NewProductForm = () => {
                 handleOnChange(value, name)
               }}
             />
-            
-           <TextInput
+            <TextInput
               label='URL da imagem'
               id="imageUrl"
               name="imageUrl"
@@ -73,17 +72,16 @@ const NewProductForm = () => {
                 handleOnChange(value, name)
               }}
             />
-            
             <TextInput
-              label='Condição do produto
+              label='Condição do produto'
               id="condition"
               name="condition"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          
-           <Select
+
+            <Select
               label='Selecione a categoria'
               value={selectValue}
               onChange={(value) => handleSelectOnChange(value)}
@@ -95,14 +93,14 @@ const NewProductForm = () => {
               />
               <SelectOptionList className="border border-dark/20 rounded">
                 {categories?.map((category) => (
-                  <SelectOption value={category.name}>
+                  <SelectOption key={category.id} value={category.name}>
                     {category.name}
                   </SelectOption>
                 ))}
               </SelectOptionList>
             </Select>
 
-           <TextInput
+            <TextInput
               label='Categoria, subcategoria e tags'
               id="categories"
               name="categories"
@@ -110,15 +108,13 @@ const NewProductForm = () => {
                 handleOnChange(value, name)
               }}
             />
-            
-          <NumberInput
-              label='Preço do produto' 
-              id='price' name='price' 
+            <TextInput
+              label='Preço do produto'
+              id='price' name='price'
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }} />
-              
-           <TextInput
+            <TextInput
               label='Condições de pagamento'
               id="installmentsInfo"
               name="installmentsInfo"
@@ -126,8 +122,7 @@ const NewProductForm = () => {
                 handleOnChange(value, name)
               }}
             />
-            
-            <NumberInput
+            <TextInput
               label='Quantidade de produtos vendidos'
               id="soldAmount"
               name="soldAmount"
@@ -135,8 +130,7 @@ const NewProductForm = () => {
                 handleOnChange(value, name)
               }}
             />
-            
-            <NumberInput
+            <TextInput
               label='Quantidade em estoque'
               id="stockAmount"
               name="stockAmount"
@@ -144,21 +138,20 @@ const NewProductForm = () => {
                 handleOnChange(value, name)
               }}
             />
-            
-        </Column>
+          </Column>
 
-        <Row className="flex justify-end space-x-6 pt-6 border-t-2">
-          <Link href={'/'}>
-            <Button variant="light" size='sm'>
-              Cancelar
+          <Row className="flex justify-end space-x-6 pt-6 border-t-2">
+            <Link href={'/'}>
+              <Button variant="light" size='sm'>
+                Cancelar
+              </Button>
+            </Link>
+            <Button size='sm' type='submit'>
+              Salvar
             </Button>
-           </Link>
-          <Button size='sm' type='submit'>
-            Salvar
-          </Button>
-        </Row>
-      </Column>
-     </form>
+          </Row>
+        </Column>
+      </form>
     </Column>
   )
 }
