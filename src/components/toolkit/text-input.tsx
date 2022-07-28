@@ -36,7 +36,7 @@ const TextInput: React.FC<TextInputProps> = ({
       <label
         htmlFor={id}
         className={classNames(
-          'w-full  shadow',
+          'w-full',
           disabled ? 'text-dark/30' : 'block focus-within:text-info'
         )}
       >
@@ -59,7 +59,6 @@ const TextInput: React.FC<TextInputProps> = ({
         ></input>
       </label>
     </Row>
-
   )
 }
 
