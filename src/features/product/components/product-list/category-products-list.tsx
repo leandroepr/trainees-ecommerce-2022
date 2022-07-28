@@ -5,7 +5,6 @@ import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
 import React from 'react'
 import ProductCard from '../product-card/product-card'
 
-
 export interface CategoryProductsListProps {
   className?: string
   categoryName?: string
@@ -42,7 +41,7 @@ const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
   return (
     <Column className={classNames('space-y-5', className)}>
       <Row className="items-baseline space-x-4">
-        <Text className="text-zinc-700 text-2xl font-thin">{categoryName}</Text>
+        <Text className="text-dark text-2xl font-thin">{categoryName}</Text>
         <Link href={`/produtos?categoria=${categoryId}`}>
           <Text className="text-info">Ver detalhes</Text>
         </Link>
