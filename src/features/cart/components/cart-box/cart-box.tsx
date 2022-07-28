@@ -1,5 +1,6 @@
 import { Column, Row } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
+import CartAmount from 'features/cart/cart-amount'
 import React, { useState } from 'react'
 import CartBoxFirstTab from './cart-box-tab-1'
 
@@ -8,7 +9,6 @@ export interface CartBoxProps {
 }
 const CartBox: React.FC<CartBoxProps> = ({ className }) => {
   const [activeTab, setActiveTab] = useState('tab1')
-
   return (
     <Column className={classNames('p-8 bg-light border-2 rounded', className)}>
       <Row className="pb-8 divid">
@@ -23,7 +23,7 @@ const CartBox: React.FC<CartBoxProps> = ({ className }) => {
               setActiveTab('tab1')
             }}
           >
-            Carrinho (0)
+            Carrinho (<CartAmount />)
           </li>
           <li
             className={

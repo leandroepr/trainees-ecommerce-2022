@@ -12,17 +12,13 @@ import {
 import { classNames } from 'core/helpers/class-names'
 import { useGetProductBySlug } from 'features/product-details/hooks/use-get-all-products'
 import ProductDetailsBox from 'features/product-details/product-detail-box'
-import { Product } from 'features/product/types/product'
-import { useRouter } from 'next/router'
 import React from 'react'
 
 export interface ProductDetailScreenProps {
-  product: Product
+  slug: string
 }
 
-const ProductDetailScreen: React.FC<ProductDetailScreenProps> = () => {
-  const router = useRouter()
-  const slug = String(router.query.slug)
+const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({ slug }) => {
   const { isLoading, data: products } = useGetProductBySlug(slug)
 
   return (

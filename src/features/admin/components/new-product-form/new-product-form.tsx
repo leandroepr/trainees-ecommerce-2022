@@ -4,43 +4,161 @@ import SelectInput from 'components/toolkit/select/select-input'
 import SelectOption from 'components/toolkit/select/select-option'
 import SelectOptionList from 'components/toolkit/select/select-option-list'
 import TextInput from 'components/toolkit/text-input'
+import { classNames } from 'core/helpers/class-names'
+import { UsePostProduct } from 'features/admin/hooks/use-post-product'
+import { useGetAllCategories } from 'features/category/hooks/use-get-all-categories'
+import { Product } from 'features/product/types/product'
+import React from 'react'
 
 const NewProductForm = () => {
+  const { data: categories, isLoading } = useGetAllCategories()
+  const [product, setProduct] = React.useState({} as Product)
+  const [selectValue, setSelectValue] = React.useState('Selecione a Categoria')
+  const { mutate: saveProduct } = UsePostProduct()
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+    product.id = product.name
+    saveProduct(product)
+  }
+
+  const handleSelectOnChange = (value: string) => {
+    setProduct({
+      ...product,
+      ['categories']: value,
+    })
+    setSelectValue(value)
+  }
+
+  const handleOnChange = (value: string, name: string) => {
+    setProduct({
+      ...product,
+      [name]: value,
+    })
+  }
+
   return (
     <Column className="w-full">
+      {isLoading && (
+        <Column className={classNames('items-center')}>
+          <Spinner color="black" size={100} />
+          Carregando...
+        </Column>
+      )}
       <Text
         as="h2"
-        className="indent-8 text-2xl py-6 border-b-2 text-dark/70 font-light">
+        className="indent-8 text-2xl py-6 border-b-2 text-dark/70 font-light"
+      >
         Cadastro de Produtos
       </Text>
-      <Column className="py-10 px-8">
+      
+      <form onSubmit={handleSubmit}>
+        <Column className="py-10 px-8 space-y-3">
         <Column className="pb-10 space-y-4">
-          <TextInput required label='Título' />
-          <TextInput label='URL da imagem' />
-          <TextInput label='Condição do produto' />
+          <TextInput
+              required
+              label='Título'
+              id="name"
+              name="name"
+              onChange={(value, name) => {
+                handleOnChange(value, name)
+              }}
+            />
+            
+           <TextInput
+              label='URL da imagem'
+              id="imageUrl"
+              name="imageUrl"
+              onChange={(value, name) => {
+                handleOnChange(value, name)
+              }}
+            />
+            
+            <TextInput
+              label='Condição do produto
+              id="condition"
+              name="condition"
+              onChange={(value, name) => {
+                handleOnChange(value, name)
+              }}
+            />
+          
+           <Select
+              label='Selecione a categoria'
+              value={selectValue}
+              onChange={(value) => handleSelectOnChange(value)}
+              className="border border-dark/20 rounded"
+            >
+              <SelectInput
+                onChange={(value) => handleSelectOnChange(value)}
+                className="h-10"
+              />
+              <SelectOptionList className="border border-dark/20 rounded">
+                {categories?.map((category) => (
+                  <SelectOption value={category.name}>
+                    {category.name}
+                  </SelectOption>
+                ))}
+              </SelectOptionList>
+            </Select>
 
-          <Select label='Selecione a categoria'>
-            <SelectInput onChange={(value) => value} className="h-11" />
-            <SelectOptionList className="mt-[-5px]">
-              <SelectOption value="Roupas">Roupas</SelectOption>
-              <SelectOption value="Sapatos">Sapatos</SelectOption>
-            </SelectOptionList>
-          </Select>
-
-          <TextInput label='Categoria, subcategoria e tags' />
-          <NumberInput label='Preço do produto' />
-          <TextInput label='Condições de pagamento' />
-          <NumberInput label='Quantidade de produtos vendidos' />
-          <NumberInput label='Quantidade em estoque' />
+           <TextInput
+              label='Categoria, subcategoria e tags'
+              id="categories"
+              name="categories"
+              onChange={(value, name) => {
+                handleOnChange(value, name)
+              }}
+            />
+            
+          <NumberInput
+              label='Preço do produto' 
+              id='price' name='price' 
+              onChange={(value, name) => {
+                handleOnChange(value, name)
+              }} />
+              
+           <TextInput
+              label='Condições de pagamento'
+              id="installmentsInfo"
+              name="installmentsInfo"
+              onChange={(value, name) => {
+                handleOnChange(value, name)
+              }}
+            />
+            
+            <NumberInput
+              label='Quantidade de produtos vendidos'
+              id="soldAmount"
+              name="soldAmount"
+              onChange={(value, name) => {
+                handleOnChange(value, name)
+              }}
+            />
+            
+            <NumberInput
+              label='Quantidade em estoque'
+              id="stockAmount"
+              name="stockAmount"
+              onChange={(value, name) => {
+                handleOnChange(value, name)
+              }}
+            />
+            
         </Column>
 
-        <Row className="flex justify-end space-x-6 pt-6 border-t-2 mt-">
-          <Button variant="light" size='sm'>
-            Cancelar
+        <Row className="flex justify-end space-x-6 pt-6 border-t-2">
+          <Link href={'/'}>
+            <Button variant="light" size='sm'>
+              Cancelar
+            </Button>
+           </Link>
+          <Button size='sm' type='submit'>
+            Salvar
           </Button>
-          <Button size='sm'>Salvar</Button>
         </Row>
       </Column>
+     </form>
     </Column>
   )
 }
