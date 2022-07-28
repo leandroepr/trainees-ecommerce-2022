@@ -1,3 +1,4 @@
+import CartContextProvider from 'features/cart/components/cart-provider'
 import type { AppProps } from 'next/app'
 import React from 'react'
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
@@ -10,7 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ToastProvider>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          <Component {...pageProps} />
+          <CartContextProvider>
+            <Component {...pageProps} />
+          </CartContextProvider>
         </Hydrate>
       </QueryClientProvider>
     </ToastProvider>
