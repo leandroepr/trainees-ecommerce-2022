@@ -1,4 +1,4 @@
-import { Button, Column, Row, Text } from 'components/toolkit'
+import { Button, Column, NumberInput, Row, Text } from 'components/toolkit'
 import { Select } from 'components/toolkit/select'
 import SelectInput from 'components/toolkit/select/select-input'
 import SelectOption from 'components/toolkit/select/select-option'
@@ -28,10 +28,10 @@ const NewProductForm = () => {
           </Select>
 
           <TextInput label='Categoria, subcategoria e tags' />
-          <TextInput label='Preço do produto' />
+          <NumberInput label='Preço do produto' />
           <TextInput label='Condições de pagamento' />
-          <TextInput label='Quantidade de produtos vendidos' />
-          <TextInput label='Quantidade em estoque' />
+          <NumberInput label='Quantidade de produtos vendidos' />
+          <NumberInput label='Quantidade em estoque' />
         </Column>
 
         <Row className="flex justify-end space-x-6 pt-6 border-t-2 mt-">
