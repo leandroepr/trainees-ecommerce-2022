@@ -9,11 +9,6 @@ export interface CartBoxProps {
 }
 const CartBox: React.FC<CartBoxProps> = ({ className }) => {
   const [activeTab, setActiveTab] = useState('tab1')
-
-  const getSavedItems = () => {
-    return localStorage.length
-  }
-
   return (
     <Column className={classNames('p-8 bg-light border-2 rounded', className)}>
       <Row className="pb-8 divid">
@@ -40,7 +35,7 @@ const CartBox: React.FC<CartBoxProps> = ({ className }) => {
               setActiveTab('tab2')
             }}
           >
-            Salvo ({getSavedItems()})
+            Salvo (0)
           </li>
         </ul>
       </Row>

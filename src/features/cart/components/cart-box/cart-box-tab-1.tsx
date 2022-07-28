@@ -8,9 +8,16 @@ import ProductsTotalPrice from '../total-price/products-total-price'
 const CartBoxFirstTab: React.FC = () => {
   const { items, dispatch } = useCartContext()
 
-  const saveInLocalStorage = (item: CartItemType) => {
-    return localStorage.setItem(`${item.product.slug}`, String(item))
-  }
+  // const saveInLocalStorage = (item: CartItemType) => {
+  //   const savedItens = localStorage.getItem('cart')
+  //   if (savedItens) {
+  //     const oldSavedItens = JSON.parse(JSON.stringify(savedItens))
+  //     const newSavedItens = { ...oldSavedItens, item }
+  //     return localStorage.setItem('cart', String(newSavedItens))
+  //   } else {
+  //     return localStorage.setItem('cart', String(item))
+  //   }
+  // }
 
   const manageItem = (type: string, item: CartItemType) => {
     switch (type) {
@@ -37,7 +44,8 @@ const CartBoxFirstTab: React.FC = () => {
           data: { ...item },
         })
       case 'save':
-        saveInLocalStorage(item)
+        // saveInLocalStorage(item)
+        console.log('Produto salvo:', item)
         return dispatch({
           type: 'remove',
           data: { ...item },
