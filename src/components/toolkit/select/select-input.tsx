@@ -15,12 +15,12 @@ const SelectInput = <T,>({
   className,
 }: SelectInputProps<T>) => {
   return (
-    <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
+    <div>
       <Combobox.Input
         placeholder={placeholder}
         displayValue={displayValue}
         className={classNames(
-          'w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0',
+          'w-full group border py-2 pl-3 pr-10 text-sm leading-5 text-dark focus:text-info rounded border-dark/20',
           className
         )}
         onChange={(event) => onChange?.(event.target.value)}
@@ -31,7 +31,7 @@ const SelectInput = <T,>({
           className
         )}
       >
-        <SelectorIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+        <SelectorIcon className="h-5 w-5 text-dark/20 " aria-hidden="true" />
       </Combobox.Button>
     </div>
   )

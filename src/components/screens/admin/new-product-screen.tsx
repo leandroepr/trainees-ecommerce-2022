@@ -7,7 +7,7 @@ const NewProductScreen: React.FC = () => {
   return (
     <DefaultPublicLayout>
       <Container>
-        <Row className='h-[40rem] w-full my-4'>
+        <Row className='h-full w-full my-4'>
           <Column className='w-60 drop-shadow hidden md:block'>
             <ProductDetails />
           </Column>

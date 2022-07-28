@@ -1,4 +1,4 @@
-import { Button, Column, Link, Row, Spinner, Text } from 'components/toolkit'
+import { Button, Column, NumberInput, Row, Text } from 'components/toolkit'
 import { Select } from 'components/toolkit/select'
 import SelectInput from 'components/toolkit/select/select-input'
 import SelectOption from 'components/toolkit/select/select-option'
@@ -51,49 +51,40 @@ const NewProductForm = () => {
       >
         Cadastro de Produtos
       </Text>
+      
       <form onSubmit={handleSubmit}>
         <Column className="py-10 px-8 space-y-3">
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Título
-            </Text>
-            <TextInput
+        <Column className="pb-10 space-y-4">
+          <TextInput
+              required
+              label='Título'
               id="name"
               name="name"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              URL da imagem
-            </Text>
-            <TextInput
+            
+           <TextInput
+              label='URL da imagem'
               id="imageUrl"
               name="imageUrl"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Condição do produto
-            </Text>
+            
             <TextInput
+              label='Condição do produto
               id="condition"
               name="condition"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Selecione a categoria
-            </Text>
-            <Select
+          
+           <Select
+              label='Selecione a categoria'
               value={selectValue}
               onChange={(value) => handleSelectOnChange(value)}
               className="border border-dark/20 rounded"
@@ -110,79 +101,64 @@ const NewProductForm = () => {
                 ))}
               </SelectOptionList>
             </Select>
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Categoria, subcategoria e tags
-            </Text>
-            <TextInput
+
+           <TextInput
+              label='Categoria, subcategoria e tags'
               id="categories"
               name="categories"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Preço do produto
-            </Text>
-            <TextInput
-              id="price"
-              name="price"
+            
+          <NumberInput
+              label='Preço do produto' 
+              id='price' name='price' 
               onChange={(value, name) => {
                 handleOnChange(value, name)
-              }}
-            />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Condições de pagamento
-            </Text>
-            <TextInput
+              }} />
+              
+           <TextInput
+              label='Condições de pagamento'
               id="installmentsInfo"
               name="installmentsInfo"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Quantidade de produtos vendidos
-            </Text>
-            <TextInput
+            
+            <NumberInput
+              label='Quantidade de produtos vendidos'
               id="soldAmount"
               name="soldAmount"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Quantidade em estoque
-            </Text>
-            <TextInput
+            
+            <NumberInput
+              label='Quantidade em estoque'
               id="stockAmount"
               name="stockAmount"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <Row className="flex justify-end space-x-6 pt-6 border-t-2">
-            <Link href={'/'}>
-              <Button variant="light" size="sm">
-                Cancelar
-              </Button>
-            </Link>
-            <Button size="sm" type="submit">
-              Salvar
-            </Button>
-          </Row>
+            
         </Column>
-      </form>
+
+        <Row className="flex justify-end space-x-6 pt-6 border-t-2">
+          <Link href={'/'}>
+            <Button variant="light" size='sm'>
+              Cancelar
+            </Button>
+           </Link>
+          <Button size='sm' type='submit'>
+            Salvar
+          </Button>
+        </Row>
+      </Column>
+     </form>
     </Column>
   )
 }

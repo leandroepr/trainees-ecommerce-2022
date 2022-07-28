@@ -5,23 +5,25 @@ import Row from './row'
 export interface NumberInputProps {
   name?: string
   id?: string
-  value?: number | undefined
+  value?: number
   label?: string
   placeholder?: string
   shape?: 'rounded' | 'square'
   disabled?: boolean
+  required?: boolean
   className?: string
-  onChange?: (value: number | undefined) => void
+  onChange?: (value: number) => void
 }
 
 const NumberInput: React.FC<NumberInputProps> = ({
   name,
   id,
-  value,
+  value = 0,
   label,
   placeholder,
   shape = 'rounded',
   disabled,
+  required,
   className,
   onChange,
 }) => {
@@ -32,25 +34,26 @@ const NumberInput: React.FC<NumberInputProps> = ({
   }, [typedValue, onChange])
 
   return (
-    <Row>
+    <Row className='relative'>
       <label
         htmlFor={id}
         className={classNames(
-          'w-full',
+          'w-full group',
           disabled ? 'text-dark/30' : 'block focus-within:text-info'
         )}
       >
-        {label}
+        <div className="bg-light absolute mt-[-13px] ml-3 text-dark/30 group-focus-within:text-info">{required ? `${label}*` : label}</div>
         <input
-          type="number"
           className={classNames(
-            'block h-8 w-full',
+            'py-5 block h-8 w-full',
             disabled
-              ? 'border border-dark/30 text-dark/30 cursor-not-allowed focus:border-dark/30 focus:ring-0'
-              : 'border border-dark/50 focus:text-info focus:border-info',
+              ? 'border border-dark/10 text-dark/10 cursor-not-allowed focus:border-dark/30 focus:ring-0'
+              : 'border border-dark/20 focus:text-info focus:border-info',
             inputShapeMap[shape],
             className
           )}
+          type="number"
+          min='0'
           name={name}
           id={id}
           value={typedValue}
