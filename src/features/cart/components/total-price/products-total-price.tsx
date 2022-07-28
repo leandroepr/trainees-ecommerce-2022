@@ -2,7 +2,9 @@ import { ChevronDownIcon } from '@heroicons/react/outline'
 import { Column, Row, Text } from 'components/toolkit'
 import React from 'react'
 
-export interface ProductsTotalPriceProps {}
+export interface ProductsTotalPriceProps {
+  value?: string
+}
 const ProductsTotalPrice: React.FC<ProductsTotalPriceProps> = () => {
   return (
     <Row className="gap-12">
@@ -14,7 +16,9 @@ const ProductsTotalPrice: React.FC<ProductsTotalPriceProps> = () => {
             <ChevronDownIcon className="w-5" />
           </Text>
         </Row>
-        <Text as="p" className='pt-2'>Total</Text>
+        <Text as="p" className="pt-2">
+          Total
+        </Text>
       </Column>
       <Column>
         <Row className="justify-end">
