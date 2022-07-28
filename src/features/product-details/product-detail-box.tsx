@@ -11,7 +11,6 @@ export interface ProductDetailsBoxProps {
 }
 
 const ProductDetailsBox: React.FC<ProductDetailsBoxProps> = ({ product }) => {
-  console.log(product)
   return (
     <Column className="p-8">
       {product?.map((product) => (
