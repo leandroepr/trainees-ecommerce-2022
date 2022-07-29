@@ -8,14 +8,18 @@ const CartReducer = (state: State, action: Action) => {
     case 'add':
       return [...state, action.data]
     case 'update':
-      return state.map((item) => {
-        if (item.product.slug === action.data.product.slug) return action.data
-        return item
-      })
+      return [
+        ...state.filter(
+          (order) => order.product.slug !== action.data.product.slug
+        ),
+        action.data,
+      ]
     case 'remove':
-      return state.filter(
-        (order) => order.product.slug !== action.data.product.slug
-      )
+      return [
+        ...state.filter(
+          (order) => order.product.slug !== action.data.product.slug
+        ),
+      ]
     case 'clear':
       return defaultCartReducerValue
     default:

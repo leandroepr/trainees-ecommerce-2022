@@ -1,30 +1,64 @@
-import { Column, Flex, Text } from 'components/toolkit'
+import { Column, Flex, Image, Text } from 'components/toolkit'
 import Badge from 'components/toolkit/badge'
+import { Product } from 'features/product/types/product'
 import React from 'react'
 
-export interface ProductDetailsProps {}
-const ProductDetails: React.FC<ProductDetailsProps> = () => { 
+export interface ProductDetailsProps {
+  product: Product
+}
+const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   return (
     <Column className="bg-white rounded-md">
       <div className="h-60 border-b-2">
+        <Image src={product?.imageUrl} alt="Imagem do produto" />
       </div>
+
       <Column className="h-50 p-4">
         <Text as="p" className="text-sm text-gray-500">
-          Novo │ 1 vendidos
+          {product.condition ? (
+            <>
+              {product?.condition} | {product?.soldAmount}
+            </>
+          ) : null}
+          {product?.soldAmount ? ' vendido(s)' : null}
         </Text>
         <Text as="p" className="text-lg font-semibold">
-          Nome do produto detalhado
+          {product?.name}
         </Text>
         <Flex>
-          <Text className='text-2xl font-medium'>R$ 99 </Text>
-          <Text className='font-medium'>99</Text>
+          {product.price ? (
+            <>
+              <Text className="text-2xl pr-1">R$ </Text>
+              <Text className="text-2xl ">
+                {String(product?.price).split(/[,.\s]/)[0]}
+              </Text>
+              <Text className="text-md">
+                {String(product?.price).split(/[,.\s]/)[1]}
+              </Text>
+            </>
+          ) : null}
         </Flex>
-        <Text as="p" className='text-green-500 pb-2'>em 10x R$9,99 sem juros</Text>
-        <Flex className='gap-2'>
-          <Badge>Categoria</Badge>
-          <Badge>Subcategoria</Badge>
-          <Badge>Tag1</Badge>
-          <Badge>TagN</Badge>
+        <Text as="p" className="text-green-500 pb-2">
+          {product?.installmentsInfo}
+        </Text>
+        <Flex className="flex-wrap gap-2">
+          {product?.categoryId && (
+            <Badge variant="gray">{product?.categoryId}</Badge>
+          )}
+
+          {typeof product?.categories === 'string' &&
+            product?.categories
+              ?.trim()
+              .split(',')
+              .filter(Boolean)
+              .map(
+                (category: string) =>
+                  category && (
+                    <Badge key={category} variant="gray">
+                      {category}
+                    </Badge>
+                  )
+              )}
         </Flex>
       </Column>
     </Column>

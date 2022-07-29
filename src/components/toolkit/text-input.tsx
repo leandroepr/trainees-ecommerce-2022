@@ -27,7 +27,6 @@ const TextInput: React.FC<TextInputProps> = ({
   className,
   onChange,
 }) => {
-
   const [typedValue, setTypedValue] = React.useState(value)
 
   const handleOnChange = (value: any) => {
@@ -48,10 +47,12 @@ const TextInput: React.FC<TextInputProps> = ({
           disabled ? 'text-dark/30' : 'block focus-within:text-info'
         )}
       >
-        <div className="bg-light absolute mt-[-13px] ml-3 text-dark/30 group-focus-within:text-info">{required ? `${label}*` : label}</div>
+        <div className="bg-light absolute mt-[-10px] ml-3 text-dark/50 font-light text-sm group-focus-within:text-info">
+          {required ? `${label}*` : label}
+        </div>
         <input
           className={classNames(
-            'py-5 block h-8 w-full',
+            'py-5 block h-8 w-full placeholder:text-dark/20',
             disabled
               ? 'border border-dark/10 text-dark/10 cursor-not-allowed focus:border-dark/30 focus:ring-0'
               : 'border border-dark/20 focus:text-info focus:border-info',
@@ -67,7 +68,6 @@ const TextInput: React.FC<TextInputProps> = ({
         ></input>
       </label>
     </Row>
-
   )
 }
 

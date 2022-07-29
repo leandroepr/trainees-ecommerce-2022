@@ -20,7 +20,7 @@ const SelectInput = <T,>({
         placeholder={placeholder}
         displayValue={displayValue}
         className={classNames(
-          'w-full group border py-2 pl-3 pr-10 text-sm leading-5 text-dark focus:text-info rounded border-dark/20',
+          'w-full group border py-2 pl-3 pr-10 text-sm leading-5 text-dark focus:text-info rounded border-dark/20 placeholder:text-dark/20 placeholder:text-base',
           className
         )}
         onChange={(event) => onChange?.(event.target.value)}

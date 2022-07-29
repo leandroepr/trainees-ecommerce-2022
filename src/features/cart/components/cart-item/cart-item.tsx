@@ -1,21 +1,12 @@
 import { Column, Row, Text } from 'components/toolkit'
-import { CartItemType } from 'features/cart/types/cart-item-type'
-import ProductPrice from 'features/product/components/product-card/product-price'
 import React from 'react'
-import CountButton from '../count-button/count-button'
 
-export interface CartItemProps {
-  item: CartItemType
-  handleItem: (type: string) => void
-}
-
-const CartItem: React.FC<CartItemProps> = ({ item, handleItem }) => {
-  const { product, amount } = item
+const CartItem: React.FC = () => {
   return (
-    <Row className="w-full">
-      <Column className="ml-1 h-32 w-full">
+    <Row>
+      <Column className="ml-1 h-32 w-auto">
         <Text as="h1" className="font-bold text-lg">
-          {product.name}
+          Camiseta Hering Super Cotton - Unisex
         </Text>
         <Row className="items-center">
           <Text as="p">Lorem ipsum dolor sit amet consectetur</Text>
@@ -24,7 +15,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, handleItem }) => {
           </a>
         </Row>
         <Text as="span" className="text-success text-xs my-1">
-          {product.installmentsInfo}
+          em 10x R$ 5,65
         </Text>
         <Row className="my-2">
           <a href="">
@@ -33,22 +24,16 @@ const CartItem: React.FC<CartItemProps> = ({ item, handleItem }) => {
           <a href="">
             <p className="text-info text-xs mr-4 ml-4">Comprar agora</p>
           </a>
-          <button onClick={() => handleItem('save')}>
+          <a href="">
             <p className="text-info text-xs mr-4">Salvar para depois</p>
-          </button>
-          <button onClick={() => handleItem('delete')}>
+          </a>
+          <a href="">
             <p className="text-info text-xs mr-4">Excluir</p>
-          </button>
+          </a>
         </Row>
       </Column>
-      <Column className="items-center justify-center w-1/5 h-24">
-        <CountButton handleAmount={(type) => handleItem(type)}>
-          {amount}
-        </CountButton>
-      </Column>
-      <Column className="items-center justify-center w-1/5 h-20">
-        <ProductPrice price={product.price * amount} />
-      </Column>
+      <Column className="items-center justify-center w-64 h-24">Button</Column>
+      <Column className="items-center justify-center w-32 h-20">Valor</Column>
     </Row>
   )
 }
