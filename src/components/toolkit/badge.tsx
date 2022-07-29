@@ -24,6 +24,6 @@ const Badge: React.FC<BadgeProps> = ({
 export default Badge
 
 const tagStyleMap: Record<BadgeVariant, string> = {
-  info: 'bg-sky-100 text-sky-600',
+  info: 'bg-sky-100 text-info',
   gray: 'bg-zinc-200 text-gray-500',
 }

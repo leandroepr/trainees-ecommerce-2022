@@ -28,14 +28,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
   product,
   pending = false,
 }) => {
-  const adaptCategories = (input: string[]) => {
+  const adaptCategories = (input: string | string[]) => {
+    const adaptedInput = Array.isArray(input) ? input : [input]
+
     const result: { variant: BadgeVariant; content: string }[] = [
       {
         variant: 'info',
         content: 'Enviando normalmente',
       },
     ]
-    input.forEach((value) => {
+    adaptedInput.forEach((value) => {
       result.push({
         variant: 'gray',
         content: value,

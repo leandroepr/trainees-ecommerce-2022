@@ -10,10 +10,12 @@ export interface ProductPriceProps {
 }
 
 const ProductPrice: React.FC<ProductPriceProps> = ({
-  price = 0,
+  price,
   className,
   size = 'medium',
 }) => {
+  if (!price) return null
+
   const splitProductPrice = (integerPrice: number) => {
     const currency = Math.floor(integerPrice).toLocaleString()
     const cents = ('0' + Math.round((integerPrice % 1) * 100)).slice(-2)
@@ -22,7 +24,7 @@ const ProductPrice: React.FC<ProductPriceProps> = ({
   const { currency, cents } = splitProductPrice(price)
 
   return (
-    <Row className={classNames('text-slate-800', className)}>
+    <Row className={classNames('text-dark', className)}>
       <span className={currencySizeMap[size]}>R$ {currency}</span>
       <span className={centsSizeMap[size]}>{cents}</span>
     </Row>

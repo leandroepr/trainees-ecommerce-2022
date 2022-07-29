@@ -10,7 +10,13 @@ import { useGetAllCategories } from 'features/category/hooks/use-get-all-categor
 import { Product } from 'features/product/types/product'
 import React from 'react'
 
-const NewProductForm = () => {
+interface NewProductFormProps {
+  handleNewProduct: (product: Product) => void
+}
+
+const NewProductForm: React.FC<NewProductFormProps> = ({
+  handleNewProduct,
+}) => {
   const { data: categories, isLoading } = useGetAllCategories()
   const [product, setProduct] = React.useState({} as Product)
   const [selectValue, setSelectValue] = React.useState('')
@@ -25,9 +31,10 @@ const NewProductForm = () => {
   const handleSelectOnChange = (value: string) => {
     setProduct({
       ...product,
-      ['categories']: value,
+      ['categoryId']: value,
     })
     setSelectValue(value)
+    handleNewProduct({ ...product, ['categoryId']: value })
   }
 
   const handleOnChange = (value: string, name: string) => {
@@ -35,6 +42,7 @@ const NewProductForm = () => {
       ...product,
       [name]: value,
     })
+    handleNewProduct({ ...product, [name]: value })
   }
 
   return (
@@ -54,18 +62,19 @@ const NewProductForm = () => {
 
       <form onSubmit={handleSubmit}>
         <Column className="py-10 px-8 space-y-3">
-          <Column className="pb-10 space-y-4">
+          <Column className="pb-10 space-y-5">
             <TextInput
               required
-              label='Título'
+              label="Título"
               id="name"
               name="name"
+              placeholder="Nome do produto"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
             <TextInput
-              label='URL da imagem'
+              label="URL da imagem"
               id="imageUrl"
               name="imageUrl"
               onChange={(value, name) => {
@@ -77,13 +86,14 @@ const NewProductForm = () => {
               label='Condição do produto'
               id="condition"
               name="condition"
+              placeholder="Novo, Usado..."
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
 
             <Select
-              label='Selecione a categoria'
+              label="Selecione a categoria"
               value={selectValue}
               onChange={(value) => handleSelectOnChange(value)}
             >
@@ -101,9 +111,10 @@ const NewProductForm = () => {
             </Select>
 
             <TextInput
-              label='Categoria, subcategoria e tags'
+              label="Categoria, subcategoria e tags"
               id="categories"
               name="categories"
+              placeholder="Feminino, Masculino, Infantil, Esportivo..."
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
@@ -112,20 +123,24 @@ const NewProductForm = () => {
               required
               label='Preço do produto'
               id='price' name='price'
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }} />
-            <TextInput
-              required
-              label='Condições de pagamento'
-              id="installmentsInfo"
-              name="installmentsInfo"
+              name="price"
+              placeholder="R$ 49,99"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
             <TextInput
-              label='Quantidade de produtos vendidos'
+              required
+              label='Condições de pagamento'
+              id="installmentsInfo"
+              name="installmentsInfo"
+              placeholder="em 10x de R$ 4,99 sem juros"
+              onChange={(value, name) => {
+                handleOnChange(value, name)
+              }}
+            />
+            <TextInput
+              label="Quantidade de produtos vendidos"
               id="soldAmount"
               name="soldAmount"
               onChange={(value, name) => {
@@ -133,7 +148,7 @@ const NewProductForm = () => {
               }}
             />
             <TextInput
-              label='Quantidade em estoque'
+              label="Quantidade em estoque"
               id="stockAmount"
               name="stockAmount"
               onChange={(value, name) => {
@@ -144,11 +159,11 @@ const NewProductForm = () => {
 
           <Row className="flex justify-end space-x-6 pt-6 border-t-2">
             <Link href={'/'}>
-              <Button variant="light" size='sm'>
+              <Button variant="light" size="sm">
                 Cancelar
               </Button>
             </Link>
-            <Button size='sm' type='submit'>
+            <Button size="sm" type="submit">
               Salvar
             </Button>
           </Row>
