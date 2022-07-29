@@ -65,7 +65,7 @@ const TextInput: React.FC<TextInputProps> = ({
           onBlur={(e) => required ? inputValidation(e) : undefined}
         ></input>
       </label>
-    </Row >
+    </Row>
 
   )
 }
