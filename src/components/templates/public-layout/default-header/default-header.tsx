@@ -10,7 +10,7 @@ import {
 import { Column, Link, Row, SearchInput, Text } from 'components/toolkit'
 
 import { useQueryParams } from 'core/hooks/use-query-params'
-import CartAmount from 'features/cart/cart-amount'
+import CartAmount from 'features/cart/components/cart-amount'
 import { useRouter } from 'next/router'
 import HeaderLogo from './header-logo'
 import HeaderNavigationMenu from './header-menu/header-navigation-menu'
