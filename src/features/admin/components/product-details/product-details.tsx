@@ -10,12 +10,12 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   return (
     <Column className="bg-white rounded-md">
       <div className="h-60 border-b-2">
-        <Image src={product.imageUrl} alt="Qualquer imagem" />
+        <Image src={product?.imageUrl} alt="Imagem do produto" />
       </div>
 
       <Column className="h-50 p-4">
         <Text as="p" className="text-sm text-gray-500">
-          {product ? (
+          {product.condition ? (
             <>
               {product?.condition} | {product?.soldAmount}
             </>
@@ -25,13 +25,17 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           {product?.name}
         </Text>
         <Flex>
-          <Text className="text-2xl font-medium">
-            {String(product?.price).split(/[,.\s]/)[0]}
-            {String(product?.price).split(/[,.\s]/)[1]}
-          </Text>
-          <Text className="font-sm">
-            {String(product?.price).split(/[,.\s]/)[2]}
-          </Text>
+          {product.price ? (
+            <>
+              <Text className="text-2xl font-medium">
+                {String(product?.price).split(/[,.\s]/)[0]}
+                {String(product?.price).split(/[,.\s]/)[1]}
+              </Text>
+              <Text className="font-sm">
+                {String(product?.price).split(/[,.\s]/)[2]}
+              </Text>
+            </>
+          ) : null}
         </Flex>
         <Text as="p" className="text-green-500 pb-2">
           {product?.installmentsInfo}
