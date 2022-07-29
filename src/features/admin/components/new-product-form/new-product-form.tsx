@@ -1,4 +1,4 @@
-import { Button, Column, Link, Row, Spinner, Text } from 'components/toolkit'
+import { Button, Column, Link, NumberInput, Row, Spinner, Text } from 'components/toolkit'
 import { Select } from 'components/toolkit/select'
 import SelectInput from 'components/toolkit/select/select-input'
 import SelectOption from 'components/toolkit/select/select-option'
@@ -30,7 +30,7 @@ const NewProductForm = () => {
     setSelectValue(value)
   }
 
-  const handleOnChange = (value: string, name: string) => {
+  const handleOnChange = (value: string | number, name: string) => {
     setProduct({
       ...product,
       [name]: value,
@@ -57,13 +57,7 @@ const NewProductForm = () => {
             <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
               Título
             </Text>
-            <TextInput
-              id="name"
-              name="name"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
-            />
+            <TextInput id="name" name="name" onChange={handleOnChange} />
           </div>
           <div className="relative">
             <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
@@ -72,9 +66,7 @@ const NewProductForm = () => {
             <TextInput
               id="imageUrl"
               name="imageUrl"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
           </div>
           <div className="relative">
@@ -84,9 +76,7 @@ const NewProductForm = () => {
             <TextInput
               id="condition"
               name="condition"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
           </div>
           <div className="relative">
@@ -95,13 +85,10 @@ const NewProductForm = () => {
             </Text>
             <Select
               value={selectValue}
-              onChange={(value) => handleSelectOnChange(value)}
+              onChange={handleSelectOnChange}
               className="border border-dark/20 rounded"
             >
-              <SelectInput
-                onChange={(value) => handleSelectOnChange(value)}
-                className="h-10"
-              />
+              <SelectInput onChange={handleSelectOnChange} className="h-10" />
               <SelectOptionList className="border border-dark/20 rounded">
                 {categories?.map((category) => (
                   <SelectOption value={category.name}>
@@ -118,22 +105,14 @@ const NewProductForm = () => {
             <TextInput
               id="categories"
               name="categories"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
           </div>
           <div className="relative">
             <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
               Preço do produto
             </Text>
-            <TextInput
-              id="price"
-              name="price"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
-            />
+            <NumberInput id="price" name="price" onChange={handleOnChange} />
           </div>
           <div className="relative">
             <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
@@ -142,33 +121,27 @@ const NewProductForm = () => {
             <TextInput
               id="installmentsInfo"
               name="installmentsInfo"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
           </div>
           <div className="relative">
             <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
               Quantidade de produtos vendidos
             </Text>
-            <TextInput
+            <NumberInput
               id="soldAmount"
               name="soldAmount"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
           </div>
           <div className="relative">
             <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
               Quantidade em estoque
             </Text>
-            <TextInput
+            <NumberInput
               id="stockAmount"
               name="stockAmount"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
           </div>
           <Row className="flex justify-end space-x-6 pt-6 border-t-2">
