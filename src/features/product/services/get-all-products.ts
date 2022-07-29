@@ -5,14 +5,18 @@ import { Product } from 'features/product/types/product'
 export type Params = {
   category?: string
   search?: string
+  size?: number
+  page?: number
 }
 export type Response = Product[]
 type ServiceType = (params?: Params) => Promise<Response>
 const getAllProductsService: ServiceType = async (params) => {
   const filters = [
     params?.category && `categoryId=${params.category}`,
-    //params?.search && `name_like=${params.search}`,
     params?.search && `slug_like=${params.search}`,
+    params?.search && `name_like=${params.search}`,
+    params?.size && `_limit=${params.size}`,
+    params?.page && `_page=${params.page}`,
   ]
     .filter(Boolean)
     .join('&')
