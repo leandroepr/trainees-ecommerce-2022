@@ -20,7 +20,9 @@ const Select = <T,>({
 }: SelectProps<T>) => {
   return (
     <div className={classNames('w-full relative group', className)}>
-      <div className="absolute z-10 mt-[-10px] ml-3 text-dark/30 bg-light group-focus-within:text-info">{label}</div>
+      <div className="absolute z-10 mt-[-6px] ml-3 text-dark/50 font-light bg-light group-focus-within:text-info text-sm">
+        {label}
+      </div>
       <Combobox value={value} onChange={onChange}>
         <div className="relative mt-1">{children}</div>
       </Combobox>

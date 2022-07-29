@@ -19,7 +19,7 @@ const NewProductForm: React.FC<NewProductFormProps> = ({
 }) => {
   const { data: categories, isLoading } = useGetAllCategories()
   const [product, setProduct] = React.useState({} as Product)
-  const [selectValue, setSelectValue] = React.useState('Selecione a Categoria')
+  const [selectValue, setSelectValue] = React.useState('')
   const { mutate: saveProduct } = UsePostProduct()
 
   const handleSubmit = (e: any) => {
