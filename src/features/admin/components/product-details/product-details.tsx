@@ -2,8 +2,8 @@ import { Column, Flex, Text } from 'components/toolkit'
 import Badge from 'components/toolkit/badge'
 import React from 'react'
 
-export interface ProductDetailsProps {}
-const ProductDetails: React.FC<ProductDetailsProps> = () => { 
+export interface ProductDetailsProps { }
+const ProductDetails: React.FC<ProductDetailsProps> = () => {
   return (
     <Column className="bg-white rounded-md">
       <div className="h-60 border-b-2">
@@ -20,7 +20,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = () => {
           <Text className='font-medium'>99</Text>
         </Flex>
         <Text as="p" className='text-green-500 pb-2'>em 10x R$9,99 sem juros</Text>
-        <Flex className='gap-2'>
+        <Flex className='flex-wrap gap-2'>
           <Badge>Categoria</Badge>
           <Badge>Subcategoria</Badge>
           <Badge>Tag1</Badge>
