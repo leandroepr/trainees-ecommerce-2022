@@ -22,37 +22,38 @@ const TextInput: React.FC<TextInputProps> = ({
   label,
   placeholder,
   shape = 'rounded',
-  disabled,
   required,
   className,
   onChange,
 }) => {
   const [typedValue, setTypedValue] = React.useState(value)
+  const [emptyRequired, setEmptyRequired] = React.useState('')
 
   const handleOnChange = (value: any) => {
     setTypedValue(value)
     onChange(value, name)
   }
 
-  // React.useEffect(() => {
-  //   onChange?.(typedValue)
-  // }, [typedValue, onChange])
+  const inputValidation = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    if (!e.currentTarget.value) {
+      setEmptyRequired('border-danger ring-1 ring-danger')
+    } else {
+      setEmptyRequired('focus-within:text-info')
+    }
+  }
 
   return (
     <Row className="relative">
       <label
         htmlFor={id}
-        className={classNames(
-          'w-full group',
-          disabled ? 'text-dark/30' : 'block focus-within:text-info'
-        )}
+        className='w-full group'
       >
         <div className="bg-light absolute mt-[-10px] ml-3 text-dark/50 font-light text-sm group-focus-within:text-info">
           {required ? `${label}*` : label}
         </div>
         <input
           className={classNames(
-            'py-5 block h-8 w-full placeholder:text-dark/20',
+            `py-5 block h-8 w-full border border-dark/20 focus:text-info ${emptyRequired}`,
             disabled
               ? 'border border-dark/10 text-dark/10 cursor-not-allowed focus:border-dark/30 focus:ring-0'
               : 'border border-dark/20 focus:text-info focus:border-info',
@@ -65,6 +66,7 @@ const TextInput: React.FC<TextInputProps> = ({
           value={typedValue}
           placeholder={placeholder}
           onChange={(e) => handleOnChange(e.target.value)}
+          onBlur={(e) => required ? inputValidation(e) : undefined}
         ></input>
       </label>
     </Row>

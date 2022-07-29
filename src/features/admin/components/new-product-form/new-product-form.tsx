@@ -82,7 +82,8 @@ const NewProductForm: React.FC<NewProductFormProps> = ({
               }}
             />
             <TextInput
-              label="Condição do produto"
+              required
+              label='Condição do produto'
               id="condition"
               name="condition"
               placeholder="Novo, Usado..."
@@ -119,8 +120,9 @@ const NewProductForm: React.FC<NewProductFormProps> = ({
               }}
             />
             <TextInput
-              label="Preço do produto"
-              id="price"
+              required
+              label='Preço do produto'
+              id='price' name='price'
               name="price"
               placeholder="R$ 49,99"
               onChange={(value, name) => {
@@ -128,7 +130,8 @@ const NewProductForm: React.FC<NewProductFormProps> = ({
               }}
             />
             <TextInput
-              label="Condições de pagamento"
+              required
+              label='Condições de pagamento'
               id="installmentsInfo"
               name="installmentsInfo"
               placeholder="em 10x de R$ 4,99 sem juros"
