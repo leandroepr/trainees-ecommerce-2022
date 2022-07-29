@@ -33,10 +33,6 @@ const TextInput: React.FC<TextInputProps> = ({
     onChange(value, name)
   }
 
-  // React.useEffect(() => {
-  //   onChange?.(typedValue)
-  // }, [typedValue, onChange])
-
   return (
     <Row>
       <label
