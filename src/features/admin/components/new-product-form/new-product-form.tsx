@@ -13,7 +13,7 @@ import React from 'react'
 const NewProductForm = () => {
   const { data: categories, isLoading } = useGetAllCategories()
   const [product, setProduct] = React.useState({} as Product)
-  const [selectValue, setSelectValue] = React.useState('Selecione a Categoria')
+  const [selectValue, setSelectValue] = React.useState('')
   const { mutate: saveProduct } = UsePostProduct()
 
   const handleSubmit = (e: any) => {
@@ -73,6 +73,7 @@ const NewProductForm = () => {
               }}
             />
             <TextInput
+              required
               label='Condição do produto'
               id="condition"
               name="condition"
@@ -85,11 +86,10 @@ const NewProductForm = () => {
               label='Selecione a categoria'
               value={selectValue}
               onChange={(value) => handleSelectOnChange(value)}
-              className="border border-dark/20 rounded"
             >
               <SelectInput
                 onChange={(value) => handleSelectOnChange(value)}
-                className="h-10"
+                className="h-11"
               />
               <SelectOptionList className="border border-dark/20 rounded">
                 {categories?.map((category) => (
@@ -109,12 +109,14 @@ const NewProductForm = () => {
               }}
             />
             <TextInput
+              required
               label='Preço do produto'
               id='price' name='price'
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }} />
             <TextInput
+              required
               label='Condições de pagamento'
               id="installmentsInfo"
               name="installmentsInfo"
