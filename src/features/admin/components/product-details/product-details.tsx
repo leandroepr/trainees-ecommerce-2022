@@ -42,6 +42,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           {product?.installmentsInfo}
         </Text>
         <Flex className="flex-wrap gap-2">
+          {product?.categoryId && (
+            <Badge variant="gray">{product?.categoryId}</Badge>
+          )}
+
           {typeof product?.categories === 'string' &&
             product?.categories
               ?.trim()

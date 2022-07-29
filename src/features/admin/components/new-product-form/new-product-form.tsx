@@ -31,10 +31,10 @@ const NewProductForm: React.FC<NewProductFormProps> = ({
   const handleSelectOnChange = (value: string) => {
     setProduct({
       ...product,
-      ['categories']: value,
+      ['categoryId']: value,
     })
     setSelectValue(value)
-    handleNewProduct({ ...product, ['categories']: value })
+    handleNewProduct({ ...product, ['categoryId']: value })
   }
 
   const handleOnChange = (value: string, name: string) => {
