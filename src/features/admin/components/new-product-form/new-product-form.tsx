@@ -59,56 +59,46 @@ const NewProductForm: React.FC<NewProductFormProps> = ({
       >
         Cadastro de Produtos
       </Text>
+
       <form onSubmit={handleSubmit}>
         <Column className="py-10 px-8 space-y-3">
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Título
-            </Text>
+          <Column className="pb-10 space-y-5">
             <TextInput
+              required
+              label="Título"
               id="name"
               name="name"
+              placeholder="Nome do produto"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              URL da imagem
-            </Text>
             <TextInput
+              label="URL da imagem"
               id="imageUrl"
               name="imageUrl"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Condição do produto
-            </Text>
             <TextInput
+              label="Condição do produto"
               id="condition"
               name="condition"
+              placeholder="Novo, Usado..."
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Selecione a categoria
-            </Text>
+
             <Select
+              label="Selecione a categoria"
               value={selectValue}
               onChange={(value) => handleSelectOnChange(value)}
-              className="border border-dark/20 rounded"
             >
               <SelectInput
                 onChange={(value) => handleSelectOnChange(value)}
-                className="h-10"
+                className="h-11"
               />
               <SelectOptionList className="border border-dark/20 rounded">
                 {categories?.map((category) => (
@@ -118,67 +108,52 @@ const NewProductForm: React.FC<NewProductFormProps> = ({
                 ))}
               </SelectOptionList>
             </Select>
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Categoria, subcategoria e tags
-            </Text>
+
             <TextInput
+              label="Categoria, subcategoria e tags"
               id="categories"
               name="categories"
+              placeholder="Feminino, Masculino, Infantil, Esportivo..."
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Preço do produto
-            </Text>
             <TextInput
+              label="Preço do produto"
               id="price"
               name="price"
+              placeholder="R$ 49,99"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Condições de pagamento
-            </Text>
             <TextInput
+              label="Condições de pagamento"
               id="installmentsInfo"
               name="installmentsInfo"
+              placeholder="em 10x de R$ 4,99 sem juros"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Quantidade de produtos vendidos
-            </Text>
             <TextInput
+              label="Quantidade de produtos vendidos"
               id="soldAmount"
               name="soldAmount"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
-          <div className="relative">
-            <Text className="absolute z-20 mt-[-10px] ml-4 px-[2px] bg-light text-dark/60 font-light">
-              Quantidade em estoque
-            </Text>
             <TextInput
+              label="Quantidade em estoque"
               id="stockAmount"
               name="stockAmount"
               onChange={(value, name) => {
                 handleOnChange(value, name)
               }}
             />
-          </div>
+          </Column>
+
           <Row className="flex justify-end space-x-6 pt-6 border-t-2">
             <Link href={'/'}>
               <Button variant="light" size="sm">

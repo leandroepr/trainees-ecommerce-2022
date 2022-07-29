@@ -20,6 +20,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
               {product?.condition} | {product?.soldAmount}
             </>
           ) : null}
+          {product?.soldAmount ? ' vendido(s)' : null}
         </Text>
         <Text as="p" className="text-lg font-semibold">
           {product?.name}
@@ -27,12 +28,12 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         <Flex>
           {product.price ? (
             <>
-              <Text className="text-2xl font-medium">
+              <Text className="text-2xl pr-1">R$ </Text>
+              <Text className="text-2xl ">
                 {String(product?.price).split(/[,.\s]/)[0]}
-                {String(product?.price).split(/[,.\s]/)[1]}
               </Text>
-              <Text className="font-sm">
-                {String(product?.price).split(/[,.\s]/)[2]}
+              <Text className="text-md">
+                {String(product?.price).split(/[,.\s]/)[1]}
               </Text>
             </>
           ) : null}
