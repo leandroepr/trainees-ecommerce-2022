@@ -17,8 +17,8 @@ const HeaderNavigationMenu: React.FC<HeaderNavigationMenuProps> = ({
         <NavigationItem text="Roupas" href="/produtos?categoria=roupas" />
         <NavigationItem text="Calçados" href="/produtos?categoria=calcados" />
         <NavigationItem
-          text="Utilitários"
-          href="/produtos?categoria=utilitarios"
+          text="Acessórios"
+          href="/produtos?categoria=acessorios"
         />
         <NavigationItem
           className="lg:hidden"

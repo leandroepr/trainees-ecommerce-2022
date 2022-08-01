@@ -24,16 +24,45 @@ const SearchInput: React.FC<SearchInputProps> = ({
 }) => {
   const handleOnSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' && internalValue !== '') {
-      onSearch?.(internalValue)
+      onSearch?.(
+        internalValue
+          .trim()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .split(' ')
+          .join('-')
+      )
     } else if (event.key === 'Enter' && internalValue == '' && filter !== '') {
-      onSearch?.(internalValue)
+      onSearch?.(
+        internalValue
+          .trim()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .split(' ')
+          .join('-')
+      )
     }
   }
+
   const handleOnClickToSearch = () => {
     if (internalValue !== '') {
-      onSearch?.(internalValue)
+      onSearch?.(
+        internalValue
+          .trim()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .split(' ')
+          .join('-')
+      )
     } else if (internalValue == '' && filter !== '') {
-      onSearch?.(internalValue)
+      onSearch?.(
+        internalValue
+          .trim()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .split(' ')
+          .join('-')
+      )
     }
   }
   const [internalValue, setInternalValue] = React.useState(value)
