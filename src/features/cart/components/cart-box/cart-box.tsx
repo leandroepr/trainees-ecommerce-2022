@@ -1,6 +1,7 @@
 import { Column, Row } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import React, { useState } from 'react'
+import CartAmount from '../cart-amount'
 import CartBoxFirstTab from './cart-box-tab-1'
 
 export interface CartBoxProps {
@@ -23,7 +24,7 @@ const CartBox: React.FC<CartBoxProps> = ({ className }) => {
               setActiveTab('tab1')
             }}
           >
-            Carrinho (0)
+            Carrinho (<CartAmount />)
           </li>
           <li
             className={
