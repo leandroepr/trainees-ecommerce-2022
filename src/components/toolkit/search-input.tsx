@@ -12,21 +12,27 @@ export interface SearchInputProps {
   // pending?: boolean;
   onChange?: (value: string) => void
   onSearch?: (value: string) => void
+  filter: string
 }
 const SearchInput: React.FC<SearchInputProps> = ({
   value = '',
   onChange,
   onSearch,
   className,
+  filter,
   ...inputProps
 }) => {
   const handleOnSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' && internalValue !== '') {
       onSearch?.(internalValue)
+    } else if (event.key === 'Enter' && internalValue == '' && filter !== '') {
+      onSearch?.(internalValue)
     }
   }
   const handleOnClickToSearch = () => {
     if (internalValue !== '') {
+      onSearch?.(internalValue)
+    } else if (internalValue == '' && filter !== '') {
       onSearch?.(internalValue)
     }
   }

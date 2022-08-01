@@ -57,6 +57,7 @@ const DefaultHeader = () => {
           placeholder="Pesquise por produtos..."
           value={search}
           onSearch={redirectAndHandleOnSearch}
+          filter={search}
         />
         <Row className="space-x-6">
           <HeaderNavigationMenu className="space-x-6" />
