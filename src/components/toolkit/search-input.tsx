@@ -24,11 +24,25 @@ const SearchInput: React.FC<SearchInputProps> = ({
 }) => {
   const handleOnSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' && internalValue !== '') {
-      onSearch?.(internalValue)
+      onSearch?.(
+        internalValue
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .split(' ')
+          .join('-')
+      )
     } else if (event.key === 'Enter' && internalValue == '' && filter !== '') {
-      onSearch?.(internalValue)
+      onSearch?.(
+        internalValue
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .split(' ')
+          .join('-')
+      )
     }
   }
+
+  /*.normalize('NFD').replace(/[\u0300-\u036f]/g, '')*/
   const handleOnClickToSearch = () => {
     if (internalValue !== '') {
       onSearch?.(internalValue)

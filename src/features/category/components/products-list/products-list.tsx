@@ -28,7 +28,8 @@ const ProductsList: React.FC = () => {
           ?.filter(
             (product) =>
               product.slug.includes(filtro) ||
-              product.categoryId.includes(categoria)
+              product.categoryId.includes(categoria) ||
+              product.categoryId.includes(filtro)
           )
           .map((product) => (
             <Link key={product.slug} href={`/produtos/${product.slug}`}>
