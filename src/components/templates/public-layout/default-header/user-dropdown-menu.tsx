@@ -19,10 +19,10 @@ const UserDropdownMenu: React.FC<UserDropdownMenuProps> = ({ children }) => {
       >
         <Popover.Panel className="absolute z-40 pt-1">
           <div className="grid grid-rows-2 gap-y-4 bg-dark/70 rounded text-light py-6 px-4">
-            <Link className="hover:text-sky-400" href="/customer">
+            <Link className="hover:text-sky-400" href="/">
               Cliente
             </Link>
-            <Link className="hover:text-sky-400" href="/admin">
+            <Link className="hover:text-sky-400" href="/novo-produto">
               Administrador
             </Link>
           </div>
