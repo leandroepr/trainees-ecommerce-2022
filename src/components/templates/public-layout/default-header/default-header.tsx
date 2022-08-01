@@ -74,8 +74,11 @@ const DefaultHeader = () => {
             <UserCircleIcon className="h-6 w-6" />
           </div>
           <Row>
-            <UserDropdownMenu>Usuário</UserDropdownMenu>
-            <ChevronDownIcon className="w-4" />
+            <UserDropdownMenu>
+              <Row>
+                Usuário <ChevronDownIcon className="w-4" />
+              </Row>
+            </UserDropdownMenu>
           </Row>
 
           <Row>
