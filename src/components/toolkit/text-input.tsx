@@ -23,6 +23,7 @@ const TextInput: React.FC<TextInputProps> = ({
   placeholder,
   shape = 'rounded',
   required,
+  disabled,
   className,
   onChange,
 }) => {
@@ -44,10 +45,7 @@ const TextInput: React.FC<TextInputProps> = ({
 
   return (
     <Row className="relative">
-      <label
-        htmlFor={id}
-        className='w-full group'
-      >
+      <label htmlFor={id} className="w-full group">
         <div className="bg-light absolute mt-[-10px] ml-3 text-dark/50 font-light text-sm group-focus-within:text-info">
           {required ? `${label}*` : label}
         </div>
@@ -66,7 +64,7 @@ const TextInput: React.FC<TextInputProps> = ({
           value={typedValue}
           placeholder={placeholder}
           onChange={(e) => handleOnChange(e.target.value)}
-          onBlur={(e) => required ? inputValidation(e) : undefined}
+          onBlur={(e) => (required ? inputValidation(e) : undefined)}
         ></input>
       </label>
     </Row>
