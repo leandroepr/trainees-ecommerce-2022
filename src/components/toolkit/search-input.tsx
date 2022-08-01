@@ -42,12 +42,23 @@ const SearchInput: React.FC<SearchInputProps> = ({
     }
   }
 
-  /*.normalize('NFD').replace(/[\u0300-\u036f]/g, '')*/
   const handleOnClickToSearch = () => {
     if (internalValue !== '') {
-      onSearch?.(internalValue)
+      onSearch?.(
+        internalValue
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .split(' ')
+          .join('-')
+      )
     } else if (internalValue == '' && filter !== '') {
-      onSearch?.(internalValue)
+      onSearch?.(
+        internalValue
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .split(' ')
+          .join('-')
+      )
     }
   }
   const [internalValue, setInternalValue] = React.useState(value)
