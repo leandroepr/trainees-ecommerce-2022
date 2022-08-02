@@ -1,12 +1,14 @@
 import { Button, Column, Row } from 'components/toolkit'
 import useCartContext from 'features/cart/hooks/use-cart-context'
 import { CartItemType } from 'features/cart/types/cart-item-type'
+import { useRouter } from 'next/router'
 import React from 'react'
 import CartItem from '../cart-item/cart-item'
 import ProductsTotalPrice from '../total-price/products-total-price'
 
 const CartBoxFirstTab: React.FC = () => {
   const { items, dispatch } = useCartContext()
+  const router = useRouter()
 
   const manageItem = (type: string, item: CartItemType) => {
     switch (type) {
@@ -42,6 +44,13 @@ const CartBoxFirstTab: React.FC = () => {
         console.error('Undefined action')
     }
   }
+
+  const finishSale = () => {
+    router.push('/sucesso')
+    dispatch({
+      type: 'clear',
+    })
+  }
   return (
     <Column className="w-full">
       <Column className="flex flex-col">
@@ -59,10 +68,22 @@ const CartBoxFirstTab: React.FC = () => {
         </Row>
       </Column>
       <Row className="pt-16 justify-end">
-        <Button shape="rounded" variant="light" size="md" className="mr-2">
+        <Button
+          shape="rounded"
+          variant="light"
+          size="md"
+          className="mr-2"
+          onClick={() => router.push('/')}
+        >
           Cancelar a compra
         </Button>
-        <Button shape="rounded" variant="info" size="md">
+        <Button
+          disabled={items.length <= 0}
+          shape="rounded"
+          variant="info"
+          size="md"
+          onClick={() => finishSale()}
+        >
           Continuar a compra
         </Button>
       </Row>
