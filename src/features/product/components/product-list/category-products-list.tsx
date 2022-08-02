@@ -1,11 +1,10 @@
 import { ChevronRightIcon } from '@heroicons/react/outline'
 import { Column, Link, Row, SkeletonElement, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
-import { useGetAllProducts } from 'features/product/hooks/use-get-all-products'
 import React from 'react'
-import ProductCard from '../product-card/product-card'
 
 export interface CategoryProductsListProps {
+  children?: React.ReactNode | React.ReactNode[]
   className?: string
   categoryName?: string
   categoryPageLink?: string
@@ -13,13 +12,12 @@ export interface CategoryProductsListProps {
   pending?: boolean
 }
 const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
+  children,
   className,
   categoryName = '',
   categoryId,
   pending = false,
 }) => {
-  const { data } = useGetAllProducts({ category: categoryId })
-
   if (pending)
     return (
       <Column className={classNames('space-y-5 animate-pulse', className)}>
@@ -29,7 +27,7 @@ const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
         </Row>
         <Row className="relative">
           <Row className={`w-full grid grid-cols-5 gap-4 items-center`}>
-            {Array(5).fill(<ProductCard pending={true} variant="compressed" />)}
+            {children}
           </Row>
           <Column className="absolute -right-8 h-full justify-center">
             <span className="w-16 h-16 bg-gray-200 rounded-full" />
@@ -47,13 +45,7 @@ const CategoryProductsList: React.FC<CategoryProductsListProps> = ({
         </Link>
       </Row>
       <Row className="relative">
-        <div className={`grid grid-cols-5 gap-4`}>
-          {data?.slice(0, 5).map((product) => (
-            <Link key={product.slug} href={`/produtos/${product.slug}`}>
-              <ProductCard className="h-full" product={product} />
-            </Link>
-          ))}
-        </div>
+        <div className="grid grid-cols-5 gap-4">{children}</div>
         <Column className="absolute -right-8 h-full justify-center">
           <Link href={`/produtos?categoria=${categoryId}`}>
             <span className="w-16 h-16 p-2 bg-light rounded-full text-info hover:bg-info hover:text-white shadow-md flex items-center justify-center">
