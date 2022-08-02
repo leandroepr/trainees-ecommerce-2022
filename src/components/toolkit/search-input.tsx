@@ -29,8 +29,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
           .trim()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
-          .split(' ')
-          .join('-')
       )
     } else if (event.key === 'Enter' && internalValue == '' && filter !== '') {
       onSearch?.(
@@ -38,8 +36,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
           .trim()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
-          .split(' ')
-          .join('-')
       )
     }
   }
