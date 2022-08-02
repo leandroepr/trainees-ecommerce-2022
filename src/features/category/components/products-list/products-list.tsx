@@ -40,7 +40,7 @@ const ProductsList: React.FC = () => {
                       .join(' ')
                       .normalize('NFD')
                       .replace(/[\u0300-\u036f]/g, '')
-                      .includes(filtro)
+                      .includes(filtro && categoria)
                 )
                 .map((product) => (
                   <Link key={product.slug} href={`/produtos/${product.slug}`}>
@@ -57,40 +57,41 @@ const ProductsList: React.FC = () => {
         </div>
       </Row>
     )
+  } else {
+    return (
+      <Row className={classNames('')}>
+        <div
+          className={classNames(
+            'grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'
+          )}
+        >
+          {products
+            ?.filter(
+              (product) =>
+                product.name
+                  .toLowerCase()
+                  .normalize('NFD')
+                  .replace(/[\u0300-\u036f]/g, '')
+                  .includes(filtro) ||
+                product.slug
+                  .split('-')
+                  .join(' ')
+                  .normalize('NFD')
+                  .replace(/[\u0300-\u036f]/g, '')
+                  .includes(filtro) ||
+                product.categoryId.includes(filtro) ||
+                product.categories.includes(filtro) ||
+                product.name.includes(filtro)
+            )
+            .map((product) => (
+              <Link key={product.slug} href={`/produtos/${product.slug}`}>
+                <ProductCard product={product} variant="detailed" />
+              </Link>
+            ))}
+        </div>
+      </Row>
+    )
   }
-  return (
-    <Row className={classNames('')}>
-      <div
-        className={classNames(
-          'grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'
-        )}
-      >
-        {products
-          ?.filter(
-            (product) =>
-              product.name
-                .toLowerCase()
-                .normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, '')
-                .includes(filtro) ||
-              product.slug
-                .split('-')
-                .join(' ')
-                .normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, '')
-                .includes(filtro) ||
-              product.categoryId.includes(filtro) ||
-              product.categories.includes(filtro) ||
-              product.name.includes(filtro)
-          )
-          .map((product) => (
-            <Link key={product.slug} href={`/produtos/${product.slug}`}>
-              <ProductCard product={product} variant="detailed" />
-            </Link>
-          ))}
-      </div>
-    </Row>
-  )
 }
 
 export default ProductsList
