@@ -22,7 +22,7 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({ slug }) => {
   const { isLoading, data: products } = useGetProductBySlug(slug)
 
   return (
-    <DefaultPublicLayout title="Detalhes do produto">
+    <DefaultPublicLayout title={`Compre Fácil | ${slug} `}>
       <Container className="py-4">
         {isLoading ? (
           <Column className={classNames('items-center')}>
@@ -85,7 +85,7 @@ const ProductDetailScreen: React.FC<ProductDetailScreenProps> = ({ slug }) => {
           </Column>
         )}
       </Container>
-    </DefaultPublicLayout>
+    </DefaultPublicLayout >
   )
 }
 

@@ -10,22 +10,22 @@ const ProductsScreen: React.FC = () => {
   const { isLoading } = useGetAllProducts()
 
   return (
-    <DefaultPublicLayout>
+    <DefaultPublicLayout title="Compre Fácil | Produtos">
       <Container>
         <RelatedSearches />
         <Row className="grid-cols-2">
-            <Row className="shrink-0">
-              <CategoryLateralMenuLayout />
-            </Row>
-            {isLoading && (
-              <Column className={classNames('items-center')}>
-                <Spinner color="black" size={100} />
-                Carregando...
-              </Column>
-            )}
-            <Row className="">
-              <ProductsList />
-            </Row>
+          <Row className="shrink-0">
+            <CategoryLateralMenuLayout />
+          </Row>
+          {isLoading && (
+            <Column className={classNames('items-center')}>
+              <Spinner color="black" size={100} />
+              Carregando...
+            </Column>
+          )}
+          <Row className="">
+            <ProductsList />
+          </Row>
         </Row>
       </Container>
     </DefaultPublicLayout>
