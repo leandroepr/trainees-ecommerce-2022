@@ -30,8 +30,17 @@ const ProductsList: React.FC = () => {
                 ?.filter(
                   (product) =>
                     (product.categoryId.includes(categoria) &&
-                      product.name.toLowerCase().includes(filtro)) ||
-                    product.slug.split('-').join(' ').includes(filtro)
+                      product.name
+                        .toLowerCase()
+                        .normalize('NFD')
+                        .replace(/[\u0300-\u036f]/g, '')
+                        .includes(filtro)) ||
+                    product.slug
+                      .split('-')
+                      .join(' ')
+                      .normalize('NFD')
+                      .replace(/[\u0300-\u036f]/g, '')
+                      .includes(filtro)
                 )
                 .map((product) => (
                   <Link key={product.slug} href={`/produtos/${product.slug}`}>
@@ -59,13 +68,20 @@ const ProductsList: React.FC = () => {
         {products
           ?.filter(
             (product) =>
-              product.name.toLowerCase().includes(filtro) ||
-              product.slug.split('-').join(' ').includes(filtro) ||
+              product.name
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .includes(filtro) ||
+              product.slug
+                .split('-')
+                .join(' ')
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .includes(filtro) ||
               product.categoryId.includes(filtro) ||
               product.categories.includes(filtro) ||
-              product.condition.includes(filtro) ||
-              product.name.includes(filtro) ||
-              product.installmentsInfo.includes(filtro)
+              product.name.includes(filtro)
           )
           .map((product) => (
             <Link key={product.slug} href={`/produtos/${product.slug}`}>
