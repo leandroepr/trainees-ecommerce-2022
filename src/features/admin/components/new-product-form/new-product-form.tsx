@@ -1,9 +1,9 @@
 import { Button, Column, Link, Row, Spinner, Text } from 'components/toolkit'
+import Input from 'components/toolkit/input'
 import { Select } from 'components/toolkit/select'
 import SelectInput from 'components/toolkit/select/select-input'
 import SelectOption from 'components/toolkit/select/select-option'
 import SelectOptionList from 'components/toolkit/select/select-option-list'
-import TextInput from 'components/toolkit/text-input'
 import { classNames } from 'core/helpers/class-names'
 import { UsePostProduct } from 'features/admin/hooks/use-post-product'
 import { useGetAllCategories } from 'features/category/hooks/use-get-all-categories'
@@ -63,44 +63,35 @@ const NewProductForm: React.FC<NewProductFormProps> = ({
       <form onSubmit={handleSubmit}>
         <Column className="py-10 px-8 space-y-3">
           <Column className="pb-10 space-y-5">
-            <TextInput
+            <Input
               required
               label="Título"
               id="name"
               name="name"
               placeholder="Nome do produto"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
-            <TextInput
+            <Input
               label="URL da imagem"
               id="imageUrl"
               name="imageUrl"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
-            <TextInput
+            <Input
               required
               label="Condição do produto"
               id="condition"
               name="condition"
               placeholder="Novo, Usado..."
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
 
             <Select
               label="Selecione a categoria"
               value={selectValue}
-              onChange={(value) => handleSelectOnChange(value)}
+              onChange={handleSelectOnChange}
             >
-              <SelectInput
-                onChange={(value) => handleSelectOnChange(value)}
-                className="h-11"
-              />
+              <SelectInput onChange={handleSelectOnChange} className="h-11" />
               <SelectOptionList className="border border-dark/20 rounded">
                 {categories?.map((category) => (
                   <SelectOption key={category.id} value={category.name}>
@@ -110,50 +101,43 @@ const NewProductForm: React.FC<NewProductFormProps> = ({
               </SelectOptionList>
             </Select>
 
-            <TextInput
+            <Input
               label="Categoria, subcategoria e tags"
               id="categories"
               name="categories"
               placeholder="Feminino, Masculino, Infantil, Esportivo..."
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
-            <TextInput
+            <Input
               required
+              type="number"
               label="Preço do produto"
               id="price"
               name="price"
               placeholder="R$ 49,99"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
-            <TextInput
+            <Input
               required
               label="Condições de pagamento"
               id="installmentsInfo"
               name="installmentsInfo"
               placeholder="em 10x de R$ 4,99 sem juros"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
-            <TextInput
+            <Input
+              type="number"
               label="Quantidade de produtos vendidos"
               id="soldAmount"
               name="soldAmount"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
-            <TextInput
+            <Input
+              type="number"
               label="Quantidade em estoque"
               id="stockAmount"
               name="stockAmount"
-              onChange={(value, name) => {
-                handleOnChange(value, name)
-              }}
+              onChange={handleOnChange}
             />
           </Column>
 

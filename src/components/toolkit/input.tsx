@@ -2,10 +2,11 @@ import { classNames } from 'core/helpers/class-names'
 import React from 'react'
 import Row from './row'
 
-export interface TextInputProps {
+export interface InputProps {
   name: string
   id?: string
-  value?: string
+  type?: string
+  value?: string | number 
   label?: string
   placeholder?: string
   shape?: 'rounded' | 'square'
@@ -15,9 +16,10 @@ export interface TextInputProps {
   onChange: (value: string, name: string) => void
 }
 
-const TextInput: React.FC<TextInputProps> = ({
+const Input: React.FC<InputProps> = ({
   name,
   id,
+  type = 'text',
   value = '',
   label,
   placeholder,
@@ -58,7 +60,7 @@ const TextInput: React.FC<TextInputProps> = ({
             inputShapeMap[shape],
             className
           )}
-          type="text"
+          type={type}
           name={name}
           id={id}
           value={typedValue}
@@ -71,7 +73,7 @@ const TextInput: React.FC<TextInputProps> = ({
   )
 }
 
-export default TextInput
+export default Input
 
 const inputShapeMap = {
   rounded: 'rounded',

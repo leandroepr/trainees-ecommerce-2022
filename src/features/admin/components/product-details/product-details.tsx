@@ -1,5 +1,6 @@
 import { Column, Flex, Image, Text } from 'components/toolkit'
 import Badge from 'components/toolkit/badge'
+import ProductPrice from 'features/product/components/product-card/product-price'
 import { Product } from 'features/product/types/product'
 import React from 'react'
 
@@ -28,13 +29,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         <Flex>
           {product.price ? (
             <>
-              <Text className="text-2xl pr-1">R$ </Text>
-              <Text className="text-2xl ">
-                {String(product?.price).split(/[,.\s]/)[0]}
-              </Text>
-              <Text className="text-md">
-                {String(product?.price).split(/[,.\s]/)[1]}
-              </Text>
+              <ProductPrice price={product.price}/>
             </>
           ) : null}
         </Flex>
