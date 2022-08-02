@@ -40,7 +40,7 @@ const ProductsList: React.FC = () => {
                       .join(' ')
                       .normalize('NFD')
                       .replace(/[\u0300-\u036f]/g, '')
-                      .includes(filtro && categoria)
+                      .includes(filtro)
                 )
                 .map((product) => (
                   <Link key={product.slug} href={`/produtos/${product.slug}`}>
