@@ -23,7 +23,7 @@ const HomeScreen: React.FC = () => {
   }, [data, loadingCategories, error])
 
   return (
-    <DefaultPublicLayout title="Home">
+    <DefaultPublicLayout title="Compre Fácil | Início">
       <Container className="space-y-12 py-12">
         {loadingCategories
           ? Array(3).fill(
