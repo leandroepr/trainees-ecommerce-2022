@@ -6,7 +6,7 @@ import React from 'react'
 // export interface CartScreenProps {}
 const CartScreen: React.FC = () => {
   return (
-    <DefaultPublicLayout title="cart" className="bg-gray">
+    <DefaultPublicLayout title="Compre Fácil | Carrinho" className="bg-gray">
       <Container className="pt-6">
         {/* <Column className={classNames('items-center')}>Carregando...</Column> */}
         <Column className="flex h-full shadow-xl bg-light">

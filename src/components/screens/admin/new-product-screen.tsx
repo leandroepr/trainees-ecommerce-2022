@@ -12,7 +12,7 @@ const NewProductScreen: React.FC = () => {
   }
 
   return (
-    <DefaultPublicLayout>
+    <DefaultPublicLayout title="Compre Fácil | Novo Produto">
       <Container>
         <Row className="h-full w-full my-4">
           <Column className="w-60 drop-shadow hidden md:block">
