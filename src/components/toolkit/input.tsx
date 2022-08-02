@@ -45,7 +45,6 @@ const Input: React.FC<InputProps> = ({
     } else {
       setEmptyRequired('focus-within:text-info')
       setEmptyLabelRequired('text-info')
-
     }
   }
 
