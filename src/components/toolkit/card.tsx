@@ -7,7 +7,7 @@ const Card: React.FC<CardProps> = ({ className, ...divProps }) => {
   return (
     <Column
       className={classNames(
-        'flex flex-col bg-white shadow border rounded-md overflow-hidden cursor-pointer hover:shadow-md ',
+        'flex flex-col bg-white shadow border rounded-md overflow-hidden cursor-pointer hover:shadow-md h-full',
         className
       )}
       {...divProps}
