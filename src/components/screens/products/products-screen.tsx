@@ -13,7 +13,7 @@ const ProductsScreen: React.FC = () => {
     <DefaultPublicLayout title="Compre Fácil | Produtos">
       <Container>
         <RelatedSearches />
-        <Row className="grid-cols-2 mb-4">
+        <Row className="grid-cols-2 pb-4">
           <Row className="shrink-0">
             <CategoryLateralMenuLayout />
           </Row>
