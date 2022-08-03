@@ -10,7 +10,13 @@ const HomeScreen: React.FC = () => {
     useGetAllCategoriesWithProducts()
 
   const categories = ['Roupas', 'Calçados', 'Acessórios']
-  const cards = ['first-card', 'second-card', 'third-card']
+  const cards = [
+    'first-card',
+    'second-card',
+    'third-card',
+    'forth-card',
+    'fifth-card',
+  ]
 
   return (
     <DefaultPublicLayout title="Compre Fácil | Início">
