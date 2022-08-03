@@ -30,7 +30,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
           .toLowerCase()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
-          .toLowerCase()
       )
     } else if (event.key === 'Enter' && internalValue == '' && filter !== '') {
       onSearch?.(
@@ -39,7 +38,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
           .toLowerCase()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
-          .toLowerCase()
       )
     }
   }
@@ -52,7 +50,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
           .toLowerCase()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
-          .toLowerCase()
       )
     } else if (internalValue == '' && filter !== '') {
       onSearch?.(
