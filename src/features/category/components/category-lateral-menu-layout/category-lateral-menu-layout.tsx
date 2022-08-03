@@ -1,4 +1,4 @@
-import { Column } from 'components/toolkit'
+import { Column, Row, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
 import StockNumber from './stock-number'
 
@@ -12,68 +12,90 @@ const CategoryLateralMenuLayout: React.FC<CategoryLateralMenuLayoutProps> = ({
   return (
     <div className={classNames('text-gray-600 min-w-fit pr-5', className)}>
       <Column className="space-y-4 pb-8">
-        <div>Calçados, Roupas e Bolsas</div>
+        <Text as="h2">Calçados, Roupas e Bolsas</Text>
 
-        <section>
-          <div className="font-bold text-xl pb-1 text-gray-800">Todos</div>
-          <div>1.472.478 resultados</div>
-        </section>
+        <Column>
+          <Text className="font-bold text-xl pb-1 text-gray-800">Todos</Text>
+          <Text>1.472.478 resultados</Text>
+        </Column>
       </Column>
 
       <Column className="space-y-6">
-        <section>
-          <div className="font-bold text-lg pb-1 text-gray-800">Gênero</div>
+        <Column>
+          <Text className="font-bold text-lg pb-2 text-gray-800">Gênero</Text>
           <div className="text-sm space-y-2">
-            <div>
-              Feminino <StockNumber />
-            </div>
-            <div>
-              Masculino <StockNumber />
-            </div>
-            <div>
-              Sem gênero <StockNumber />
-            </div>
-            <div>
-              Meninas <StockNumber />
-            </div>
-            <div>
-              Meninos <StockNumber />
-            </div>
-            <div>
-              Bebês <StockNumber />
-            </div>
-          </div>
-        </section>
+            <Row className="space-x-1">
+              <Text className="font-medium">Feminino</Text>
+              <StockNumber />
+            </Row>
 
-        <section>
-          <div className="font-bold text-lg pb-1 text-gray-800">Categorias</div>
-          <div className="text-sm space-y-2">
-            <div>
-              Botas <StockNumber />
-            </div>
-            <div>
-              Sapatos <StockNumber />
-            </div>
-            <div>
-              Sandalhas <StockNumber />
-            </div>
-            <div>
-              Sapatênis <StockNumber />
-            </div>
-          </div>
-        </section>
+            <Row className="space-x-1">
+              <Text className="font-medium">Masculino</Text>
+              <StockNumber />
+            </Row>
 
-        <section>
-          <div className="font-bold text-lg pb-1 text-gray-800">Pagamento</div>
-          <div className="text-sm space-y-2">
-            <div>
-              Sem juros <StockNumber />
-            </div>
-            <div className="pb-2">
-              Com juros <StockNumber />
-            </div>
+            <Row className="space-x-1">
+              <Text className="font-medium">Sem genêro</Text>
+              <StockNumber />
+            </Row>
+
+            <Row className="space-x-1">
+              <Text className="font-medium">Meninas</Text>
+              <StockNumber />
+            </Row>
+
+            <Row className="space-x-1">
+              <Text className="font-medium">Meninos</Text>
+              <StockNumber />
+            </Row>
+
+            <Row className="space-x-1">
+              <Text className="font-medium">Bebês</Text>
+              <StockNumber />
+            </Row>
           </div>
-        </section>
+        </Column>
+
+        <Column>
+          <Text className="font-bold text-lg pb-2 text-gray-800">
+            Categorias
+          </Text>
+          <div className="text-sm space-y-2">
+            <Row className="space-x-1">
+              <Text className="font-medium">Botas</Text>
+              <StockNumber />
+            </Row>
+
+            <Row className="space-x-1">
+              <Text className="font-medium">Sapatos</Text>
+              <StockNumber />
+            </Row>
+
+            <Row className="space-x-1">
+              <Text className="font-medium">Sandalhas</Text>
+              <StockNumber />
+            </Row>
+
+            <Row className="space-x-1">
+              <Text className="font-medium">Sapatênis</Text>
+              <StockNumber />
+            </Row>
+          </div>
+        </Column>
+
+        <Column>
+          <div className="font-bold text-lg pb-2 text-gray-800">Pagamento</div>
+          <div className="text-sm space-y-2">
+            <Row className="space-x-1">
+              <Text className="font-medium">Sem juros</Text>
+              <StockNumber />
+            </Row>
+            <Row className="space-x-1">
+              <Text className="font-medium">Com juros</Text>
+              <StockNumber />
+            </Row>
+          </div>
+        </Column>
       </Column>
     </div>
   )
