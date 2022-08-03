@@ -2,6 +2,7 @@ import { MenuIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import { NavigationItem } from 'components/templates/public-layout/default-header/header-menu'
 import { Link, Row, Text } from 'components/toolkit'
 import { classNames } from 'core/helpers/class-names'
+import CartAmount from 'features/cart/components/cart-amount'
 import React from 'react'
 
 export interface HeaderNavigationMenuProps {
@@ -36,7 +37,7 @@ const HeaderNavigationMenu: React.FC<HeaderNavigationMenuProps> = ({
               as="span"
               className="absolute ml-4 text-sm text-white bg-red-500 rounded-full w-5 h-5 text-center justify-center mt-[-6px]"
             >
-              3
+              {<CartAmount />}
             </Text>
           </Row>
         </Row>
