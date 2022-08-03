@@ -27,6 +27,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
       onSearch?.(
         internalValue
           .trim()
+          .toLowerCase()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
       )
@@ -34,6 +35,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
       onSearch?.(
         internalValue
           .trim()
+          .toLowerCase()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
       )
@@ -45,19 +47,17 @@ const SearchInput: React.FC<SearchInputProps> = ({
       onSearch?.(
         internalValue
           .trim()
+          .toLowerCase()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
-          .split(' ')
-          .join('-')
       )
     } else if (internalValue == '' && filter !== '') {
       onSearch?.(
         internalValue
           .trim()
+          .toLowerCase()
           .normalize('NFD')
           .replace(/[\u0300-\u036f]/g, '')
-          .split(' ')
-          .join('-')
       )
     }
   }
