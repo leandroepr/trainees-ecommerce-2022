@@ -13,17 +13,13 @@ const HomeScreen: React.FC = () => {
     <DefaultPublicLayout title="Compre Fácil | Início">
       <Container className="space-y-12 py-12">
         {loadingCategories
-          ? Array(3)
-              .fill(undefined)
-              .map((_, index) => (
-                <CategoryProductsList pending={true} key={index + 1}>
-                  {Array(5)
-                    .fill(undefined)
-                    .map((_, index) => (
-                      <ProductCard pending={true} key={index + 1} />
-                    ))}
-                </CategoryProductsList>
-              ))
+          ? Array.from({ length: 3 }, (_, i) => (
+              <CategoryProductsList pending={true} key={i + 1}>
+                {Array.from({ length: 5 }, (_, i) => (
+                  <ProductCard pending={true} key={i + 1} />
+                ))}
+              </CategoryProductsList>
+            ))
           : data?.map((category) => (
               <CategoryProductsList
                 key={category.name}
