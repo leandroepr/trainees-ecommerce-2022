@@ -9,26 +9,21 @@ const HomeScreen: React.FC = () => {
   const { data, isLoading: loadingCategories } =
     useGetAllCategoriesWithProducts()
 
-  const categories = ['Roupas', 'Calçados', 'Acessórios']
-  const cards = [
-    'first-card',
-    'second-card',
-    'third-card',
-    'forth-card',
-    'fifth-card',
-  ]
-
   return (
     <DefaultPublicLayout title="Compre Fácil | Início">
       <Container className="space-y-12 py-12">
         {loadingCategories
-          ? categories.map((category) => (
-              <CategoryProductsList pending={true} key={category}>
-                {cards.map((card) => (
-                  <ProductCard pending={true} key={card} />
-                ))}
-              </CategoryProductsList>
-            ))
+          ? Array(3)
+              .fill(undefined)
+              .map((_, index) => (
+                <CategoryProductsList pending={true} key={index + 1}>
+                  {Array(5)
+                    .fill(undefined)
+                    .map((_, index) => (
+                      <ProductCard pending={true} key={index + 1} />
+                    ))}
+                </CategoryProductsList>
+              ))
           : data?.map((category) => (
               <CategoryProductsList
                 key={category.name}
