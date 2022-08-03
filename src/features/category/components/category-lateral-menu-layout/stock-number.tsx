@@ -1,5 +1,7 @@
+import { Text } from 'components/toolkit'
+
 const StockNumber = () => {
-  return <span className="font-light">(123)</span>
+  return <Text className="font-light">(123)</Text>
 }
 
 export default StockNumber
