@@ -5,32 +5,24 @@ import { ProductCard } from 'features/product'
 import CategoryProductsList from 'features/product/components/product-list/category-products-list'
 import React from 'react'
 
-// export interface HomeScreenProps {}
 const HomeScreen: React.FC = () => {
-  const {
-    data,
-    isLoading: loadingCategories,
-    error,
-  } = useGetAllCategoriesWithProducts()
+  const { data, isLoading: loadingCategories } =
+    useGetAllCategoriesWithProducts()
 
-  React.useEffect(() => {
-    console.log({
-      log: 'Categories with products',
-      data,
-      isLoading: loadingCategories,
-      error,
-    })
-  }, [data, loadingCategories, error])
+  const categories = ['Roupas', 'Calçados', 'Acessórios']
+  const cards = ['first-card', 'second-card', 'third-card']
 
   return (
     <DefaultPublicLayout title="Compre Fácil | Início">
       <Container className="space-y-12 py-12">
         {loadingCategories
-          ? Array(3).fill(
-              <CategoryProductsList pending={true}>
-                {Array(5).fill(<ProductCard pending={true} />)}
+          ? categories.map((category) => (
+              <CategoryProductsList pending={true} key={category}>
+                {cards.map((card) => (
+                  <ProductCard pending={true} key={card} />
+                ))}
               </CategoryProductsList>
-            )
+            ))
           : data?.map((category) => (
               <CategoryProductsList
                 key={category.name}
